@@ -2,7 +2,7 @@
 ### 대학생을 위한 블록체인 기반 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템
 
 > (나중에 설명을 씁시다)
->
+>자꾸만 심쿵해~~
 > (한두줄 정도로)
 
  [![license](https://img.shields.io/badge/license-Apache%202.0-red.svg)](https://www.apache.org/licenses/LICENSE-2.0)
