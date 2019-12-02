@@ -1,4 +1,4 @@
-# scholarship-with-blockchain
+# Scholarship-with-blockchain
 > 대학생을 위한 블록체인 기반의 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템 개발
 
 ## 샘플
