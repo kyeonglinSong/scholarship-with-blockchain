@@ -6,7 +6,6 @@ import { Container, Row, Col } from 'reactstrap';
 import {WiNightCloudyHigh} from "react-icons/wi"
 import { Button } from 'reactstrap';
 
-import MiddleBar from "./common/MiddleBar";
 
 const Notice = ({ notice, loading, error, history })=>{
 

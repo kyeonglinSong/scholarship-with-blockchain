@@ -3,7 +3,7 @@ import {
   Navbar, Nav, NavItem, NavLink
 } from "reactstrap"
 
-const HeaderNotLogin = ({ user, onClick }) =>{
+const HeaderStudentLogin = ({ user, onClick }) =>{
 
     return(
       <header>
@@ -32,4 +32,4 @@ const HeaderNotLogin = ({ user, onClick }) =>{
     );
 }
 
-export default HeaderNotLogin;
+export default HeaderStudentLogin;

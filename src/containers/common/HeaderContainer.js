@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../modules/auth';
 import { withRouter } from 'react-router-dom'
 
-import HeaderLogin from '../../components/common/HeaderLogin';
+import HeaderStudentLogin from '../../components/common/HeaderStudentLogin';
 import HeaderNotLogin from '../../components/common/HeaderNotLogin';
 
 const HeaderContainer = ( { history } ) =>{
@@ -21,7 +21,10 @@ const HeaderContainer = ( { history } ) =>{
         return <HeaderNotLogin/>
     }
     else{
-        return <HeaderLogin user={user} onClick={onLogout}/>
+        if(user.id===1)
+            return <HeaderStudentLogin user={user} onClick={onLogout}/>
+        else
+            return <HeaderStudentLogin user={user} onClick={onLogout}/>
     }
 }
 

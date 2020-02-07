@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import MiddleBar from "./common/MiddleBar";
 import "./content.css"
 
 
@@ -13,7 +12,6 @@ const SignIn = ({form, onChange, onSubmit})=>{
 
   return(
     <div>
-      <MiddleBar>로그인</MiddleBar>
       <span className="content">
         <Form onSubmit={onSubmit}>
           <FormGroup>

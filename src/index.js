@@ -14,10 +14,12 @@ import { setUser } from './modules/auth';
 
 function loadUser(){
   try{
+    console.log("in load user");
     const user = localStorage.getItem('user');
     if(!user) return;
-
-    store.dispatch(setUser(user));
+    const tempuser = JSON.parse(user);
+    console.log(tempuser);
+    store.dispatch(setUser(tempuser));
   }catch(e){
     console.log('localStorage is not working');
   }

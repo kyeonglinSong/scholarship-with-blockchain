@@ -25,19 +25,13 @@ const LoginForm = ({ history }) => {
         );
     };
 
-    //form submit handler
-    const onSubmit = e => {
-        e.preventDefault();
-        const { email, password } = form;
-        console.log(form);
-        dispatch(login({ email, password }));
-    };
-
     useEffect(()=>{
         dispatch(initializeForm());
     }, [dispatch]);
 
     useEffect(()=>{
+        console.log("in useEffect")
+        console.log(auth)
         if(authError){
             //그냥 일단 로그인 실패하면 홈으로 돌아가게 해놓음 로그인 실패 페이지 만들자!
             history.push('/');
@@ -54,7 +48,15 @@ const LoginForm = ({ history }) => {
             }
             //dispatch(check());
         }
-    }, [auth, authError, dispatch]);
+    }, [auth, authError, dispatch, history]);
+
+     //form submit handler
+     const onSubmit = e => {
+        e.preventDefault();
+        const { email, password } = form;
+        console.log(form);
+        dispatch(login({ email, password }));
+    };
 
     return(
         <SignIn 

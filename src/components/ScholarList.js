@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import { Table, Button } from "reactstrap";
-import MiddleBar from "./common/MiddleBar";
 import "./content.css"
 import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 

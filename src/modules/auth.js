@@ -27,7 +27,7 @@ export const logout = createAction(
     LOGOUT,
 );
 
-export const setUser = createAction(SET_USER, user=>user);
+export const setUser = createAction(SET_USER, auth=>auth);
 
 export const login = createAction(LOGIN, ({email, password})=>({
     email,
@@ -61,10 +61,11 @@ const auth = handleActions(
         [LOGOUT]:(state)=>({
             ...state,
             auth:null,
+            isStudent:null,
         }),
-        [SET_USER]:(state, user)=>({
+        [SET_USER]:(state, { payload:auth })=>({
             ...state,
-            auth:user,
+            auth,
         }),
         [LOGIN_SUCCESS]: (state, { payload:auth })=>({
             ...state,

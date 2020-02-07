@@ -6,7 +6,6 @@ import { Container, Row, Col } from 'reactstrap';
 import { AiOutlineRight } from "react-icons/ai";
 import { Button } from 'reactstrap';
 
-import MiddleBar from "./common/MiddleBar";
 
 const ApplyDetail = ({ apply, loading, error, history })=>{
 
