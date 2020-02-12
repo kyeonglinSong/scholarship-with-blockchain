@@ -14,7 +14,6 @@ const ScholarViewer = ({ match })=>{
         loading:loading['scholar/READ_SCHOLAR'],
     }));
 
-    console.log(scholarId.id);
     useEffect(()=>{
         dispatch(readScholar(scholarId.id));
         return()=>{
@@ -22,7 +21,6 @@ const ScholarViewer = ({ match })=>{
         };
     }, [dispatch, scholarId]);
 
-    console.log(scholar);
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><ScholarDetail scholar={scholar} loading={loading} error={error} /></div>;
 };

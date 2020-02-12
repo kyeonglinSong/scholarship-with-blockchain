@@ -31,7 +31,6 @@ const LoginForm = ({ history }) => {
     }, [dispatch]);
 
     useEffect(()=>{
-        console.log("in useEffect")
         console.log(auth)
         if(authError){
             //그냥 일단 로그인 실패하면 홈으로 돌아가게 해놓음 로그인 실패 페이지 만들자!
@@ -40,7 +39,6 @@ const LoginForm = ({ history }) => {
             console.log(authError);
         }
         if(auth){
-            console.log('login success');
             try{
                 localStorage.setItem('user', JSON.stringify(auth));
             }catch(e){
@@ -54,7 +52,6 @@ const LoginForm = ({ history }) => {
      const onSubmit = e => {
         e.preventDefault();
         const { email, password } = form;
-        console.log(form);
         dispatch(login({ email, password }));
     };
 

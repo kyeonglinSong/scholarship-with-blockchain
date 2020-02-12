@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import { Table, Button } from "reactstrap";
 import "../content.css"
-import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 

@@ -19,7 +19,6 @@ const ScholarshipsContainer = ()=>{
         if(e){
             e.preventDefault();
         }
-        console.log("on next page");
         dispatch(nextPage());
     }
 

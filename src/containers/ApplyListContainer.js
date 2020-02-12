@@ -21,7 +21,6 @@ const ApplyListContainer = ()=>{
         if(e){
             e.preventDefault();
         }
-        console.log("on next page");
         dispatch(nextPage());
     }
 
@@ -34,7 +33,6 @@ const ApplyListContainer = ()=>{
         dispatch(listApplies(1));
     }, [dispatch]);
 
-    console.log(applies);
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><ApplyList applies={applies} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
                         nextPage={toNextPage} prevPage={toPrevPage} total={total}/></div>;

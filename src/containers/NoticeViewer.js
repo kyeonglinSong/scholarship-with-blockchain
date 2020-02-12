@@ -9,7 +9,6 @@ import styled from 'styled-components';
 
 const NoticeViewer = ({ match, history })=>{
     const noticeId  = match.params;
-    console.log(noticeId);
     const dispatch = useDispatch();
     const { notice, error, loading, user } = useSelector(({ notice, loading, auth })=>({
         notice:notice.notice,
@@ -25,12 +24,10 @@ const NoticeViewer = ({ match, history })=>{
         };
     }, [dispatch, noticeId]);
 
-    console.log(notice);
 
     const onRemove = async() => {
         try{
             await removeNotice(noticeId);
-            console.log(noticeId)
             history.push('/notices');
         }catch(e){
             console.log(e)
@@ -39,7 +36,6 @@ const NoticeViewer = ({ match, history })=>{
 
     const onEdit = () =>{
         dispatch(setOriginal(notice));
-        console.log("on edit")
         history.push('/notices/write');
     }
 

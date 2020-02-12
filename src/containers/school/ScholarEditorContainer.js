@@ -25,9 +25,7 @@ const ScholarEditorContainer = ({ history }) => {
     };
     
     const onPublish = () =>{
-        console.log(content);
         if(originalScholarId){
-            console.log("in update");
             dispatch(updateScholar({originalScholarId, content}));
         }
         dispatch(

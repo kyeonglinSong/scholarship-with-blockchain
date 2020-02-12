@@ -21,7 +21,6 @@ const NoticeListContainer = ()=>{
         if(e){
             e.preventDefault();
         }
-        console.log("on next page");
         dispatch(nextPage());
     }
 
@@ -34,7 +33,6 @@ const NoticeListContainer = ()=>{
         dispatch(listNotices());
     }, [dispatch]);
 
-    console.log(notices);
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NoticeList notices={notices} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
                         nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user}/></div>;

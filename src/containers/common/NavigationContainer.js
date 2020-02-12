@@ -14,7 +14,6 @@ const NavigationContainer = ( { history } ) =>{
     const { user } = useSelector(({auth})=>({user:auth.auth}));
 
     if(user && !localStorage.getItem('user')){
-        console.log("in user set");
         try{
             localStorage.setItem('user', JSON.stringify(user));
         }catch(e){
@@ -28,11 +27,9 @@ const NavigationContainer = ( { history } ) =>{
     else{
         console.log(user);
         if(user.id===1){
-            console.log("in student")
             return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NavigationStudent user={user}/></div>
         }
         else{
-            console.log("in school")
             return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NavigationSchool user={user}/></div>
         }
     }

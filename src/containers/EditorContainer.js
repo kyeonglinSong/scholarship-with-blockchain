@@ -21,7 +21,6 @@ const EditorContainer = ({ history }) => {
     
     const onPublish = () =>{
         if(originalNoticeId){
-            console.log("in update");
             dispatch(updateNotice({originalNoticeId, title, body}));
         }
         dispatch(
@@ -44,7 +43,6 @@ const EditorContainer = ({ history }) => {
     useEffect(()=>{
         if(notice){
             const id = notice.id;
-            console.log(notice);
             history.push(`/notices/${id}`);
         }
         if(noticeError){

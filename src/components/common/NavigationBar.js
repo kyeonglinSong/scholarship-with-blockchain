@@ -1,19 +1,13 @@
-import React, { Component } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import {
   Navbar, Nav, NavItem, NavLink, NavbarBrand
 } from "reactstrap"
 import {NavLink as NL} from 'react-router-dom';
 import { IoIosSchool } from "react-icons/io"
-import HeaderNotLogin from "./HeaderNotLogin";
 import Main from "../Main"
-import SignIn from "../SignIn";
 import SignUp from "../SignUp";
-import NoticeList from "../NoticeList";
-import ScholarList from "../ScholarList";
-//import MyApplyList from "../MyApplyList";
-import Notice from "../NoticeDetail";
-import ScholarDetail from "../ScholarDetail";
+
 import WriteComponent from "../WriteComponent";
 
 import LoginForm from '../../containers/LoginForm';

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom"
 import styled from 'styled-components';
 import img from '../images/examplepic01.png';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import {WiNightCloudyHigh} from "react-icons/wi"
 import { Button,Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 

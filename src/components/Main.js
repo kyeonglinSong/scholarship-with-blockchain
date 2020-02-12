@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./content.css"
 import {Button} from 'reactstrap';
 import {GiNewspaper} from 'react-icons/gi';
