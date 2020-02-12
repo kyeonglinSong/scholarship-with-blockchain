@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import { Table, Button } from "reactstrap";
 import "./content.css"
-import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
@@ -18,7 +18,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
     <th scope="row">{applies.id}</th>
     <td>{applies.title}</td>
     <td>{(applies.completed)? "완료":"산정중"}</td>
-    <td><Link to={`/applyDetail/${applies.id}`}><button>자세히보기</button></Link></td>
+    <td><Link to={`/applies/${applies.id}`}><button>자세히보기</button></Link></td>
     </tr>
   ));
 

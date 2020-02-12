@@ -1,18 +1,12 @@
 import React from "react";
-import { NavLink, Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 
 import Footer from "./common/Footer"
-import NavigationContainer from '../containers/common/NavigationContainer'
-import HeaderContainer from '../containers/common/HeaderContainer';
+import MainContainer from '../containers/common/MainContainer';
+import LoginContainer from '../containers/LoginContainer';
+import MainSchool from "./school/MainSchool";
+import MainStudent from "./student/MainStudent";
 
-import Main from "./Main"
-
-import NoticeViewer from "../containers/NoticeViewer";
-import NoticeListContainer from "../containers/NoticeListContainer";
-import ApplyListContainer from "../containers/ApplyListContainer";
-import ApplyViewer from "../containers/ApplyViewer";
-import ScholarListContainer from "../containers/ScholarListContainer";
-import ScholarViewer from "../containers/ScholarViewer";
 
 
 import './App.css';
@@ -21,8 +15,12 @@ const App = ()=>{
   return(
     <div>
       <BrowserRouter>
-        <NavigationContainer />
+        <MainContainer />
+          <Route path="/login" component={LoginContainer} />
+          <Route path="/school" component={MainSchool} />
+          <Route path="/student" component={MainStudent} />
       </BrowserRouter>
+      
       <Footer />
     </div>
   );

@@ -1,11 +1,11 @@
-import React, {Component} from "react";
-import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
-import { Table, Button, Pagination, PaginationItem } from "reactstrap";
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import { Table, Button } from "reactstrap";
 import "./content.css"
 
 
 
-const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nextPage, total })=>{
+const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nextPage, total, user })=>{
 
   if(loading || !notices){
     return null;
@@ -17,7 +17,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
   const noticeList = notices.slice(startIndex, endIndex).map((notice)=>(
     <tr key={notice.id}>
       <th style={{width:'50px'}} scope="row">{notice.id}</th>
-      <td style={{width:'1000px'}}><Link to={`/notice/${notice.id}`}>{notice.title}</Link></td>
+      <td style={{width:'1000px'}}><Link to={`/notices/${notice.id}`}>{notice.title}</Link></td>
       <td style={{width:'150px'}}>2020.02.01</td>
     </tr>
   ));
@@ -25,6 +25,8 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
   const pageStyle = {
     margin:'10px'
   }
+
+  const usertype = (user.id===1)
 
 
   return(
@@ -48,8 +50,14 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       </span>
+      <div style={{textAlign: 'right'}}>
+        {
+          !usertype &&
+          <Link to='/notices/write'><Button outline color="secondary">공지등록</Button></Link>
+        }
+      </div>
     </div>
   );
 }
 
-export default NoticeList;
+export default withRouter(NoticeList);

@@ -1,10 +1,10 @@
-import React from "react";
+import React, {Component} from "react";
 import { Table, Button } from "reactstrap";
-import "./content.css"
-import { Link } from "react-router-dom";
+import "../content.css"
+import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 
 
-const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
+const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
 
   if(loading || !scholars){
     return null;
@@ -16,8 +16,8 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
       <tr key={scholars.id}>
         <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px'}} >{scholars.title}</td>
-        <td style={{width:'150px'}} ><Link to={`/scholars/${scholars.id}`}><button>신청하기</button></Link></td>
+        <td style={{width:'1000px'}} ><Link to={`/scholarDetail/${scholars.id}`}>{scholars.title}</Link></td>
+        <td style={{width:'150px'}} ><Link to={`/scholarDetail/${scholars.id}`}><button>신청하기</button></Link></td>
       </tr>
     ));
 
@@ -35,7 +35,6 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
           <tr>
             <th>#</th>
             <th>이름</th>
-            <th>신청하기</th>
           </tr>
         </thead>
         <tbody>
@@ -46,9 +45,12 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      <div>
+          <Button><Link to={'scholarships/new'}></Link>등록</Button>
+      </div>
       </span>
     </div>
   );
 }
 
-export default ScholarList;
+export default ScholarshipList;

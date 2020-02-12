@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link, withRouter } from "react-router-dom"
 import styled from 'styled-components';
 import img from '../images/background.png';
 import { Container, Row, Col } from 'reactstrap';
@@ -7,7 +7,7 @@ import {WiNightCloudyHigh} from "react-icons/wi"
 import { Button } from 'reactstrap';
 
 
-const Notice = ({ notice, loading, error, history })=>{
+const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
 
   const NoticeStyle={
       borderBottom: "3px solid #444444",
@@ -54,9 +54,11 @@ if(loading || !notice){
 }
 
 const { userId, id, title, body } = notice;
+const usertype = (user.id===1)
+console.log(usertype);
 
 const onClick = e =>{
-  history.push('/noticelist');
+  history.push('/notices');
 }
 
 
@@ -76,7 +78,16 @@ return(
         </Row>
       <hr size="5" noshade></hr>
       <div style={{textAlign: 'center'}}>
-        <Link to='/noticeList'><Button outline color="secondary">목록으로</Button></Link>
+        <Link to='/notices'><Button outline color="secondary">목록으로</Button></Link>
+      </div>
+      <div style={{textAlign: 'right'}}>
+        {
+          !usertype &&
+          <div>
+          <Button outline color="secondary" onClick={onEdit}>수정하기</Button>
+          <Button outline color="secondary" onClick={onRemove}>삭제하기</Button>
+          </div>
+        }
       </div>
     </Container>
   </div>
@@ -84,4 +95,4 @@ return(
 
 }
 
-export default Notice;
+export default withRouter(Notice);

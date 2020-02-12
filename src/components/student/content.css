@@ -9,7 +9,7 @@
 
 .img{
   position: relative;
-  background-image: url("../images/background_student.png");
+  background-image: url("../../images/background_student.png");
   background-repeat: no-repeat;
   background-position: center center;
   height: 110vh;

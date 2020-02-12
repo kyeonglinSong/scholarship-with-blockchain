@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
+import { NavLink, Route, Switch, BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'draft-js/dist/Draft.css';
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';

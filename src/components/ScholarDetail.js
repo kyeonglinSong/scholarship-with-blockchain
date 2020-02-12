@@ -58,7 +58,7 @@ if(loading || !scholar){
 const { userId, id, title, body } = scholar;
 
 const onClick = e =>{
-  history.push('/scholarlist');
+  history.push('/scholars');
 }
 
 
@@ -90,7 +90,7 @@ return(
 </ModalFooter>
       </Modal>
      &nbsp; &nbsp;
-        <Link to='/scholarList'><Button color="secondary">목록으로</Button></Link>
+        <Link to='/scholars'><Button color="secondary">목록으로</Button></Link>
       </div>
     </Container>
   </div>

@@ -1,20 +1,13 @@
 import React from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
 import {
   Navbar, Nav, NavItem, NavLink, NavbarBrand
 } from "reactstrap"
 import {NavLink as NL} from 'react-router-dom';
 import { IoIosSchool } from "react-icons/io"
 
-import Main from "../Main"
 
 import HeaderContainer from '../../containers/common/HeaderContainer';
-import NoticeViewer from "../../containers/NoticeViewer";
-import NoticeListContainer from "../../containers/NoticeListContainer";
-import ApplyListContainer from "../../containers/ApplyListContainer";
-import ApplyViewer from "../../containers/ApplyViewer";
-import ScholarListContainer from "../../containers/ScholarListContainer";
-import ScholarViewer from "../../containers/ScholarViewer";
+
 
 const NavigationStudent = ( {user})=>{
 
@@ -44,7 +37,7 @@ const NavigationStudent = ( {user})=>{
             <NavLink exact to="/scholars" tag={NL}>장학금 정보/신청</NavLink>
             </NavItem>
           <NavItem className="nav-link ml-5">
-          <NavLink exact to="/applylies" tag={NL}>신청현황조회</NavLink>
+          <NavLink exact to="/applies" tag={NL}>신청현황조회</NavLink>
           </NavItem>
           <NavItem className="nav-link ml-5">
           <NavLink exact to="/student" tag={NL}>사이트이용방법</NavLink>
@@ -53,16 +46,6 @@ const NavigationStudent = ( {user})=>{
         </div>
         </Nav>
       </Navbar>
-      <Switch>
-          <Route exact path="/" component={Main} />
-          <Route path="/student" component={Main} />
-          <Route path="/notices" component={NoticeListContainer}/>
-          <Route path="/notices/:id" component={NoticeViewer}/>
-          <Route path="/scholars" component={ScholarListContainer} />
-          <Route path="/scholars/:id" component={ScholarViewer}/>
-          <Route path="/applies" component={ApplyListContainer} />
-          <Route path="/applies/:id" component={ApplyViewer}/>
-        </Switch>
       </div>
     </div>
   );

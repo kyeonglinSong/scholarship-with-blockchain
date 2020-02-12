@@ -40,7 +40,6 @@ const LoginForm = ({ history }) => {
         }
         if(auth){
             console.log('login success');
-            history.push('/');
             try{
                 localStorage.setItem('user', JSON.stringify(auth));
             }catch(e){

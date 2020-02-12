@@ -72,7 +72,7 @@ return(
         </Row>
       <hr size="5" noshade></hr>
       <Row>
-        <Col sm="3" md={{ size:3, offset:10}}><Button color="link"><Link to='/applyList'>목록으로</Link></Button></Col>
+        <Col sm="3" md={{ size:3, offset:10}}><Button color="link"><Link to='/applies'>목록으로</Link></Button></Col>
       </Row>
     </Container>
   </div>

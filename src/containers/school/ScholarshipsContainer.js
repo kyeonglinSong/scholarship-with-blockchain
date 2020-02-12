@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { listScholars, prevPage, nextPage } from '../modules/scholarList';
-import ScholarList from '../components/ScholarList';
+import { listScholars, prevPage, nextPage } from '../../modules/scholarList';
+import ScholarshipList from '../../components/school/ScholarshipList';
 
-const ScholarListContainer = ()=>{
-
+const ScholarshipsContainer = ()=>{
+    console.log("in scholarlist")
     const dispatch = useDispatch();
     const { scholars, tempPage, lastPage, total, error, loading } = useSelector(({ scholars, loading })=>({
         scholars:scholars.scholars,
@@ -35,8 +34,8 @@ const ScholarListContainer = ()=>{
 
     console.log(scholars);
 
-    return <ScholarList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
+    return <ScholarshipList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
                         nextPage={toNextPage} prevPage={toPrevPage} total={total}/>;
 };
 
-export default ScholarListContainer;
+export default ScholarshipsContainer;
