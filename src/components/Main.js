@@ -7,7 +7,7 @@ import {GoQuestion} from 'react-icons/go';
 import {AiOutlineBank} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-
+import LOGO from '../images/logo.PNG';
 const Main = ()=>{
   const iconStyle={
     margin:'10px',

@@ -9,10 +9,10 @@ const HeaderStudentLogin = ({ user, onClick }) =>{
     return(
       <header>
          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <Navbar className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "#022601"}}>
+        <Navbar className="navbar navbar-expand-lg navbar-light ml-auto" style={{backgroundColor: "#022601", height: '20px'}}>
         <div className="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
           <Nav >
-          <ul className="navbar-nav ml-auto">
+          <ul className="navbar-nav">
             <NavItem>
             <NavLink href="/signin">
               <div className="btn-group mr-2" role="group" area-label="First group">
@@ -21,10 +21,10 @@ const HeaderStudentLogin = ({ user, onClick }) =>{
               </NavLink>
             </NavItem>
             <NavItem>
-            <NavLink href="/"><button className="btn btn-outline-light my-2 my-sm-0" type="button" onClick={onClick}>로그아웃</button></NavLink>
-            </NavItem>
+            <NavLink href="/"><button className="btn" style={{color: 'white'}}type="button" onClick={onClick}>로그아웃</button></NavLink>
+            </NavItem> 
             <NavItem>
-            <NavLink href="/https://github.com/reactstrap/reactstrap"><button className="btn btn-outline-light my-2 my-sm-0" type="button">한국장학재단</button></NavLink>
+            <NavLink href="/https://github.com/reactstrap/reactstrap"><button className="btn" style={{color: 'white'}}type="button">한국장학재단</button></NavLink>
             </NavItem>
             </ul>
           </Nav>
