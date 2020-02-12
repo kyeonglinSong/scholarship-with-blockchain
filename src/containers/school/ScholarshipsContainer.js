@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listScholars, prevPage, nextPage } from '../../modules/scholarList';
 import ScholarshipList from '../../components/school/ScholarshipList';
-import styled from 'styled-components';
 
 const ScholarshipsContainer = ()=>{
     console.log("in scholarlist")
@@ -35,15 +34,8 @@ const ScholarshipsContainer = ()=>{
 
     console.log(scholars);
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><ScholarshipList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total}/></div>;
+    return <ScholarshipList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total}/>;
 };
 
 export default ScholarshipsContainer;
-
-const Appcontainer = styled.div`
-    &,
-    & * {
-        box-sizing: border-box;
-    }
-`;

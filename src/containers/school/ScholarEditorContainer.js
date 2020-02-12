@@ -1,32 +1,38 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeField, initialize, writeNotice, updateNotice } from '../../modules/write';
+import { changeField, initialize, addScholar, updateScholar } from '../../modules/school/scholarship';
 
-import EditorComponent from '../../components/EditorComponent';
-import styled from 'styled-components';
+import FormComponent from '../../components/FormComponent';
 
-const EditorContainer = ({ history }) => {
+const ScholarEditorContainer = ({ history }) => {
     const dispatch = useDispatch();
-    const { title, body, notice, noticeError, originalNoticeId } = useSelector(({ write })=>({
-        title: write.title,
-        body:write.body,
-        notice:write.notice,
-        noticeError:write.noticeError,
-        originalNoticeId: write.originalNoticeId,
+    const { content, scholar, scholarError, originalScholarId } = useSelector(({ Scholarship })=>({
+        content:Scholarship.content,
+        scholar:Scholarship.scholarship,
+        scholarError:Scholarship.scholarshipError,
+        originalScholarId: Scholarship.originalScholarshipId,
     }));
-    console.log(originalNoticeId);
-    const onChangeField = useCallback(payload => dispatch(changeField(payload)),[
-        dispatch,
-    ]);
+
+     //change input handler
+     const onChange = e =>{
+        const { value, name } = e.target;
+        dispatch(
+            changeField({
+                key:name,
+                value
+            })
+        );
+    };
     
     const onPublish = () =>{
-        if(originalNoticeId){
+        console.log(content);
+        if(originalScholarId){
             console.log("in update");
-            dispatch(updateNotice({originalNoticeId, title, body}));
+            dispatch(updateScholar({originalScholarId, content}));
         }
         dispatch(
-            writeNotice({
-                title,body,
+            addScholar({
+                content,
             }),
         );
     }
@@ -42,24 +48,16 @@ const EditorContainer = ({ history }) => {
     }, [dispatch]);
 
     useEffect(()=>{
-        if(notice){
-            const id = notice.id;
-            console.log(notice);
-            history.push(`/notices/${id}`);
+        if(scholar){
+            const id = scholar.id;
+            history.push(`/scholarships/${id}`);
         }
-        if(noticeError){
-            console.log(noticeError);
+        if(scholarError){
+            console.log(scholarError);
         }
-    }, [history, notice, noticeError])
+    }, [history, scholar, scholarError])
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><EditorComponent onChangeField={onChangeField} title={title} body={body} onPublish={onPublish} onCancel={onCancel}/></div>;
+    return <FormComponent onChange={onChange} content={content} onPublish={onPublish} onCancel={onCancel}/>;
 }
 
-export default EditorContainer;
-
-const Appcontainer = styled.div`
-    &,
-    & * {
-        box-sizing: border-box;
-    }
-`;
+export default ScholarEditorContainer;

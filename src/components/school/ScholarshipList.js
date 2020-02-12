@@ -18,8 +18,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
       <tr key={scholars.id}>
         <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px'}} ><Link to={`/scholarDetail/${scholars.id}`}>{scholars.title}</Link></td>
-        <td style={{width:'150px'}} ><Link to={`/scholarDetail/${scholars.id}`}><button>신청하기</button></Link></td>
+        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}>{scholars.title}</Link></td>
       </tr>
     ));
 
@@ -49,7 +48,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       <div>
-          <Button><Link to={'/scholarships/new'}></Link>등록</Button>
+        <Link to={'/scholarships/new'}><Button>등록</Button></Link>
       </div>
       </span>
     </div>
