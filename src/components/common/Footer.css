@@ -1,0 +1,14 @@
+#footer {
+  padding:30px 0;
+}
+#footer .footerLogo {
+  float:left;
+}
+#footer .addWrap {
+  float:left;
+  margin-left: 50px;
+  font-size: 14px;
+}
+#footer .addWrap{
+  font-weight: bold;
+}
