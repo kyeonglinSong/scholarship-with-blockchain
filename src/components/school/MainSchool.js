@@ -11,6 +11,7 @@ import ScholarshipsContainer from "../../containers/school/ScholarshipsContainer
 import ScholarViewer from "../../containers/ScholarViewer";
 
 import EditorContainer from "../../containers/EditorContainer";
+import ScholarEditorContainer from "../../containers/school/ScholarEditorContainer";
 
 const MainSchool = () => {
 
@@ -23,6 +24,7 @@ const MainSchool = () => {
                 <Route exact path="/notices/write" component={EditorContainer} />
                 <Route path="/notices/:id" component={NoticeViewer}/>
                 <Route path="/notices" component={NoticeListContainer}/>
+                <Route exact path="/scholarships/new" component={ScholarEditorContainer} />
                 <Route path="/scholarships/:id" component={ScholarViewer}/>
                 <Route path="/scholarships" component={ScholarshipsContainer} />
                 <Route path="/selections/:id" component={ApplyViewer}/>

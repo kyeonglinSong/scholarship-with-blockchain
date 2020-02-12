@@ -46,7 +46,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       <div>
-          <Button><Link to={'scholarships/new'}></Link>등록</Button>
+          <Button><Link to={'/scholarships/new'}></Link>등록</Button>
       </div>
       </span>
     </div>
