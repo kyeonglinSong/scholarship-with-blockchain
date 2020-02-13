@@ -7,7 +7,7 @@ import {WiNightCloudyHigh} from "react-icons/wi"
 import { Button,Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
-const ScholarDetail = ({ scholar, loading, error, history })=>{
+const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdit })=>{
   const [modal, setModal]=useState(false);
   const toggle=()=>setModal(!modal);
   const ScholarStyle={
@@ -61,6 +61,8 @@ const onClick = e =>{
   history.push('/scholars');
 }
 
+const usertype = (user.id===1)
+
 
 return(
   <div>
@@ -81,7 +83,10 @@ return(
         <img src={img}  height='300px' width='240px' style={imgStyle}/></div>
       <hr size="5" noshade></hr>
       <div style={{textAlign: 'center'}}>
-      <Button color="primary" onClick={toggle}>신청하기</Button>
+        {
+          usertype &&
+          <Button color="primary" onClick={toggle}>신청하기</Button>
+        }
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>장학금신청 확인창</ModalHeader>
 <ModalBody>{body}</ModalBody>
@@ -92,6 +97,15 @@ return(
       </Modal>
      &nbsp; &nbsp;
         <Link to='/scholars'><Button color="secondary">목록으로</Button></Link>
+      </div>
+      <div style={{textAlign: 'right'}}>
+        {
+          !usertype &&
+          <div>
+          <Button outline color="secondary" onClick={onEdit}>수정하기</Button>
+          <Button outline color="secondary" onClick={onRemove}>삭제하기</Button>
+          </div>
+        }
       </div>
     </Container>
   </div>

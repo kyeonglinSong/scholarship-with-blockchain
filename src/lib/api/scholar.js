@@ -6,8 +6,7 @@ export const readScholarDetail = id => client.get(`https://jsonplaceholder.typic
 
 export const registerScholarship =  content  => client.post('https://jsonplaceholder.typicode.com/posts', content);
 
-export const updateScholarship = ( id, title, detail ) => client.post('https://jsonplaceholder.typicode.com/posts/', 
-                                                {params:{
+export const updateScholarship = ( id, content ) => client.patch(`https://jsonplaceholder.typicode.com/posts/${id}`, content);
 
-                                                }});
+export const removeScholarship = id => client.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
 
