@@ -17,7 +17,7 @@ const SchoolMain = ()=>{
   return(
     <div className="img">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <div style={{textalign: 'left', position: 'relative', left: '250px', top: '100px' }}>
+      <div style={{textalign: 'left', position: 'relative', marginLeft: '3rem', top: '100px' }}>
       <hr style={{ textalign: 'left', width: '130px',border: '3px solid black', marginLeft: '0px'}}></hr>
       <h2><strong>교직원용 장학금통합관리시스템</strong></h2>
       <h7>온라인 장학금통합관리시스템에 오신 것을 환영합니다.<br/>편리하게 장학금 정보를 얻고 빠르게 신청해보세요!
