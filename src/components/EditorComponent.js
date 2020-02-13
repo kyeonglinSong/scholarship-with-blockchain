@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 import { Button } from 'reactstrap';
+import { AutoComplete } from 'antd';
 
 const TitleInput = styled.input`
-    font-size:3rem;
+    font-size:2rem;
     outline:none;
     padding-bottom:0.5rem;
     border:none;
@@ -23,6 +24,7 @@ const QuillWrapper = styled.div`
     }
     .ql-editor.ql-blank::before{
         left:0px;
+        opacity:0.5;
     }
 `;
 
@@ -63,16 +65,26 @@ const EditorComponent = ({ title, body, onChangeField, onPublish, onCancel }) =>
         onChangeField({key:'title', value:e.target.value});
     };
 
+    const bodyStyle={
+        margin:'20px auto 20px',
+        width:'1200px',
+
+    }
+
+    const buttonStyle={
+        margin:'10px',
+    }
+
     return(
-        <div>
+        <div style={bodyStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <TitleInput placeholder="제목을 입력하세요" onChange={onChangeTitle} value={title}/>
             <QuillWrapper>
                 <div ref={quillElement}/>
             </QuillWrapper>
             <div>
-                <Button onClick={onPublish}>등록</Button>
-                <Button onClick={onCancel}>취소</Button>
+                <Button style={buttonStyle} onClick={onPublish}>등록</Button>
+                <Button style={buttonStyle} onClick={onCancel}>취소</Button>
             </div>
         </div>
     );

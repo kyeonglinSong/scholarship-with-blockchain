@@ -12,6 +12,8 @@ import ScholarViewer from "../../containers/ScholarViewer";
 
 import EditorContainer from "../../containers/EditorContainer";
 import ScholarEditorContainer from "../../containers/school/ScholarEditorContainer";
+import SelectionContainer from "../../containers/school/SelectionContainer";
+import StudentListContainer from "../../containers/school/StudentListContainer";
 import styled from 'styled-components';
 
 const MainSchool = () => {
@@ -29,8 +31,8 @@ const MainSchool = () => {
                 <Route exact path="/scholarships/new" component={ScholarEditorContainer} />
                 <Route path="/scholarships/:id" component={ScholarViewer}/>
                 <Route path="/scholarships" component={ScholarshipsContainer} />
-                <Route path="/selections/:id" component={ApplyViewer}/>
-                <Route path="/selections" component={ApplyListContainer} />
+                <Route path="/selections/:id" component={StudentListContainer}/>
+                <Route path="/selections" component={SelectionContainer} />
             </Switch>
 
             </BrowserRouter>

@@ -4,8 +4,8 @@ import { Button, Form, FormGroup, Label, Input, FormText, Col, Row } from 'react
 const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
 
     const style={
-        padding:'20px',
-        margin:'20px',
+        padding:'50px',
+        margin:'50px',
     }
 
     console.log(content);

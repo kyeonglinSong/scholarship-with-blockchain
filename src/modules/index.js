@@ -12,6 +12,7 @@ import write, { writeSaga } from './write';
 import scholars, { scholarsSaga } from './scholarList';
 import scholarDetail, { scholarSaga } from './scholarDetail';
 import Scholarship, { ScholarSaga } from './school/scholarship';
+import students, { StudentsSaga } from './school/selection';
 
 const rootReducer = combineReducers({
     auth,
@@ -26,10 +27,12 @@ const rootReducer = combineReducers({
     scholars,
     scholarDetail,
     Scholarship,
+    students,
 });
 
 export function* rootSaga(){
-    yield all([authSaga(), userSaga(), writeSaga(), noticeSaga(), noticesSaga(), appliesSaga(), applyDetailSaga(), scholarsSaga(), scholarSaga(), ScholarSaga(),]);
+    yield all([authSaga(), userSaga(), writeSaga(), noticeSaga(), noticesSaga(), appliesSaga(), applyDetailSaga(), 
+        scholarsSaga(), scholarSaga(), ScholarSaga(), StudentsSaga(),]);
 }
 
 export default rootReducer;

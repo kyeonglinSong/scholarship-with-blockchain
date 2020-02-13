@@ -10,7 +10,7 @@ const Scholar=({scholar})=>{
                 <Card body className="text-center">
                 <CardTitle><strong>{scholar.title}</strong></CardTitle>
                 <CardText>{scholar.image_url}</CardText>
-                <Link to={`/scholarDetail/${scholar.rank}`}><Button color="success" >자세히보기/신청하기</Button></Link>
+                <Link to={`/scholars/${scholar.rank}`}><Button color="success" >자세히보기/신청하기</Button></Link>
                 </Card>
             </Col>
         </Row>
