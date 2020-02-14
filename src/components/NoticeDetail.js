@@ -53,7 +53,7 @@ if(loading || !notice){
   return null;
 }
 
-const { userId, id, title, body } = notice;
+const { userId, id, title, content } = notice;
 const usertype = (user.id===1)
 console.log(usertype);
 
@@ -74,7 +74,7 @@ return(
       <div style={titleSubStyle}>첨부파일: 파일제목.hwp</div>
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>
-        {body}
+        {content}
         <img src={img}  height='170px' width='300px' style={imgStyle}/>
         </Row>
       <hr size="5" noshade></hr>

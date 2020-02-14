@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Col, Row } from 'reactstrap';
 
-const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
+const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar }) => {
 
     const style={
         padding:'50px',
@@ -9,6 +9,7 @@ const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
     }
 
     console.log(content);
+
     
   return (
     <div style={style}>
@@ -16,19 +17,19 @@ const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
     <Form>
       <FormGroup>
         <Label for="scholarName" sm={2}>장학금 이름</Label>
-        <Input onChange={onChange} type="text" name="scholarName" id="scholarName" placeholder="장학금 이름을 입력하세요" />
+        <Input onChange={onChange} type="text" name="scholarName" id="scholarName" placeholder="장학금 이름을 입력하세요" value={originalScholar? originalScholar.title:null}/>
       </FormGroup>
       <Row form>
           <Col md={6}>
             <FormGroup>
                 <Label for="startDate" sm={2}>시작날짜</Label>
-                <Input onChange={onChange} type="date" name="startDate" id="startDate" placeholder="시작날짜를 설정하세요" />
+                <Input onChange={onChange} type="date" name="startDate" id="startDate" placeholder="시작날짜를 설정하세요" value={originalScholar? originalScholar.createdAt:null} />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
                 <Label for="dueDate" sm={2}>마감날짜</Label>
-                <Input onChange={onChange} type="date" name="dueDate" id="dueDate" placeholder="마감기한을 설정하세요" />
+                <Input onChange={onChange} type="date" name="dueDate" id="dueDate" placeholder="마감기한을 설정하세요" value={originalScholar? originalScholar.updatedAt:null} />
             </FormGroup>
           </Col>
       </Row>
@@ -36,7 +37,7 @@ const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
         <Col>
         <FormGroup>
             <Label for="sum" sm={2}>금액</Label>
-            <Input onChange={onChange} type="number" name="sum" id="sum" placeholder="금액을 입력하세요"/>
+            <Input onChange={onChange} type="number" name="sum" id="sum" placeholder="금액을 입력하세요" value={originalScholar? originalScholar.title:null}/>
             <FormText color="muted">
             금액을 입력하지 않을 시 등록금 전액 장학금으로 등록됩니다.
             </FormText>
@@ -45,7 +46,7 @@ const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
         <Col>
         <FormGroup>
             <Label for="numberOfPeople"sm={2}>인원</Label>
-            <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요"/>
+            <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.id:null}/>
         </FormGroup>
         </Col>
       </Row>
@@ -53,10 +54,10 @@ const FormComponent = ({ onChange, content, onPublish, onCancel }) => {
         <Row>
             <Label for="semester" sm={2}>학기 제한</Label>
             <Col md={5}>
-                <Input onChange={onChange} type="number" name="startSemester" id="startSemester" placeholder="시작 학기" />
+                <Input onChange={onChange} type="number" name="startSemester" id="startSemester" placeholder="시작 학기"  value={originalScholar? originalScholar.id:null}/>
             </Col>
             <Col md={5}>
-                <Input onChange={onChange} type="number" name="endSemester" id="endSemester" placeholder="끝 학기" />
+                <Input onChange={onChange} type="number" name="endSemester" id="endSemester" placeholder="끝 학기"  value={originalScholar? originalScholar.id:null}/>
             </Col>
         </Row>
         <FormText color="muted">
