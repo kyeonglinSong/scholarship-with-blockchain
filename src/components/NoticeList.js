@@ -3,15 +3,25 @@ import { Link, withRouter } from "react-router-dom";
 import { Table, Button } from "reactstrap";
 import "./content.css"
 import styled from 'styled-components';
+import SearchContainer from '../containers/SearchContainer';
+import search from "../modules/search";
 
 
 
-const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nextPage, total, user })=>{
+const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nextPage, user, searchWord, onSubmit })=>{
 
   if(loading || !notices){
     return null;
   }
 
+  if(searchWord){
+    console.log(searchWord)
+    notices=notices.filter((notices)=>{
+    return notices.title.indexOf(searchWord)>-1;
+  })
+}
+  
+  var total=notices.length;
   var startIndex = (tempPage - 1) * 10 ;
   var endIndex = Math.min(startIndex + 10, total - 1);
 
@@ -25,6 +35,10 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
 
   const pageStyle = {
     margin:'10px'
+  }
+
+  const buttonStyle={
+    padding:'auto',
   }
 
   const usertype = (user.id===1)
@@ -47,17 +61,19 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
           {noticeList}
         </tbody>
       </Table>
+      <SearchContainer />
+      <div style={{textAlign: 'right'}}>
+        {
+          !usertype &&
+          <Link to='/notices/write'><Button style={buttonStyle} outline color="secondary">공지등록</Button></Link>
+        }
+      </div>
+      <Button onClick={onSubmit}>검색</Button>
       </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       </span>
-      <div style={{textAlign: 'right'}}>
-        {
-          !usertype &&
-          <Link to='/notices/write'><Button outline color="secondary">공지등록</Button></Link>
-        }
-      </div>
     </div>
   );
 }

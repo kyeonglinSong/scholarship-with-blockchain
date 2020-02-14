@@ -3,6 +3,7 @@ import { Table, Button, Modal, ModalHeader, ModalFooter, ModalBody, Input } from
 import "./content.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import SearchContainer from "../../containers/SearchContainer";
 
 
 const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, total, onChange, onSubmit })=>{
@@ -24,7 +25,7 @@ const [modal, setModal] = useState(false);
     <tr key={students.id}>
     <th scope="row">{students.id}</th>
     <td>{students.name}</td>
-    <td><input type="checkbox" name={students.id} onChange={onChange} checked="true"/></td>
+    <td><input type="checkbox" name={students.id} onChange={onChange}/></td>
     <td><button onClick={toggle}>자세히보기</button></td>
     <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>
         <ModalHeader>{students.name}</ModalHeader>
@@ -62,6 +63,7 @@ const [modal, setModal] = useState(false);
           {applyList}
         </tbody>
       </Table>
+      <SearchContainer />
       </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>

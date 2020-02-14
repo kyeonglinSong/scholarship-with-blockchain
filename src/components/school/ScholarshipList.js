@@ -3,6 +3,7 @@ import { Table, Button } from "reactstrap";
 import "../content.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import SearchContainer from "../../containers/SearchContainer";
 
 
 
@@ -44,6 +45,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
         </tbody>
       </Table>
       </div>
+      <SearchContainer />
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
