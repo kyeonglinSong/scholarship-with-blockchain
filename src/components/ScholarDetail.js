@@ -77,7 +77,6 @@ return(
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>
         {body}
-        
         </Row>
         <div style={{textAlign: 'center'}}>
         <img src={img}  height='300px' width='240px' style={imgStyle}/></div>
@@ -88,10 +87,13 @@ return(
           <Button color="primary" onClick={toggle}>신청하기</Button>
         }
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>장학금신청 확인창</ModalHeader>
-<ModalBody>{body}</ModalBody>
+        <ModalHeader toggle={toggle}>{title}</ModalHeader>
+<ModalBody>1. 목적 : 지원자 개인 식별, 지원의사 확인, 입사전형의 진행, 고지사항 전달, 입사 지원자와의 원활한 의사소통, 지원이력 확인 및 면접 불합격자 재지원 제한
+<br/>
+2. 항목 : 아이디(이메일주소), 비밀번호, 이름, 생년월일, 휴대폰번호<br/>
+3. 위 개인정보 수집에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 장학금 지원이 제한될 수 있습니다</ModalBody>
 <ModalFooter>
-  <Button color="primary" onClick={toggle}>신청확인</Button>{' '}
+ <Link to='/applies'><Button color="primary" onClick={toggle}>신청확인</Button></Link>
   <Button color="secondary" onClick={toggle}>취소</Button>
 </ModalFooter>
       </Modal>

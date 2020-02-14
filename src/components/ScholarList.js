@@ -4,7 +4,8 @@ import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 import Search from "./Search";
 import Scholar from "./Scholar.js";
 
-const SAMPLE_URL="https://api.jikan.moe/v3/top/anime/1/upcoming";
+const SAMPLE_URL="https://koreanjson.com/posts";
+//"https://api.jikan.moe/v3/top/anime/1/upcoming";
 
 const ScholarList = ()=>{
   const [scholars, setScholars]=useState([]);
@@ -22,7 +23,7 @@ const ScholarList = ()=>{
      }
    })
    .then(jsonResponse=>{
-     setScholars(jsonResponse.top);
+     setScholars(jsonResponse);
    })
    .catch(error=>{
      console.log(error);
@@ -34,7 +35,7 @@ const ScholarList = ()=>{
       const result=scholars.filter(
         scholar =>
         (!searchRegex || searchRegex.test(scholar.title)) &&
-        (!filterByState || scholar.type===filterByState)
+        (!filterByState || scholar.UserId===filterByState)
         );
       setSortedScholarses(result);
   },[searchValue, scholars, filterByState]);

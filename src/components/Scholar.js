@@ -9,8 +9,8 @@ const Scholar=({scholar})=>{
             <Col>
                 <Card body className="text-center">
                 <CardTitle><strong>{scholar.title}</strong></CardTitle>
-                <CardText>{scholar.image_url}</CardText>
-                <Link to={`/scholars/${scholar.rank}`}><Button color="success" >자세히보기/신청하기</Button></Link>
+                <CardText>{scholar.content}</CardText>
+                <Link to={`/scholars/${scholar.id}`}><Button color="success" >자세히보기/신청하기</Button></Link>
                 </Card>
             </Col>
         </Row>
