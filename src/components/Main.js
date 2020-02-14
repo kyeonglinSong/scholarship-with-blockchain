@@ -16,7 +16,7 @@ const Main = ()=>{
     height:'50px',
   }
   return(
-    <div className="img">
+    <div className="img" style={{overflowX: 'hidden', overflowY: 'auto'}}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div style={{textalign: 'left', position: 'relative', marginLeft: '3rem', top: '100px' }}>
       <hr style={{ textalign: 'left', width: '130px',border: '3px solid black', marginLeft: '0px'}}></hr>
@@ -27,7 +27,7 @@ const Main = ()=>{
       <br/><br/><br/>
       <div className="content">
         <div className="row"></div>
-        <Link to="/scholars"><Button className="RegisterMainButton" size="lg">장학금정보/신청<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/scholars"><Button className="RegisterMainButton" size="lg">장학금 정보/신청<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/applylies"><Button className="RegisterMainButton" size="lg" color="warning">신청현황조회<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/student"><Button className="RegisterMainButton" size="lg" color="info">사이트 이용안내<br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/student"><Button className="RegisterMainButton" size="lg" color="success">재단용 페이지 이동<br/><AiOutlineBank style={iconStyle}/></Button></Link>

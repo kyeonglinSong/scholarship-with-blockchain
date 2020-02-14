@@ -4,7 +4,7 @@ import {Form, Input} from 'reactstrap';
 const Search=({
     setSearchValue,
     searchValue,
-    filterByState,
+    filterByState, //State는 이제 applying, processing, finished 로 스테이트 구분함. 
     setFilterByState
 })=>{
     const handleSearchInputChanges=e=>{
@@ -15,7 +15,7 @@ const Search=({
             <br/>
         <Form className="search">
             <Input
-            style={{width: '300px', position: 'relative', left: '635px'}}
+            style={{width: '50%',marginLeft:'28%' }}
             placeholder="장학금 이름"
             value={searchValue}
             onChange={handleSearchInputChanges}
