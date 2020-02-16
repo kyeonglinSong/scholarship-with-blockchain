@@ -22,33 +22,34 @@ const NavigationSchool = ( {user})=>{
   }
   
   return(
+    
     <div>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <div>
-      <HeaderContainer />
-<<<<<<< HEAD
-      <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
-        <Nav className="mr-auto" navbar>
-          <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav m-auto">
-            <NavItem className="nav-link ml-5">
-            <NavLink exact to="/notices" tag={NL}>공지사항</NavLink>
-            </NavItem>
-            <NavItem className="nav-link ml-5">
-            <NavLink exact to="/scholarships" tag={NL}>장학금등록</NavLink>
-            </NavItem>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div>
+    <HeaderContainer />
+    <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
+      <Nav className="mr-auto" navbar>
+        <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav m-auto">
           <NavItem className="nav-link ml-5">
-          <NavLink exact to="/selections" tag={NL}>장학생선발</NavLink>
+          <NavLink exact to="/notices" tag={NL}>공지사항</NavLink>
           </NavItem>
           <NavItem className="nav-link ml-5">
-          <NavLink exact to="/student" tag={NL}>사이트이용방법</NavLink>
+          <NavLink exact to="/scholarships" tag={NL}>장학금등록</NavLink>
           </NavItem>
-          </ul>
-        </div>
-      </nav>
+        <NavItem className="nav-link ml-5">
+        <NavLink exact to="/selections" tag={NL}>장학생선발</NavLink>
+        </NavItem>
+        <NavItem className="nav-link ml-5">
+        <NavLink exact to="/student" tag={NL}>사이트이용방법</NavLink>
+        </NavItem>
+        </ul>
       </div>
+      </Nav>
+    </Navbar>
     </div>
+  </div>
   );
 }
 
