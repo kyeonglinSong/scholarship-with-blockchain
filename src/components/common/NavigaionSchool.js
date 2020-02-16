@@ -3,7 +3,7 @@ import {
   Navbar, Nav, NavItem, NavLink, NavbarBrand
 } from "reactstrap"
 import {NavLink as NL, withRouter } from 'react-router-dom';
-import { IoIosSchool } from "react-icons/io"
+import LOGO from '../../images/logo.PNG';
 
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import styled from 'styled-components';
@@ -28,7 +28,7 @@ const NavigationSchool = ( {user})=>{
       <HeaderContainer />
       <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
         <Nav className="mr-auto" navbar>
-          <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><IoIosSchool style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
+          <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav m-auto">
             <NavItem className="nav-link ml-5">

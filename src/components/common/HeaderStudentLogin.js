@@ -10,13 +10,13 @@ const HeaderStudentLogin = ({ user, onClick }) =>{
       <header>
          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Navbar className="navbar navbar-expand-lg navbar-light ml-auto" style={{backgroundColor: "#022601", height: '20px'}}>
-        <div className="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
+        <div className="ml-auto" id="navbarSupportedContent">
           <Nav >
           <ul className="navbar-nav">
             <NavItem>
             <NavLink href="/signin">
               <div className="btn-group mr-2" role="group" area-label="First group">
-              <button className="btn btn-outline-light my-2 my-sm-0" type="button">마이페이지</button>
+              <button className="btn" style={{color: 'white'}} type="button">마이페이지</button>
               </div>
               </NavLink>
             </NavItem>

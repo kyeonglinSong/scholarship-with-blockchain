@@ -98,14 +98,14 @@ return(
 </ModalFooter>
       </Modal>
      &nbsp; &nbsp;
-        <Link to='/scholars'><Button color="secondary">목록으로</Button></Link>
+        <Link to='/scholarships'><Button color="secondary">목록으로</Button></Link>
       </div>
       <div style={{textAlign: 'right'}}>
         {
           !usertype &&
           <div>
-          <Button outline color="secondary" onClick={onEdit}>수정하기</Button>
-          <Button outline color="secondary" onClick={onRemove}>삭제하기</Button>
+          <Button outline color="primary" onClick={onEdit}>수정하기</Button>&nbsp;&nbsp;
+          <Button outline color="danger" onClick={onRemove}>삭제하기</Button>
           </div>
         }
       </div>

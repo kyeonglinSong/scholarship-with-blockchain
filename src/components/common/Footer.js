@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import './Footer.css';
 function Footer() {
     
     return (
         <FooterContainer className="main-footer">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <div className="footer-middle">
+            <div className="footer-middle" >
          <div className="container">
             <a href="/"><strong>정보처리방침</strong></a>
             &ensp;&ensp;<a href="/" ><strong>이용약관</strong></a>

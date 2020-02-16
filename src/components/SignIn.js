@@ -12,7 +12,7 @@ const SignIn = ({form, onChange, onSubmit})=>{
   }
 
   return(
-    <div>
+    <div style={{overflowX: 'hidden'}}>
       <br/><br/><br/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div style={{textAlign: 'center'}}><img className="center" src={LOGO} style={{width: '150px'}}/><br/></div>
