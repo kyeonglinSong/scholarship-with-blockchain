@@ -32,6 +32,7 @@ const EditorComponent = ({ title, body, onChangeField, onPublish, onCancel }) =>
     const quillElement = useRef(null);
     const quillInstance = useRef(null);
 
+
     useEffect(()=>{
         quillInstance.current = new Quill(quillElement.current, {
             theme: 'snow',
