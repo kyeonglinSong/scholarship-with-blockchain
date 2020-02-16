@@ -1,5 +1,6 @@
 import React from 'react'
 import { Input, Button, Row } from 'reactstrap';
+import styled from 'styled-components';
 
 const SearchBar = ({ onChange }) => {
     const containerStyle = {
@@ -17,6 +18,7 @@ const SearchBar = ({ onChange }) => {
     }
     return (
         <div style={containerStyle}>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
                 <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
             </Row>
@@ -26,3 +28,11 @@ const SearchBar = ({ onChange }) => {
 }
 
 export default SearchBar;
+
+const Appcontainer = styled.div`
+    &,
+    & * {
+        box-sizing: border-box;
+    }
+`;
+

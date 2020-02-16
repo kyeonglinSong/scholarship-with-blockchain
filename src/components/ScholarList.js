@@ -3,6 +3,7 @@ import "./content.css"
 import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 import Search from "./Search";
 import Scholar from "./Scholar.js";
+import styled from 'styled-components';
 
 const SAMPLE_URL="https://koreanjson.com/posts";
 //"https://api.jikan.moe/v3/top/anime/1/upcoming";
@@ -42,6 +43,7 @@ const ScholarList = ()=>{
     
   return(
     <div style={{textAlign: 'center'}}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <Search
      searchValue={searchValue}
      setSearchValue={setSearchValue}
@@ -61,3 +63,10 @@ const ScholarList = ()=>{
 };
 
 export default ScholarList;
+
+const Appcontainer = styled.div`
+    &,
+    & * {
+        box-sizing: border-box;
+    }
+`;
