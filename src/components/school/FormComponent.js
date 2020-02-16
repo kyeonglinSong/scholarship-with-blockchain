@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Col, Row } from 'reactstrap';
+import styled from 'styled-components';
 
 const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar }) => {
 
@@ -16,6 +17,7 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
     
   return (
     <div style={style}>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div style={{textAlign: 'center'}}>
         <h2><strong>장학금 등록</strong></h2>
         <hr style={{border: 'solid 1px gray'}}/>
@@ -79,3 +81,10 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
 }
 
 export default FormComponent;
+
+const Appcontainer = styled.div`
+    &,
+    & * {
+        box-sizing: border-box;
+    }
+`;

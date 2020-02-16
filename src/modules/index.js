@@ -13,6 +13,7 @@ import scholars, { scholarsSaga } from './scholarList';
 import scholarDetail, { scholarSaga } from './scholarDetail';
 import Scholarship, { ScholarSaga } from './school/scholarship';
 import students, { StudentsSaga } from './school/selection';
+import search from './search';
 
 const rootReducer = combineReducers({
     auth,
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
     scholarDetail,
     Scholarship,
     students,
+    search,
 });
 
 export function* rootSaga(){

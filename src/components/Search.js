@@ -1,6 +1,8 @@
 import React from "react";
 import Filter from "./Filter";
 import {Form, Input} from 'reactstrap';
+import styled from 'styled-components';
+
 const Search=({
     setSearchValue,
     searchValue,
@@ -12,6 +14,7 @@ const Search=({
     };
     return(
         <div>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <br/>
         <Form className="search">
             <Input
@@ -31,3 +34,11 @@ const Search=({
     );
 };
 export default Search;
+
+const Appcontainer = styled.div`
+    &,
+    & * {
+        box-sizing: border-box;
+    }
+`;
+

@@ -32,6 +32,7 @@ const EditorComponent = ({ title, body, onChangeField, onPublish, onCancel }) =>
     const quillElement = useRef(null);
     const quillInstance = useRef(null);
 
+
     useEffect(()=>{
         quillInstance.current = new Quill(quillElement.current, {
             theme: 'snow',
@@ -41,7 +42,7 @@ const EditorComponent = ({ title, body, onChangeField, onPublish, onCancel }) =>
                     [{header:'1'}, {header:'2'}],
                     ['bold', 'italic', 'underline', 'strike'],
                     [{list:'ordered'}, {list:'bullet'}],
-                    ['blockquote', 'code-block', 'link', 'image'],
+                    ['blockquote', 'code-block', 'link', 'image', 'file'],
                 ],
             },
         });

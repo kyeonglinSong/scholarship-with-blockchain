@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const NoticeListContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { notices, tempPage, lastPage, total, error, loading, user } = useSelector(({ notices, loading, auth })=>({
+    const { notices, tempPage, lastPage, total, error, loading, user, searchWord } = useSelector(({ notices, loading, auth, search })=>({
         notices:notices.notices,
         tempPage:notices.tempPage,
         lastPage:notices.lastPage,
@@ -15,7 +15,10 @@ const NoticeListContainer = ()=>{
         error:notices.error,
         loading:loading['noticeList/LIST_NOTICES'],
         user:auth.auth,
+        searchWord:search.searchWord,
     }));
+
+    var noticeList=notices;
 
     const toNextPage = e =>{
         if(e){
@@ -33,9 +36,19 @@ const NoticeListContainer = ()=>{
         dispatch(listNotices());
     }, [dispatch]);
 
+    const onSubmit = () =>{
+        console.log("in submit")
+        if(searchWord){
+            console.log(searchWord)
+          noticeList=notices.filter((notices)=>{
+            return notices.title.indexOf(searchWord)>-1;
+          })
+        }
+      }
+
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NoticeList notices={notices} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user}/></div>;
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user} searchWord={searchWord} onSubmit={onSubmit}/></div>;
 };
 
 export default NoticeListContainer;

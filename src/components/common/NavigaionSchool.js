@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import {
   Navbar, Nav, NavItem, NavLink, NavbarBrand
@@ -8,6 +9,9 @@ import LOGO from '../../images/logo.PNG';
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import styled from 'styled-components';
 
+
+import HeaderContainer from '../../containers/common/HeaderContainer';
+import styled from 'styled-components';
 
 const NavigationSchool = ( {user})=>{
 
@@ -26,6 +30,7 @@ const NavigationSchool = ( {user})=>{
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div>
       <HeaderContainer />
+<<<<<<< HEAD
       <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
         <Nav className="mr-auto" navbar>
           <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
@@ -45,14 +50,13 @@ const NavigationSchool = ( {user})=>{
           </NavItem>
           </ul>
         </div>
-        </Nav>
-      </Navbar>
+      </nav>
       </div>
     </div>
   );
 }
 
-export default withRouter(NavigationSchool);
+export default NavigationSchool;
 
 const Appcontainer = styled.div`
     &,
@@ -60,3 +64,4 @@ const Appcontainer = styled.div`
         box-sizing: border-box;
     }
 `;
+

@@ -3,6 +3,7 @@ import { Table, Button } from "reactstrap";
 import "./content.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import SearchContainer from "../../containers/SearchContainer";
 
 
 const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
@@ -45,6 +46,7 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
           {applyList}
         </tbody>
       </Table>
+      <SearchContainer />
       </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>

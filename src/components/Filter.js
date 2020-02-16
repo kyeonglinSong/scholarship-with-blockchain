@@ -1,5 +1,6 @@
 import React from 'react';
 import {  Button,FormGroup, Label, Input } from 'reactstrap';
+import styled from 'styled-components';
 
 const Filter=({
   filterByState,
@@ -16,6 +17,7 @@ const Filter=({
 
     return(
         <div>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <div>
             <label>상태:&nbsp;&nbsp;</label>
             <select defaultValue={filterByState} onChange={handleFilterByStateChange}>
@@ -29,3 +31,10 @@ const Filter=({
     );
 };
 export default Filter;
+
+const Appcontainer = styled.div`
+    &,
+    & * {
+        box-sizing: border-box;
+    }
+`;

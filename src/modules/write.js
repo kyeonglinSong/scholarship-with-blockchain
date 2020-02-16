@@ -14,12 +14,12 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value })=>({
     key,
     value,
 }));
-export const writeNotice = createAction(WRITE_NOTICE, ({ title, body })=>({
+export const writeNotice = createAction(WRITE_NOTICE, ({ title, content })=>({
     title,
-    body,
+    content,
 }));
 export const setOriginal = createAction(SET_ORIGINAL, notice=>notice);
-export const updateNotice = createAction(UPDATE_NOTICE, ({id, title, body})=>({id, title, body}));
+export const updateNotice = createAction(UPDATE_NOTICE, ({id, title, content})=>({id, title, content}));
 
 const writeNoticeSaga = createRequestSaga(WRITE_NOTICE, noticeAPI.writeNotice);
 const updateNoticeSaga = createRequestSaga(UPDATE_NOTICE, noticeAPI.updateNotice);
@@ -30,7 +30,7 @@ export function* writeSaga(){
 
 const initialState = {
     title:'',
-    body:'',
+    content:'',
     notice:null,
     noticeError:null,
     originalNoticeId:null,
@@ -59,7 +59,7 @@ const write = handleActions(
         [SET_ORIGINAL]:(state, { payload:originalnotice })=>({
             ...state,
             title:originalnotice.title,
-            body:originalnotice.body,
+            content:originalnotice.content,
             originalNoticeId:originalnotice.id,
         }),
         [UPDATE_NOTICE_SUCCESS]: (state, { payload: notice})=>({
