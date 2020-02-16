@@ -26,7 +26,7 @@ const NavigationSchool = ( {user})=>{
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div>
       <HeaderContainer />
-<<<<<<< HEAD
+
       <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
         <Nav className="mr-auto" navbar>
           <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
