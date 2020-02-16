@@ -1,13 +1,10 @@
-import React from "react";
-import {
-  Navbar, Nav, NavItem, NavLink, NavbarBrand
-} from "reactstrap"
-import {NavLink as NL, withRouter } from 'react-router-dom';
-import { IoIosSchool } from "react-icons/io"
+import React from "react";
+import { NavLink, NavbarBrand } from "reactstrap"
+import { Link } from 'react-router-dom';
+import { IoIosSchool } from "react-icons/io"
 
-import HeaderContainer from '../../containers/common/HeaderContainer';
-import styled from 'styled-components';
-
+import HeaderContainer from '../../containers/common/HeaderContainer';
+import styled from 'styled-components';
 
 const NavigationSchool = ( {user})=>{
 
@@ -18,7 +15,7 @@ const NavigationSchool = ( {user})=>{
   }
 
   const brandStyle={
-    textColor:'black',
+    color:'#ffffff',
   }
   
   return(
@@ -26,33 +23,34 @@ const NavigationSchool = ( {user})=>{
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div>
       <HeaderContainer />
-      <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
-        <Nav className="mr-auto" navbar>
-          <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><IoIosSchool style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav m-auto">
-            <NavItem className="nav-link ml-5">
-            <NavLink exact to="/notices" tag={NL}>공지사항</NavLink>
-            </NavItem>
-            <NavItem className="nav-link ml-5">
-            <NavLink exact to="/scholarships" tag={NL}>장학금등록</NavLink>
-            </NavItem>
-          <NavItem className="nav-link ml-5">
-          <NavLink exact to="/selections" tag={NL}>장학생선발</NavLink>
-          </NavItem>
-          <NavItem className="nav-link ml-5">
-          <NavLink exact to="/student" tag={NL}>사이트이용방법</NavLink>
-          </NavItem>
-          </ul>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <NavbarBrand className="nav-link mr-auto" style={brandStyle}><NavLink href="/"><IoIosSchool style={iconStyle}/>재단용장학금관리</NavLink></NavbarBrand>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li className="nav-item" style={{ marginLeft:'20px'}}>
+                    <Link className="nav-link" to="/notices">공지사항</Link>
+                </li>
+                <li className="nav-item" style={{ marginLeft:'20px'}}>
+                    <Link className="nav-link" to="/scholars">장학금 정보/신청</Link>
+                </li>
+                <li className="nav-item" style={{ marginLeft:'20px'}}>
+                    <Link className="nav-link" to="/applies">신청현황조회</Link>
+                </li>
+                <li className="nav-item" style={{ marginLeft:'20px'}}>
+                    <Link className="nav-link" to="/student">사이트이용방법</Link>
+                </li>
+            </ul>
         </div>
-        </Nav>
-      </Navbar>
+      </nav>
       </div>
     </div>
   );
 }
 
-export default withRouter(NavigationSchool);
+export default NavigationSchool;
 
 const Appcontainer = styled.div`
     &,
@@ -60,3 +58,4 @@ const Appcontainer = styled.div`
         box-sizing: border-box;
     }
 `;
+

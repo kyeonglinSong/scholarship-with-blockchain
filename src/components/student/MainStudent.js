@@ -17,7 +17,7 @@ const MainStudent = ({ history }) => {
         <div>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <BrowserRouter>
-                <NavigationStudnet  />
+                <NavigationStudnet />
                 <Switch>
                     <Route path="/student" component={Main} />
                     <Route path="/notices/:id" component={NoticeViewer}/>

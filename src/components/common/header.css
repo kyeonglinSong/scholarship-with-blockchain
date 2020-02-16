@@ -1,3 +1,11 @@
 #header{
  background-color: #022601;
 }
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-toggler {
+    border: none;
+}
