@@ -9,10 +9,6 @@ import LOGO from '../../images/logo.PNG';
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import styled from 'styled-components';
 
-
-import HeaderContainer from '../../containers/common/HeaderContainer';
-import styled from 'styled-components';
-
 const NavigationSchool = ( {user})=>{
 
   const iconStyle={
