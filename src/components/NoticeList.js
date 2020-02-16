@@ -18,8 +18,8 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     console.log(searchWord)
     notices=notices.filter((notices)=>{
     return notices.title.indexOf(searchWord)>-1;
-  })
-}
+    })
+  }
   
   var total=notices.length;
   var startIndex = (tempPage - 1) * 10 ;
@@ -29,7 +29,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     <tr key={notice.id}>
       <th style={{width:'50px'}} scope="row">{notice.id}</th>
       <td style={{width:'1000px'}}><Link to={`/notices/${notice.id}`}>{notice.title}</Link></td>
-      <td style={{width:'150px'}}>2020.02.01</td>
+      <td style={{width:'150px'}}>{notice.createdAt}</td>
     </tr>
   ));
 

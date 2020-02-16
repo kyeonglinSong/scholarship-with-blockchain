@@ -7,9 +7,9 @@ import styled from 'styled-components';
 
 const EditorContainer = ({ history }) => {
     const dispatch = useDispatch();
-    const { title, body, notice, noticeError, originalNoticeId } = useSelector(({ write })=>({
+    const { title, content, notice, noticeError, originalNoticeId } = useSelector(({ write })=>({
         title: write.title,
-        body:write.body,
+        content:write.content,
         notice:write.notice,
         noticeError:write.noticeError,
         originalNoticeId: write.originalNoticeId,
@@ -21,11 +21,11 @@ const EditorContainer = ({ history }) => {
     
     const onPublish = () =>{
         if(originalNoticeId){
-            dispatch(updateNotice({originalNoticeId, title, body}));
+            dispatch(updateNotice({originalNoticeId, title, content}));
         }
         dispatch(
             writeNotice({
-                title,body,
+                title,content,
             }),
         );
     }
@@ -50,7 +50,7 @@ const EditorContainer = ({ history }) => {
         }
     }, [history, notice, noticeError])
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><EditorComponent onChangeField={onChangeField} title={title} body={body} onPublish={onPublish} onCancel={onCancel}/></div>;
+    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><EditorComponent onChangeField={onChangeField} title={title} body={content} onPublish={onPublish} onCancel={onCancel}/></div>;
 }
 
 export default EditorContainer;

@@ -37,25 +37,24 @@ const StudentListContainer = ()=>{
     const onChange = e =>{
         e.preventDefault();
         const { value, name } = e.target;
-        let idx = selected.findIndex((item, idx)=>{
-            return item==name;
-        })
-        if(idx!==-1){
-            selected.splice(idx,1);
+        var comp = students[name-1].name;
+        if(comp.includes("1")){
+            students[name-1].name=students[name-1].name+"1";
         }else{
-            selected.push(name);
+            students[name-1].name=students[name-1].name+"1";
         }
-        dispatch(studentStateChange(selected));
+        
+        dispatch(studentStateChange(students));
     }
 
     const onSubmit = e =>{
         e.preventDefault();
-        dispatch(saveSelection());
+        dispatch(saveSelection(students));
     }
 
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><StudentList students={students} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total} onChange={onChange}/></div>;
+                        nextPage={toNextPage} prevPage={toPrevPage} onChange={onChange} onSubmit={onSubmit}/></div>;
 };
 
 export default StudentListContainer;
