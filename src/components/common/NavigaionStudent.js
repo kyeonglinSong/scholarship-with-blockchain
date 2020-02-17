@@ -23,6 +23,7 @@ const NavigationStudent = ( {user})=>{
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div>
       <HeaderContainer />
+      <br/>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavbarBrand className="nav-link mr-auto" style={brandStyle}><NavLink href="/student"><img src={LOGO} style={iconStyle}/>학생용장학금관리</NavLink></NavbarBrand>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
