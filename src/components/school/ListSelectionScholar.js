@@ -6,10 +6,17 @@ import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
 
 
-const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
+const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
 
   if(loading || !scholars){
     return null;
+  }
+
+  if(searchWord){
+    console.log(searchWord)
+    scholars=scholars.filter((scholars)=>{
+    return scholars.title.indexOf(searchWord)>-1;
+    })
   }
 
   var startIndex = (tempPage - 1) * 10;
@@ -18,8 +25,8 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
   const applyList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
     <tr key={scholars.id}>
     <th scope="row">{scholars.id}</th>
-    <td>{scholars.title}</td>
-    <td>{(scholars.completed)? "완료":"산정중"}</td>
+    <td style={{width:'600px'}}>{scholars.title}</td>
+    <td style={{width:'100px'}}>{(scholars.completed)? "완료":"산정중"}</td>
     <td><Link to={`/selections/${scholars.id}`}><button>자세히보기</button></Link></td>
     </tr>
   ));
@@ -33,11 +40,12 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
+      <SearchContainer />
       <Table striped>
         <thead>
           <tr>
             <th>#</th>
-            <th>이름</th>
+            <th style={{width:'500px'}}>이름</th>
             <th>현황</th>
             <th>자세히보기</th>
           </tr>
@@ -46,7 +54,6 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
           {applyList}
         </tbody>
       </Table>
-      <SearchContainer />
       </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>

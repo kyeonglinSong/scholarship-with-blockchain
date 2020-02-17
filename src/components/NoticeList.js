@@ -49,6 +49,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
+      <SearchContainer />
       <Table striped>
         <thead>
           <tr>
@@ -61,14 +62,12 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
           {noticeList}
         </tbody>
       </Table>
-      <SearchContainer />
       <div style={{textAlign: 'right'}}>
         {
           !usertype &&
           <Link to='/notices/write'><Button style={buttonStyle} outline color="secondary">공지등록</Button></Link>
         }
       </div>
-      <Button onClick={onSubmit}>검색</Button>
       </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>

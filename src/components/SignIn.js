@@ -7,17 +7,19 @@ import LOGO from '../images/logo.PNG'
 const SignIn = ({form, onChange, onSubmit})=>{
 
   const inputStyle = {
-    width:'500px',
-    margin:'auto',
+    width:'37.5%',
+    marginLeft:'auto',
+    marginRight: 'auto'
   }
 
   return(
+    <div>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <div style={{overflowX: 'hidden'}}>
       <br/><br/><br/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div style={{textAlign: 'center'}}><img className="center" src={LOGO} style={{width: '150px'}}/><br/></div>
       <span className="content">
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} style={{marginLeft:'auto', marginRight:'auto'}}>
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input style={inputStyle} type="email" name="email" id="exampleEmail" placeholder="학번"
@@ -31,6 +33,7 @@ const SignIn = ({form, onChange, onSubmit})=>{
           <Button>로그인</Button>
         </Form>
       </span>
+    </div>
     </div>
   );
 }
