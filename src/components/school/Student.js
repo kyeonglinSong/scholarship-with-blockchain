@@ -9,6 +9,10 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
     const [modal, setModal] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const modalToggle = () => setModal(!modal);
+    const selectToggle = e => {
+      onSelect(e);
+      setModal(!modal);
+    }
 
   
     const toggleExpander = e => {
@@ -22,16 +26,15 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
       }
     }
 
+    // isSelect는 student안의 어떤 값 읽어오겠찌??
     const isSelect = (student.id%2 ===0)
-
-    const selectWord = `${student.name} 학생을 선발하시겠습니까?`
   
       return [
         <tr key="main" onClick={toggleExpander}>
           <td className="uk-text-nowrap">{index}.</td>
           <td>{student.name}</td>
           <td>{student.name}</td>
-          <td><Button name={student.id} onClick={modalToggle} type='button'>{isSelect? "선발하기":"선발취소" }</Button></td>
+          <td><Button onClick={modalToggle} type='button'>{isSelect? "선발하기":"선발취소" }</Button></td>
           <Modal isOpen={modal} toggle={modalToggle}>
             <ModalHeader toggle={modalToggle}>정말요??</ModalHeader>
             <ModalBody>
@@ -41,7 +44,7 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
               }
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={modalToggle}>확인</Button>{' '}
+              <Button color="primary" onClick={selectToggle} name={student.id}>확인</Button>{' '}
               <Button color="secondary" onClick={modalToggle}>취소</Button>
             </ModalFooter>
           </Modal>

@@ -8,11 +8,11 @@ const [LIST_STUDENTS, LIST_STUDENTS_SUCCESS, LIST_STUDENTS_FAILURE]=createReques
 const STUDENT_STATE_CHANGE=('selection/STUDENT_STATE_CHANGE');
 const NEXT_PAGE=('selection/NEXT_PAGE');
 const PREV_PAGE=('selection/PREV_PAGE');
-const [SAVE_SELECTION, SAVE_SELECTION_SUCCESS, SAVE_SELECTION_FAILURE]=createRequestActionTypes('selection/LIST_STUDENTS');
+const [SAVE_SELECTION, SAVE_SELECTION_SUCCESS, SAVE_SELECTION_FAILURE]=createRequestActionTypes('selection/SAVE_SELECTION');
 
 export const listStudents = createAction(LIST_STUDENTS, ScholarId=>ScholarId);
 export const studentStateChange = createAction(STUDENT_STATE_CHANGE, students=>students);
-export const saveSelection = createAction(SAVE_SELECTION, students=>students);
+export const saveSelection = createAction(SAVE_SELECTION, student=>student);
 export const nextPage = createAction(NEXT_PAGE);
 export const prevPage = createAction(PREV_PAGE);
 
@@ -30,6 +30,7 @@ const initialState={
     lastPage:1,
     tempPage:1,
     total:1,
+    student:null,
 }
 
 const students = handleActions(
@@ -56,9 +57,9 @@ const students = handleActions(
             ...state,
             students,
         }),
-        [SAVE_SELECTION_SUCCESS]:(state, { payload:students })=>({
+        [SAVE_SELECTION_SUCCESS]:(state, { payload:student })=>({
             ...state,
-            students,
+            student,
         }),
         [SAVE_SELECTION_FAILURE]:(state, { payload:error })=>({
             ...state,

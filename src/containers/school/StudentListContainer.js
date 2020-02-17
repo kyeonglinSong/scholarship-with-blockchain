@@ -55,6 +55,7 @@ const StudentListContainer = ({ match })=>{
         e.preventDefault();
         const { value, name } = e.target;
         students[name-1].name=students[name-1].name+"1";
+        //안에 선발인지 탈랄인지 확인하는거 추가할거밍
         dispatch(saveSelection(students[name-1]));
     }
 
