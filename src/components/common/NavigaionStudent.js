@@ -19,17 +19,16 @@ const NavigationStudent = ( {user})=>{
   }
   
   return(
-    <div>
-      <HeaderContainer />
+    <div style={{width:'100%', display:'block'}}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <HeaderContainer />
       <br/>
       <Navbar color="light" light expand="md" className="mr-auto navbar navbar-expand-lg navbar-light bg-white">
-      
         <NavbarBrand style={{fontSize: 'x-large'}} className="nav-link ml-5 black" ><NavLink href="/student"><img src={LOGO} style={iconStyle}/>학생용장학금관리</NavLink></NavbarBrand>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div className="navbar-collapse collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mt-2 mt-lg-0">
                 <li className="nav-item" style={{ marginLeft:'100px'}}>
                     <Link className="nav-link" to="/notices">공지사항</Link>

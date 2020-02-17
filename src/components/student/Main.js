@@ -26,7 +26,7 @@ const Main = ()=>{
       </h7>
       </div>
       <br/><br/><br/>
-      <div className="content">
+      <div className="content2">
         <div className="row"></div>
         <Link to="/scholars"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#8cb09d', border: 'none', color: 'black'}}>장학금정보/신청<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/applylies"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#9fa947', border: 'none', color: 'black'}}>신청현황조회<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
