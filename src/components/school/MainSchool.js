@@ -15,6 +15,7 @@ import ScholarEditorContainer from "../../containers/school/ScholarEditorContain
 import SelectionContainer from "../../containers/school/SelectionContainer";
 import StudentListContainer from "../../containers/school/StudentListContainer";
 import styled from 'styled-components';
+import StudentDetailContainer from "../../containers/school/StudentDetailContainer";
 
 const MainSchool = () => {
 
@@ -33,6 +34,7 @@ const MainSchool = () => {
                 <Route path="/scholarships" component={ScholarshipsContainer} />
                 <Route path="/selections/:id" component={StudentListContainer}/>
                 <Route path="/selections" component={SelectionContainer} />
+                <Route path="/students/:id/:scholarId" component={StudentDetailContainer}/>
             </Switch>
 
             </BrowserRouter>

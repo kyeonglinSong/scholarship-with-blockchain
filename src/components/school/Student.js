@@ -1,14 +1,18 @@
 import React, { useState, createRef } from 'react'
 import { slideDown, slideUp } from '../animation';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Link } from "react-router-dom";
 
-const Student = ({key, index, student, onChange}) => {
+const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
     let expanderBody = createRef();
     const [isOpen, setIsOpen] = useState(false);
+    const [modal, setModal] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const modalToggle = () => setModal(!modal);
 
   
     const toggleExpander = e => {
-      if (e.target.type === 'checkbox') return;
+      if (e.target.type === 'button') return;
   
       if (!isOpen) {
         toggle();
@@ -17,13 +21,31 @@ const Student = ({key, index, student, onChange}) => {
         toggle();
       }
     }
+
+    const isSelect = (student.id%2 ===0)
+
+    const selectWord = `${student.name} 학생을 선발하시겠습니까?`
   
       return [
         <tr key="main" onClick={toggleExpander}>
           <td className="uk-text-nowrap">{index}.</td>
           <td>{student.name}</td>
-          <td>{student.id}</td>
-          <td><input className="uk-checkbox" type="checkbox" name={student.id} onChange={onChange}/></td>
+          <td>{student.name}</td>
+          <td><Button name={student.id} onClick={modalToggle} type='button'>{isSelect? "선발하기":"선발취소" }</Button></td>
+          <Modal isOpen={modal} toggle={modalToggle}>
+            <ModalHeader toggle={modalToggle}>정말요??</ModalHeader>
+            <ModalBody>
+              {
+                isSelect? 
+                `${student.name} 학생을 선발하시겠습니까?`:`${student.name} 학생을 선발 취소 하시겠습니까?`
+              }
+            </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={modalToggle}>확인</Button>{' '}
+              <Button color="secondary" onClick={modalToggle}>취소</Button>
+            </ModalFooter>
+          </Modal>
+          <td><Link to={`/students/${student.id}/${scholarId}`}><Button>자세히보기</Button></Link></td>
         </tr>,
         isOpen && (
           <tr className="expandable" key="tr-expander">

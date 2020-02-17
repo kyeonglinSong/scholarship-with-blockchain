@@ -17,7 +17,7 @@ export const nextPage = createAction(NEXT_PAGE);
 export const prevPage = createAction(PREV_PAGE);
 
 const listStudentsSaga = createRequestSaga(LIST_STUDENTS, selectionAPI.readStudentList);
-const saveSelectionSaga = createListRequestSaga(SAVE_SELECTION, selectionAPI.saveStudent);
+const saveSelectionSaga = createRequestSaga(SAVE_SELECTION, selectionAPI.saveStudent);
 
 export function* StudentsSaga(){
     yield takeLatest(LIST_STUDENTS, listStudentsSaga);

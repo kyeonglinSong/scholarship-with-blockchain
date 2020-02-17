@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Table, Button, Collapse, CardBody, CardTitle, Card, Input } from "reactstrap";
 import "./content.css"
-import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
 import Student from "./Student";
 
 
-const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, onChange, onSubmit, searchWord })=>{
+const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, onChange, onSubmit, searchWord, scholarId, onSelect })=>{
 
   if(loading || !students){
     return null;
@@ -41,6 +40,7 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
           <tr>
             <th>#</th>
             <th>이름</th>
+            <th>상태</th>
             <th>선발</th>
             <th>자세히보기</th>
           </tr>
@@ -48,7 +48,7 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
         <tbody>
           {
             students.map((student, index) =>
-            <Student key={index} index={index + 1} student={student}/>
+            <Student key={index} index={index + 1} student={student} onChange={onChange} scholarId={scholarId} onSelect={onSelect}/>
                     )
           }
         </tbody>
