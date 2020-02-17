@@ -7,10 +7,17 @@ import SearchContainer from "../../containers/SearchContainer";
 
 
 
-const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
+const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
 
   if(loading || !scholars){
     return null;
+  }
+
+  if(searchWord){
+    console.log(searchWord)
+    scholars=scholars.filter((scholars)=>{
+    return scholars.title.indexOf(searchWord)>-1;
+    })
   }
 
   var startIndex = (tempPage - 1) * 10 ;
@@ -33,6 +40,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
+      <SearchContainer />
       <Table striped>
         <thead>
           <tr>
@@ -45,7 +53,6 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
         </tbody>
       </Table>
       </div>
-      <SearchContainer />
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>

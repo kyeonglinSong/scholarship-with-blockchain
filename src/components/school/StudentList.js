@@ -4,14 +4,20 @@ import "./content.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
+import Student from "./Student";
 
 
-const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, onChange, onSubmit })=>{
-
-  const [isOpen, setIsOpen] = useState(false);
+const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, onChange, onSubmit, searchWord })=>{
 
   if(loading || !students){
     return null;
+  }
+
+  if(searchWord){
+    console.log(searchWord)
+    students=students.filter((students)=>{
+    return students.name.indexOf(searchWord)>-1;
+    })
   }
 
   const total=parseInt(students.length);
@@ -19,19 +25,6 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
   var startIndex = (tempPage - 1) * 10;
   var endIndex = Math.min(startIndex + 10, total - 1);
 
-
-  const toggle = () => setIsOpen(!isOpen);
-
-  const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={toggle}>&times;</button>;
-
-  const applyList = students.slice(startIndex, endIndex).map((students, index)=>(
-    <tr key={students.id}>
-    <th scope="row">{students.id}</th>
-    <td>{students.name}</td>
-    <td><input type="checkbox" name={students.id} onChange={onChange}/></td>
-    <td><button onClick={toggle}>자세히보기</button></td>
-    </tr>
-  ));
 
   const pageStyle = {
     margin:'10px'
@@ -42,6 +35,7 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
+      <SearchContainer />
       <Table striped>
         <thead>
           <tr>
@@ -52,16 +46,19 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
           </tr>
         </thead>
         <tbody>
-          {applyList}
+          {
+            students.map((student, index) =>
+            <Student key={index} index={index + 1} student={student}/>
+                    )
+          }
         </tbody>
       </Table>
-      <SearchContainer />
       </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      <br /><Button onClick={onSubmit} style={{margin:'10px'}}>저장하기</Button>
       </span>
-      <Button onClick={onSubmit}>저장하기</Button>      
     </div>
   );
 }

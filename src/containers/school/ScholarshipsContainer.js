@@ -6,13 +6,14 @@ import ScholarshipList from '../../components/school/ScholarshipList';
 const ScholarshipsContainer = ()=>{
     console.log("in scholarlist")
     const dispatch = useDispatch();
-    const { scholars, tempPage, lastPage, total, error, loading } = useSelector(({ scholars, loading })=>({
+    const { scholars, tempPage, lastPage, total, error, loading, searchWord } = useSelector(({ scholars, loading, search })=>({
         scholars:scholars.scholars,
         tempPage:scholars.tempPage,
         lastPage:scholars.lastPage,
         total:scholars.total,
         error:scholars.error,
         loading:loading['scholarList/LIST_SCHOLARS'],
+        searchWord:search.searchWord,
     }));
 
     const toNextPage = e =>{
@@ -34,7 +35,7 @@ const ScholarshipsContainer = ()=>{
     console.log(scholars);
 
     return <ScholarshipList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total}/>;
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total} searchWord={searchWord} />;
 };
 
 export default ScholarshipsContainer;

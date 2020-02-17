@@ -85,8 +85,8 @@ return(
         {
           !usertype &&
           <div>
-          <Button outline color="secondary" onClick={onEdit}>수정하기</Button>
-          <Button outline color="secondary" onClick={onRemove}>삭제하기</Button>
+          <Button outline color="secondary" onClick={onEdit} style={{margin:'5px'}}>수정하기</Button>
+          <Button outline color="secondary" onClick={onRemove} style={{margin:'5px'}}>삭제하기</Button>
           </div>
         }
       </div>

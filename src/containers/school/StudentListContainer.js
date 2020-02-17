@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const StudentListContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { students, selected, tempPage, lastPage, total, error, loading } = useSelector(({ students, loading })=>({
+    const { students, selected, tempPage, lastPage, total, error, loading, searchWord } = useSelector(({ students, loading, search })=>({
         students:students.students,
         selected:students.selected,
         tempPage:students.tempPage,
@@ -16,6 +16,8 @@ const StudentListContainer = ()=>{
         total:students.total,
         error:students.error,
         loading:loading['students/LIST_STUDENTS'],
+        searchWord:search.searchWord,
+
     }));
 
     const toNextPage = e =>{
@@ -54,7 +56,7 @@ const StudentListContainer = ()=>{
 
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><StudentList students={students} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} onChange={onChange} onSubmit={onSubmit}/></div>;
+                        nextPage={toNextPage} prevPage={toPrevPage} onChange={onChange} onSubmit={onSubmit} searchWord={searchWord}/></div>;
 };
 
 export default StudentListContainer;
