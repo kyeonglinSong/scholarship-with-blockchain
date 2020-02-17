@@ -30,41 +30,50 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
         <hr style={{border: 'solid 1px gray'}}/>
     </div>
     <Form>
-      <FormGroup row style={{marginBottom: '4%', marginTop: '4%'}}>
+      <FormGroup row style={{marginBottom: '6%', marginTop: '6%'}}>
         <Label for="scholarName" xs="auto"><strong>장학금 이름</strong></Label>
         <Col xs={4}>
         <Input onChange={onChange} type="text" name="scholarName" id="scholarName" placeholder="장학금 이름을 입력하세요" value={originalScholar? originalScholar.title:null}/>
       </Col>
+        <Col xs={1}/>
+        <Col xs={4}>
+        <Label for="File" ><strong>첨부 파일</strong></Label>
+        <Input onChange={onChange} type="file" name="file" id="file" />
+        <FormText color="muted">
+          한개의 첨부파일을 추가할수있음.
+        </FormText>
+        </Col>
       </FormGroup>
       
-      <FormGroup row style={{marginBottom: '4%', marginTop: '4%'}}>
+      <FormGroup row style={{marginBottom: '6%', marginTop: '6%'}}>
                 <Label xs="auto" for="startDate" ><strong>시작 날짜&nbsp;&nbsp;&nbsp;</strong></Label>
-                <Col xs={1}>
+                <Col xs={4}>
                 <Input  onChange={onChange} type="date" name="startDate" id="startDate" placeholder="시작날짜를 설정하세요" value={originalScholar? originalScholar.createdAt:null} />
                 </Col>
-                <Col xs={4}/>
+                <Col xs={1}/>
                 <Label for="dueDate" xs="auto" ><strong>마감 날짜</strong></Label>
                 <Col xs={4}> <Input onChange={onChange} type="date" name="dueDate" id="dueDate" placeholder="마감기한을 설정하세요" value={originalScholar? originalScholar.updatedAt:null} /></Col>
       </FormGroup>
       
-        <FormGroup row style={{marginBottom: '4%', marginTop: '4%'}}>
+        <FormGroup row style={{marginBottom: '6%', marginTop: '6%'}}>
             <Label for="sum" xs="auto" ><strong>지급 금액&nbsp;&nbsp;&nbsp;</strong></Label>
-            <Col xs={3}>
+            <Col xs={4}>
             <Input onChange={onChange} type="number" name="sum" id="sum" placeholder="공란 입력시 전액 장학금" value={originalScholar? originalScholar.title:null}/>
             </Col>
-            <Col xs={3}/>
+            <Col xs={1}/>
             <Label for="numberOfPeople"xs="auto" ><strong>모집 인원</strong></Label>
-           <Col xs={3}> <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.id:null}/>
+           <Col xs={4}> <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.id:null}/>
           </Col>
         </FormGroup>
         
-      <FormGroup style={{marginBottom: '4%', marginTop: '4%'}}>
-        <Row xs={6}>
+      <FormGroup style={{marginBottom: '6%', marginTop: '6%'}}>
+        <Row>
             <Label for="semester" xs="auto" ><strong>학기 제한&nbsp;&nbsp;&nbsp;</strong></Label>
-            <Col xs={3}>
+            <Col xs={4}>
                 <Input onChange={onChange} type="number" name="startSemester" id="startSemester" placeholder="시작 학기"  value={originalScholar? originalScholar.id:null}/>
             </Col>
-            <Col xs={3}>
+            <Col xs={1}/>&nbsp;&nbsp;
+            <Col xs={5}>
                 <Input onChange={onChange} type="number" name="endSemester" id="endSemester" placeholder="끝 학기"  value={originalScholar? originalScholar.id:null}/>
             </Col>
         </Row>
@@ -72,13 +81,7 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
             학기를 입력하지 않을경우 제한 없음으로 등록됩니다.
         </FormText>
       </FormGroup>
-      <FormGroup style={{marginBottom: '4%', marginTop: '4%'}}>
-        <Label for="File" ><strong>첨부 파일</strong></Label>
-        <Input onChange={onChange} type="file" name="file" id="file" />
-        <FormText color="muted">
-          한개의 첨부파일을 추가할수있음.
-        </FormText>
-      </FormGroup>
+     
       <div style={{textAlign: 'center'}}>
       <hr style={{border: 'solid 1px gray'}}/>
       <Button color="success"onClick={onPublish}>등록</Button>&nbsp;&nbsp;
