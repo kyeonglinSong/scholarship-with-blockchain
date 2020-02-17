@@ -9,54 +9,62 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
         marginLeft:'10%',
         marginRight: '10%',
         marginBottom: '5%',
-        alignContent: 'center'
+        paddingLeft: '8%',
+        paddingRight: '8%',
+        paddingTop:  '3%',
+        paddingBottom: '3%',
+        alignContent: 'center',
+        backgroundColor: '#F3F3F3',
+        borderRadius: '25px'
     }
+    
 
     console.log(content);
 
     
   return (
-    <div style={style}>
+    <div style={style} >
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div style={{textAlign: 'center'}}>
-        <h2><strong>장학금 등록</strong></h2>
+        <h2 ><strong>장학금 등록</strong></h2>
         <hr style={{border: 'solid 1px gray'}}/>
     </div>
     <Form>
-      <FormGroup row>
-        <Label for="scholarName" sm={2}>장학금 이름</Label>
-        <Col sm={4}>
+      <FormGroup row style={{marginBottom: '4%', marginTop: '4%'}}>
+        <Label for="scholarName" xs="auto"><strong>장학금 이름</strong></Label>
+        <Col xs={4}>
         <Input onChange={onChange} type="text" name="scholarName" id="scholarName" placeholder="장학금 이름을 입력하세요" value={originalScholar? originalScholar.title:null}/>
       </Col>
       </FormGroup>
       
-      <FormGroup row>
-                <Label sm={2} for="startDate" >시작날짜</Label>
-                <Col sm={4}>
+      <FormGroup row style={{marginBottom: '4%', marginTop: '4%'}}>
+                <Label xs="auto" for="startDate" ><strong>시작 날짜&nbsp;&nbsp;&nbsp;</strong></Label>
+                <Col xs={1}>
                 <Input  onChange={onChange} type="date" name="startDate" id="startDate" placeholder="시작날짜를 설정하세요" value={originalScholar? originalScholar.createdAt:null} />
                 </Col>
-                <Label for="dueDate" sm={2}>마감날짜</Label>
-                <Col md={4}> <Input onChange={onChange} type="date" name="dueDate" id="dueDate" placeholder="마감기한을 설정하세요" value={originalScholar? originalScholar.updatedAt:null} /></Col>
+                <Col xs={4}/>
+                <Label for="dueDate" xs="auto" ><strong>마감 날짜</strong></Label>
+                <Col xs={4}> <Input onChange={onChange} type="date" name="dueDate" id="dueDate" placeholder="마감기한을 설정하세요" value={originalScholar? originalScholar.updatedAt:null} /></Col>
       </FormGroup>
       
-        <FormGroup row>
-            <Label for="sum" sm={2}>금액</Label>
-            <Col sm={4}>
+        <FormGroup row style={{marginBottom: '4%', marginTop: '4%'}}>
+            <Label for="sum" xs="auto" ><strong>지급 금액&nbsp;&nbsp;&nbsp;</strong></Label>
+            <Col xs={3}>
             <Input onChange={onChange} type="number" name="sum" id="sum" placeholder="공란 입력시 전액 장학금" value={originalScholar? originalScholar.title:null}/>
             </Col>
-            
-            <Label for="numberOfPeople"sm={2}>인원</Label>
-           <Col sm={4}> <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.id:null}/>
+            <Col xs={3}/>
+            <Label for="numberOfPeople"xs="auto" ><strong>모집 인원</strong></Label>
+           <Col xs={3}> <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.id:null}/>
           </Col>
         </FormGroup>
         
-      <FormGroup>
-        <Row>
-            <Label for="semester" sm={2}>학기 제한</Label>
-            <Col md={5}>
+      <FormGroup style={{marginBottom: '4%', marginTop: '4%'}}>
+        <Row xs={6}>
+            <Label for="semester" xs="auto" ><strong>학기 제한&nbsp;&nbsp;&nbsp;</strong></Label>
+            <Col xs={3}>
                 <Input onChange={onChange} type="number" name="startSemester" id="startSemester" placeholder="시작 학기"  value={originalScholar? originalScholar.id:null}/>
             </Col>
-            <Col md={5}>
+            <Col xs={3}>
                 <Input onChange={onChange} type="number" name="endSemester" id="endSemester" placeholder="끝 학기"  value={originalScholar? originalScholar.id:null}/>
             </Col>
         </Row>
@@ -64,8 +72,8 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
             학기를 입력하지 않을경우 제한 없음으로 등록됩니다.
         </FormText>
       </FormGroup>
-      <FormGroup>
-        <Label for="File">첨부파일</Label>
+      <FormGroup style={{marginBottom: '4%', marginTop: '4%'}}>
+        <Label for="File" ><strong>첨부 파일</strong></Label>
         <Input onChange={onChange} type="file" name="file" id="file" />
         <FormText color="muted">
           한개의 첨부파일을 추가할수있음.
