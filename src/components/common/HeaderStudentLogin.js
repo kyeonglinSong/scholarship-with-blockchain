@@ -7,19 +7,11 @@ import styled from 'styled-components';
 const HeaderStudentLogin = ({ user, onClick }) =>{
 
     return(
-      <header>
-         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <Navbar className="navbar navbar-expand-lg navbar-light ml-auto" style={{backgroundColor: "#022601", height: '20px'}}>
+      <header style={{ width:'100%' }}>
+        <Navbar className="navbar navbar-expand-md navbar-light ml-auto" expand="xs" style={{backgroundColor: "#022601", height: '20px'}}>
         <div className="ml-auto" id="navbarSupportedContent">
           <Nav >
           <ul className="navbar-nav">
-            <NavItem>
-            <NavLink href="/signin">
-              <div className="btn-group mr-2" role="group" area-label="First group">
-              <button className="btn" style={{color: 'white'}} type="button">마이페이지</button>
-              </div>
-              </NavLink>
-            </NavItem>
             <NavItem>
             <NavLink href="/"><button className="btn" style={{color: 'white'}}type="button" onClick={onClick}>로그아웃</button></NavLink>
             </NavItem> 

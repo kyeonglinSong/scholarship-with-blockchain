@@ -13,6 +13,9 @@ import styled from 'styled-components';
 import './App.css';
 
 const App = ()=>{
+
+  
+
   return(
     <div style={{overflowX: 'hidden'}}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,8 +25,7 @@ const App = ()=>{
           <Route path="/school" component={MainSchool} />
           <Route path="/student" component={MainStudent} />
       </BrowserRouter>
-      
-      <Footer />
+        <Footer />
     </div>
   );
 };

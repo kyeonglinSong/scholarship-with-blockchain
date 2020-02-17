@@ -14,3 +14,8 @@
   font-weight: bold;
 
 }
+
+
+@media all and (max-width: 350px) {
+  #footerNone{ display:none; }
+}
