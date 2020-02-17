@@ -25,7 +25,6 @@ const NavigationSchool = ( {user})=>{
     
     <div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <div>
     <HeaderContainer />
     <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
       <Nav className="mr-auto" navbar>
@@ -49,7 +48,6 @@ const NavigationSchool = ( {user})=>{
       </Nav>
     </Navbar>
     </div>
-  </div>
   );
 }
 

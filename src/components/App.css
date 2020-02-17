@@ -6,10 +6,3 @@
     --mainBlue: #007bff;
   }
   
-  .navbar-toggler:focus {
-    outline: none;
-  }
-  
-  .navbar-toggler {
-    border: none;
-  }

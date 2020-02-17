@@ -38,10 +38,16 @@
   margin: 3px;
 }
 
+@media only screen and (max-width: 350px) {
+  
+}
+
 @media only screen and (min-width: 350px) {
-  .RegisterMainButton {width: 100%;}
+  .RegisterMainButton {width: 90%;}
+  .img{height:160vh;}
 }
 
 @media only screen and (min-width: 768px) {
   .RegisterMainButton {width: 22%;}
+  .img{height:110vh;}
 }

@@ -16,8 +16,9 @@ const Main = ()=>{
   }
   
   return(
-    <div className="img">
+    <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div className="img">
       <div style={{textalign: 'left', position: 'relative', marginLeft: '7%', top: '10%' }}>
       <hr style={{ textalign: 'left', width: '130px',border: '3px solid black', marginLeft: '0px'}}></hr>
       <h2><strong>장학금통합관리시스템</strong></h2>
@@ -32,6 +33,7 @@ const Main = ()=>{
         <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c369', border: 'none', color: 'black'}}>사이트 이용안내<br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c399', border: 'none', color: 'black'}}>재단용 페이지 이동<br/><AiOutlineBank style={iconStyle}/></Button></Link>
       </div>
+    </div>
     </div>
   );
 }
