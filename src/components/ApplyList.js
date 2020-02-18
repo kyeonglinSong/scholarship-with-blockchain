@@ -17,7 +17,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   const applyList = applies.slice(startIndex, endIndex).map((applies, index)=>(
     <tr key={applies.id}>
     <th scope="row">{applies.id}</th>
-    <td>{applies.title}</td>
+    <td><a style={{color:'black'}}>{applies.title}</a></td>
     <td>{(applies.completed)? "완료":"산정중"}</td>
   {/* <td>  
   {(function(){ //이제 신청내용의 스테이트에 대해서 가져온다.
@@ -43,7 +43,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>이름</th>
             <th>현황</th>
             <th>자세히보기</th>
