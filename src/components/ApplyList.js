@@ -1,4 +1,5 @@
 import React from "react";
+import "./ApplyList.css"
 import { Table, Button } from "reactstrap";
 import "./content2.css"
 import { Link } from "react-router-dom";
@@ -16,8 +17,8 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
 
   const applyList = applies.slice(startIndex, endIndex).map((applies, index)=>(
     <tr key={applies.id}>
-    <th scope="row">{applies.id}</th>
-    <td><a style={{color:'black'}}>{applies.title}</a></td>
+    <th className="th" scope="row">{applies.id}</th>
+    <td><a className="applyId">{applies.id}<br/></a>{applies.title}</td>
     <td>{(applies.completed)? "완료":"산정중"}</td>
   {/* <td>  
   {(function(){ //이제 신청내용의 스테이트에 대해서 가져온다.
@@ -27,7 +28,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
      else return "지급 거절"
    })
    }</td>*/}
-    <td><Link to={`/applies/${applies.id}`}><button>자세히보기</button></Link></td>
+    <td className="detail"><Link to={`/applies/${applies.id}`}><button>자세히보기</button></Link></td>
     </tr>
   ));
 
@@ -39,9 +40,9 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span>
-      <div className="container">
+      <div className="divStyle">
       <Table striped>
-        <thead>
+        <thead className="thead">
           <tr>
             <th></th>
             <th>이름</th>
@@ -57,7 +58,6 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       </div>
-      
       </span>
     </div>
   );

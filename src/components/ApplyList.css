@@ -1,0 +1,31 @@
+.thead{visibility:visible;}
+.th{visibility:visible;}
+.applyId{display:none;}
+.detail{display:block;}
+.divStyle{ 
+    width:90%;
+    margin:auto;
+}
+
+@media only screen and (min-width: 350px) {
+    .thead{visibility:collapse;}
+    .th{visibility:collapse;}
+    .applyId{display:block;}
+    .detail{display:none;}
+    .divStyle{ 
+        width:100%;
+        margin:0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .thead{visibility:visible;}
+    .th{visibility:visible;}
+    .applyId{display:none;}
+    .detail{display:block;}
+    .divStyle{ 
+        width:90%;
+        margin:auto;
+    }
+  }
+  
