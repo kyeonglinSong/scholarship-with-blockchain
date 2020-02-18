@@ -45,7 +45,7 @@ const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
   }
 
   const imgStyle = {
-    margin:'20px',
+    margin:'auto',
   }
 
 
