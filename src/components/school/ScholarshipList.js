@@ -40,7 +40,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
-      <SearchContainer />
+      <SearchContainer type="addScholar"/>
       <Table striped>
         <thead>
           <tr>
@@ -58,7 +58,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       <div>
         <br/>
-        <Link to={'/scholarships/new'}><Button size="lg" color="success" >등록</Button></Link>
+        
       </div>
       </span>
     </div>

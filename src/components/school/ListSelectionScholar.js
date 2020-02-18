@@ -6,17 +6,25 @@ import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
 
 
-const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
+const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord, orderBase })=>{
 
   if(loading || !scholars){
     return null;
   }
+  console.log(orderBase);
 
   if(searchWord){
     console.log(searchWord)
     scholars=scholars.filter((scholars)=>{
-    return scholars.title.indexOf(searchWord)>-1;
+      return scholars.title.indexOf(searchWord)>-1;
     })
+  }
+
+  if(orderBase){
+    orderBase='content';
+    scholars=scholars.sort(function(a,b){
+      return a[orderBase]<b[orderBase]? -1:1;
+    });
   }
 
   var startIndex = (tempPage - 1) * 10;
@@ -40,7 +48,7 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
-      <SearchContainer />
+      <SearchContainer type="scholar"/>
       <Table striped>
         <thead>
           <tr>

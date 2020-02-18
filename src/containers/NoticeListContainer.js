@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const NoticeListContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { notices, tempPage, lastPage, total, error, loading, user, searchWord } = useSelector(({ notices, loading, auth, search })=>({
+    const { notices, tempPage, lastPage, total, error, loading, user, searchWord, orderBase } = useSelector(({ notices, loading, auth, search })=>({
         notices:notices.notices,
         tempPage:notices.tempPage,
         lastPage:notices.lastPage,
@@ -16,6 +16,7 @@ const NoticeListContainer = ()=>{
         loading:loading['noticeList/LIST_NOTICES'],
         user:auth.auth,
         searchWord:search.searchWord,
+        orderBase:search.orderBase,
     }));
 
     var noticeList=notices;
@@ -48,7 +49,7 @@ const NoticeListContainer = ()=>{
 
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NoticeList notices={notices} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user} searchWord={searchWord} onSubmit={onSubmit}/></div>;
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user} searchWord={searchWord} onSubmit={onSubmit} orderBase={orderBase}/></div>;
 };
 
 export default NoticeListContainer;

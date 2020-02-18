@@ -5,6 +5,7 @@ import "./content.css"
 import styled from 'styled-components';
 import SearchContainer from '../containers/SearchContainer';
 import search from "../modules/search";
+import  moment from 'moment';
 
 
 
@@ -29,7 +30,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     <tr key={notice.id}>
       <th style={{width:'50px'}} scope="row">{notice.id}</th>
       <td style={{width:'1000px'}}><Link to={`/notices/${notice.id}`}>{notice.title}</Link></td>
-      <td style={{width:'150px'}}>{notice.createdAt}</td>
+      <td style={{width:'150px'}}>{moment(`${notice.createdAt}`).format('YY-MM-DD')}</td>
     </tr>
   ));
 
@@ -49,7 +50,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
-      <SearchContainer />
+      <SearchContainer type="notice"/>
       <Table striped>
         <thead>
           <tr>
