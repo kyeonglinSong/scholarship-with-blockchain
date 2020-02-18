@@ -13,7 +13,6 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
   }
 
   if(searchWord){
-    console.log(searchWord)
     scholars=scholars.filter((scholars)=>{
     return scholars.title.indexOf(searchWord)>-1;
     })

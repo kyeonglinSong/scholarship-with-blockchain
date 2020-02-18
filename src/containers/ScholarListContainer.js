@@ -8,13 +8,14 @@ import styled from 'styled-components';
 const ScholarListContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { scholars, tempPage, lastPage, total, error, loading } = useSelector(({ scholars, loading })=>({
+    const { scholars, tempPage, lastPage, total, error, loading, searchWord } = useSelector(({ scholars, loading, search })=>({
         scholars:scholars.scholars,
         tempPage:scholars.tempPage,
         lastPage:scholars.lastPage,
         total:scholars.total,
         error:scholars.error,
         loading:loading['scholarList/LIST_SCHOLARS'],
+        searchWord:search.searchWord,
     }));
 
     const toNextPage = e =>{
@@ -35,7 +36,7 @@ const ScholarListContainer = ()=>{
 
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><ScholarList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total}/></div>;
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total} searchWord={searchWord}/></div>;
 };
 
 export default ScholarListContainer;
