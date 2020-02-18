@@ -39,7 +39,7 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content">
       <div className="container">
-      <SearchContainer type="addScholar"/>
+      <SearchContainer type="student"/>
       <Table striped>
         <thead>
           <tr>

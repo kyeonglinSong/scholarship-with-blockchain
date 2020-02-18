@@ -1,6 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
-import "../content2.css"
+import "./content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
@@ -37,7 +37,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content2">
+      <span className="contentnew">
       <div className="container">
       <SearchContainer type="addScholar"/>
       <Table striped>
