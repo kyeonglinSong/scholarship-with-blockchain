@@ -42,7 +42,7 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>이름</th>
           </tr>
         </thead>
