@@ -19,6 +19,14 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
     <th scope="row">{applies.id}</th>
     <td>{applies.title}</td>
     <td>{(applies.completed)? "완료":"산정중"}</td>
+  {/* <td>  
+  {(function(){ //이제 신청내용의 스테이트에 대해서 가져온다.
+     if(applies.state==="applyDone") return "산정중"
+     else if(applies.state==="returned") return "자격미달"
+     else if(applies.state==="selected") return "지급"
+     else return "지급 거절"
+   })
+   }</td>*/}
     <td><Link to={`/applies/${applies.id}`}><button>자세히보기</button></Link></td>
     </tr>
   ));
@@ -30,12 +38,12 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content2">
+      <span className="content">
       <div className="container">
       <Table striped>
         <thead>
           <tr>
-            <th></th>
+            <th>#</th>
             <th>이름</th>
             <th>현황</th>
             <th>자세히보기</th>

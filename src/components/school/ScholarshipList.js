@@ -1,6 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
-import "../content2.css"
+import "./content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
@@ -40,13 +40,8 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content2">
       <div className="container">
-<<<<<<< Updated upstream
       <SearchContainer type="addScholar"/>
       <Table striped>
-=======
-      <SearchContainer />
-      <Table striped >
->>>>>>> Stashed changes
         <thead>
           <tr>
             <th> </th>

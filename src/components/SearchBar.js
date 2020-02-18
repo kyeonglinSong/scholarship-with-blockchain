@@ -65,6 +65,16 @@ const SearchBar = ({ onChange, onDropChange, type, onSemesterChange }) => {
         )
     }
 
+    else if(type==="student"){
+        return(
+            <div style={containerStyle}>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <Row>
+                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
+            </Row>
+        </div>
+        )
+    }
     return (
         <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
