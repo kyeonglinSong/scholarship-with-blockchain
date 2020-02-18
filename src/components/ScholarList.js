@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 import React from "react";
-import "./content.css"
+import "./content2.css"
 import {Table, Button} from "reactstrap";
 import { Link } from "react-router-dom";
-=======
-import React,{useState, useEffect} from "react";
-import "./content2.css"
-import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
-import Search from "./Search";
-import Scholar from "./Scholar.js";
->>>>>>> facf13f5031ac8f16245247314af437fe0cc1f01
 import styled from 'styled-components';
 import SearchContainer from "../containers/SearchContainer";
 
