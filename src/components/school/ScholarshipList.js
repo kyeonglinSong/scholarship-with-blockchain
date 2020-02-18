@@ -33,20 +33,14 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
     const pageStyle = {
       margin:'10px'
     }
-  
 
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span className="content2">
       <div className="container">
-<<<<<<< Updated upstream
       <SearchContainer type="addScholar"/>
       <Table striped>
-=======
-      <SearchContainer />
-      <Table striped >
->>>>>>> Stashed changes
         <thead>
           <tr>
             <th> </th>

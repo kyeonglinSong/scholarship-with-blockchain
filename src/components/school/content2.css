@@ -26,6 +26,14 @@
 
 }
 
+.container{
+  text-align:center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 .signupbuttons{
   padding:  20px;
   text-align:center;
