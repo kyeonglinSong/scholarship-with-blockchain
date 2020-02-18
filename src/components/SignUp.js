@@ -1,6 +1,5 @@
 import React, {useState, Component } from "react";
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import MiddleBar from "./common/MiddleBar";
 import {Checkbox} from 'antd';
 import "./content.css"
 
@@ -63,7 +62,6 @@ const onSubmit=(e)=>{
 
   return(
     <div>
-    <MiddleBar>학생회원가입</MiddleBar>
     <Form onSubmit={onSubmit} style={{padding:100}}>
     <FormGroup row >
         <Label htmlFor="user-name" sm={2} >기관명</Label>

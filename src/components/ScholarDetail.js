@@ -6,7 +6,6 @@ import { Container, Row, Col } from 'reactstrap';
 import {WiNightCloudyHigh} from "react-icons/wi"
 import { Button,Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-import MiddleBar from "./common/MiddleBar";
 
 const ScholarDetail = ({ scholar, loading, error, history })=>{
   const [modal, setModal]=useState(false);

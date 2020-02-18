@@ -5,25 +5,19 @@ import {
 } from "reactstrap"
 import {NavLink as NL} from 'react-router-dom';
 import { IoIosSchool } from "react-icons/io"
-import HeaderNotLogin from "./HeaderNotLogin";
 import Main from "../Main"
-import SignIn from "../SignIn";
 import SignUp from "../SignUp";
-import NoticeList from "../NoticeList";
-import ScholarList from "../ScholarList";
-//import MyApplyList from "../MyApplyList";
-import Notice from "../NoticeDetail";
-import ScholarDetail from "../ScholarDetail";
-import WriteComponent from "../WriteComponent";
 
 import LoginForm from '../../containers/LoginForm';
 import HeaderContainer from '../../containers/common/HeaderContainer';
-import NoticeViewer from "../../containers/NoticeViewer";
-import NoticeListContainer from "../../containers/NoticeListContainer";
 import ApplyListContainer from "../../containers/ApplyListContainer";
 import ApplyViewer from "../../containers/ApplyViewer";
 import ScholarListContainer from "../../containers/ScholarListContainer";
 import ScholarViewer from "../../containers/ScholarViewer";
+
+import ScholarEditorContainer from "../../containers/ScholarEditorContainer";
+import SelectionContainer from "../../containers/SelectionContainer";
+import StudentListContainer from "../../containers/StudentListContainer";
 
 const NavigationBar = ()=>{
 
@@ -43,23 +37,17 @@ const NavigationBar = ()=>{
       <div>
       <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
         <Nav className="mr-auto" navbar>
-          <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/main"><IoIosSchool style={iconStyle}/>학생용장학금관리</NavLink></NavbarBrand>
+          <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/main"><IoIosSchool style={iconStyle}/>재단용장학금관리</NavLink></NavbarBrand>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav m-auto">
             <NavItem className="nav-link ml-5">
-            <NavLink exact to="/noticelist" tag={NL}>공지사항</NavLink>
-            </NavItem>
-            <NavItem className="nav-link ml-5">
-            <NavLink exact to="/scholarlist" tag={NL}>장학금 정보/신청</NavLink>
+            <NavLink exact to="/addScholar" tag={NL}>장학금 등록</NavLink>
             </NavItem>
           <NavItem className="nav-link ml-5">
-          <NavLink exact to="/applylist" tag={NL}>신청현황조회</NavLink>
+          <NavLink exact to="/selections" tag={NL}>장학생 선발</NavLink>
           </NavItem>
           <NavItem className="nav-link ml-5">
           <NavLink exact to="/main" tag={NL}>사이트이용방법</NavLink>
-          </NavItem>
-          <NavItem className="nav-link ml-5">
-          <NavLink exact to="/writeNotice" tag={NL}>공지쓰러가자~!</NavLink>
           </NavItem>
           </ul>
         </div>
@@ -71,13 +59,13 @@ const NavigationBar = ()=>{
         <Route path="/signin" component={LoginForm} />
         <Route path="/signup" component={SignUp} />
         <Route path="/main" component={Main}/>
-        <Route path="/noticelist" component={NoticeListContainer}/>
+        <Route path="/addScholar" component={ScholarEditorContainer}/>
         <Route path="/scholarlist" component={ScholarListContainer} />
         <Route path="/applylist" component={ApplyListContainer} />
-        <Route path="/notice/:id" component={NoticeViewer}/>
         <Route path="/scholarDetail/:id" component={ScholarViewer}/>
         <Route path="/applyDetail/:id" component={ApplyViewer}/>
-        <Route path="/writeNotice" component={WriteComponent}/>
+        <Route path="/selections/:id" component={StudentListContainer}/>
+        <Route path="/selections" component={SelectionContainer}/>
       </Switch>
     </div>
   );
