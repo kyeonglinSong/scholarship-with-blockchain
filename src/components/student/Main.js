@@ -26,10 +26,9 @@ const Main = ()=>{
       </div>
       <br/><br/><br/>
       <div className="contentnew">
-        <div className="row"></div>
-        <Link to="/scholars"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#8cb09d', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>장학금정보/신청</a><br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-        <Link to="/applylies"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#9fa947', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>신청현황조회</a><br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-        <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c369', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>사이트 이용안내</a><br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/scholars"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#8cb09d', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999', marginRight:'30px'}}><a style={{fontWeight:'bold'}}>장학금정보/신청</a><br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/applylies"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#9fa947', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999', marginRight:'30px'}}><a style={{fontWeight:'bold'}}>신청현황조회</a><br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c369', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999', marginRight:'30px'}}><a style={{fontWeight:'bold'}}>사이트 이용안내</a><br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c399', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>재단용 페이지 이동</a><br/><AiOutlineBank style={iconStyle}/></Button></Link>
       </div>
     </div>
