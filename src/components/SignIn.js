@@ -16,19 +16,19 @@ const SignIn = ({form, onChange, onSubmit})=>{
     <div style={{overflowX: 'hidden'}}>
       <br/><br/><br/>
       <div style={{textAlign: 'center'}}><img className="center" src={LOGO} style={{width: '150px'}}/><br/></div>
-      <span className="contentnew">
+      <span style={{textAlign:'center'}}>
         <Form onSubmit={onSubmit} >
-          <FormGroup>
+          <FormGroup style={{textAlign:'center'}}>
             <Label for="exampleEmail">Email</Label>
             <Input style={inputStyle} type="email" name="email" id="exampleEmail" placeholder="학번"
             onChange={onChange} value={form.email} />
           </FormGroup>
-          <FormGroup>
+          <FormGroup style={{textAlign:'center'}}>
             <Label for="examplePassword">Password</Label>
             <Input style={inputStyle} type="password" name="password" id="examplePassword" placeholder="비밀번호" 
             onChange={onChange} value={form.password} />
           </FormGroup>
-          <Button>로그인</Button>
+          <Button style={{margin:'5px'}}>로그인</Button>
         </Form>
       </span>
     </div>

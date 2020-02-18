@@ -46,7 +46,7 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="contentnew">
+      <span >
       <div className="container">
       <SearchContainer type="scholar"/>
       <Table striped>
@@ -62,10 +62,11 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
           {applyList}
         </tbody>
       </Table>
-      </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      </div>
+      
       </span>
     </div>
   );

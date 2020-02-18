@@ -37,7 +37,7 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content">
+      <span>
       <div className="container">
       <SearchContainer type="student"/>
       <Table striped>
@@ -51,10 +51,11 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
           {scholarList}
         </tbody>
       </Table>
-      </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      </div>
+      
       <div>
         <br/>
         

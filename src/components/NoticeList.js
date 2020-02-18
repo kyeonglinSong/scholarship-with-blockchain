@@ -48,7 +48,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="contentnew">
+      <span>
       <div className="container">
       <SearchContainer type="notice"/>
       <Table striped>
@@ -69,10 +69,11 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
           <Link to='/notices/write'><Button style={buttonStyle} outline color="secondary">공지등록</Button></Link>
         }
       </div>
-      </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      </div>
+      
       </span>
     </div>
   );

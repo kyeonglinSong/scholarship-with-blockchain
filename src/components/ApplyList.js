@@ -38,7 +38,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="contentnew">
+      <span>
       <div className="container">
       <Table striped>
         <thead>
@@ -53,10 +53,11 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
           {applyList}
         </tbody>
       </Table>
-      </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      </div>
+      
       </span>
     </div>
   );

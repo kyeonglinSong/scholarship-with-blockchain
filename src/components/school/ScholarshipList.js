@@ -14,7 +14,6 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
   }
 
   if(searchWord){
-    console.log(searchWord)
     scholars=scholars.filter((scholars)=>{
     return scholars.title.indexOf(searchWord)>-1;
     })
@@ -37,7 +36,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="contentnew">
+      <span>
       <div className="container">
       <SearchContainer type="addScholar"/>
       <Table striped>
@@ -51,10 +50,11 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
           {scholarList}
         </tbody>
       </Table>
-      </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      </div>
+      
       <div>
         <br/>
         
