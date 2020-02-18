@@ -1,66 +1,76 @@
+<<<<<<< HEAD
+import React from "react";
+import "./content.css"
+import {Table, Button} from "reactstrap";
+import { Link } from "react-router-dom";
+=======
 import React,{useState, useEffect} from "react";
 import "./content2.css"
 import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 import Search from "./Search";
 import Scholar from "./Scholar.js";
+>>>>>>> facf13f5031ac8f16245247314af437fe0cc1f01
 import styled from 'styled-components';
+import SearchContainer from "../containers/SearchContainer";
 
-const SAMPLE_URL="https://koreanjson.com/posts";
-//"https://api.jikan.moe/v3/top/anime/1/upcoming";
 
-const ScholarList = ()=>{
-  const [scholars, setScholars]=useState([]);
-  const [sortedScholarses, setSortedScholarses]=useState([]);
-  const [searchValue, setSearchValue]=useState("");
-  const [filterByState, setFilterByState]=useState("");
+const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
 
- useEffect(()=>{
-   fetch(SAMPLE_URL)
-   .then(response=>{
-     if(response.ok){
-       return response.json();
-     } else {
-       throw new Error("Something is wrong!!Check again!!");
-     }
-   })
-   .then(jsonResponse=>{
-     setScholars(jsonResponse);
-   })
-   .catch(error=>{
-     console.log(error);
-   });
- }, []);
+  if(loading || !scholars){
+    return null;
+  }
 
-    useEffect(() => {
-      const searchRegex=searchValue && new RegExp(`${searchValue}`, "gi");
-      const result=scholars.filter(
-        scholar =>
-        (!searchRegex || searchRegex.test(scholar.title)) &&
-        (!filterByState || scholar.UserId===filterByState)
-        );
-      setSortedScholarses(result);
-  },[searchValue, scholars, filterByState]);
-    
+  if(searchWord){
+    console.log(searchWord)
+    scholars=scholars.filter((scholars)=>{
+    return scholars.title.indexOf(searchWord)>-1;
+    })
+  }
+
+  var startIndex = (tempPage - 1) * 10 ;
+  var endIndex = Math.min(startIndex + 10, total - 1);
+  
+    const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
+      <tr key={scholars.id}>
+        <th style={{width:'50px'}} scope="row">{scholars.id}</th>
+        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}>{scholars.title}</Link></td>
+      </tr>
+    ));
+
+    const pageStyle = {
+      margin:'10px'
+    }
+  
+
   return(
-    <div style={{textAlign: 'center'}}>
+    <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <Search
-     searchValue={searchValue}
-     setSearchValue={setSearchValue}
-     filterByState={filterByState}
-     setFilterByState={setFilterByState}
-    />
-    <br/>
-    {sortedScholarses.length> 0 ? ( //일치하는 정보가 있을  때 출력. 
-      sortedScholarses.map((scholar, index)=>{
-        return (<div ><Scholar key={index} scholar={scholar} /><br/></div>);
-      })
-      ): (
-        <span><strong>일치하는 장학금이 없습니다.</strong><br/></span>
-      )}
+      <span className="content">
+      <div className="container">
+      <SearchContainer type="addScholar"/>
+      <Table striped>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>이름</th>
+          </tr>
+        </thead>
+        <tbody>
+          {scholarList}
+        </tbody>
+      </Table>
+      </div>
+      <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
+      <span style={pageStyle}>{tempPage}</span>
+      <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      <div>
+        <br/>
+        
+      </div>
+      </span>
     </div>
   );
-};
+}
 
 export default ScholarList;
 
