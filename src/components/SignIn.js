@@ -1,9 +1,8 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import "./content.css"
 import styled from 'styled-components';
 import LOGO from '../images/logo.PNG'
-import './content.css';
+import './content2.css';
 const SignIn = ({form, onChange, onSubmit})=>{
 
   const inputStyle = {

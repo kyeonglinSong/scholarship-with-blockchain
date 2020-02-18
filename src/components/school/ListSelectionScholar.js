@@ -1,6 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
-import "./content.css"
+import "./content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
@@ -46,13 +46,13 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content">
+      <span className="content2">
       <div className="container">
       <SearchContainer type="scholar"/>
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th style={{width:'500px'}}>이름</th>
             <th>현황</th>
             <th>자세히보기</th>

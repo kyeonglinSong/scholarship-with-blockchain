@@ -1,6 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
-import "../content.css"
+import "../content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
@@ -26,7 +26,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
       <tr key={scholars.id}>
         <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}>{scholars.title}</Link></td>
+        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
       </tr>
     ));
 
@@ -38,13 +38,18 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content">
+      <span className="content2">
       <div className="container">
+<<<<<<< Updated upstream
       <SearchContainer type="addScholar"/>
       <Table striped>
+=======
+      <SearchContainer />
+      <Table striped >
+>>>>>>> Stashed changes
         <thead>
           <tr>
-            <th>#</th>
+            <th> </th>
             <th>이름</th>
           </tr>
         </thead>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import MiddleBar from "./common/MiddleBar";
 import {Checkbox} from 'antd';
-import "./content.css"
+import "./2.css"
 import styled from 'styled-components';
 
 

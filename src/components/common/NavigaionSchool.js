@@ -20,6 +20,12 @@ const NavigationSchool = ( {user})=>{
   const brandStyle={
     textColor:'black',
   }
+
+  const aStyle={
+    color:'#00664f',
+    fontSize:'25px',
+    fontWeight:'bold'
+  }
   
   return(
     
@@ -28,7 +34,7 @@ const NavigationSchool = ( {user})=>{
     <HeaderContainer />
     <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
       <Nav className="mr-auto" navbar>
-        <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/>교직원용장학금관리</NavLink></NavbarBrand>
+        <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/><a style={aStyle}>교직원용장학금관리</a></NavLink></NavbarBrand>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav m-auto">
           <NavItem className="nav-link ml-5">
