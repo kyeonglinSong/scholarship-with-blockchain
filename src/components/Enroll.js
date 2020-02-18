@@ -9,7 +9,7 @@ const Enroll = ()=>{
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <MiddleBar>장학금 등록</MiddleBar>
-    <span className="content2">
+    <span className="contentnew">
     <br />
       <InputGroup>
         <InputGroupAddon addonType="prepend">

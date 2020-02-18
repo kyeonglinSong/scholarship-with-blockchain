@@ -30,7 +30,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content2">
+      <span className="contentnew">
       <div className="container">
       <Table striped>
         <thead>
