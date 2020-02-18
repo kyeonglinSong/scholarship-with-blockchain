@@ -91,7 +91,9 @@ return(
 <ModalBody>1. 목적 : 지원자 개인 식별, 지원의사 확인, 입사전형의 진행, 고지사항 전달, 입사 지원자와의 원활한 의사소통, 지원이력 확인 및 면접 불합격자 재지원 제한
 <br/>
 2. 항목 : 아이디(이메일주소), 비밀번호, 이름, 생년월일, 휴대폰번호<br/>
-3. 위 개인정보 수집에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 장학금 지원이 제한될 수 있습니다</ModalBody>
+3. 위 개인정보 수집에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 장학금 지원이 제한될 수 있습니다.<br/>
+4. 장학금 신청 상태는 자격 미달, 산정 중, 완료(지급/지급 실패)로 나뉩니다. 신청 뒤 신청현황조회에서 확인하실 수 있습니다.
+</ModalBody>
 <ModalFooter>
  <Link to='/applies'><Button color="primary" onClick={toggle}>신청확인</Button></Link>
   <Button color="secondary" onClick={toggle}>취소</Button>
