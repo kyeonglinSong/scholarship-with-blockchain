@@ -16,7 +16,7 @@ const SignIn = ({form, onChange, onSubmit})=>{
     <div style={{overflowX: 'hidden'}}>
       <br/><br/><br/>
       <div style={{textAlign: 'center'}}><img className="center" src={LOGO} style={{width: '150px'}}/><br/></div>
-      <span className="content2">
+      <span className="contentnew">
         <Form onSubmit={onSubmit} >
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
