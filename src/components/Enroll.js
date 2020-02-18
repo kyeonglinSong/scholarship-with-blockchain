@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 import MiddleBar from "./common/MiddleBar";
-import "./content.css"
+import "./content2.css"
 import styled from 'styled-components';
 
 const Enroll = ()=>{
@@ -9,7 +9,7 @@ const Enroll = ()=>{
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <MiddleBar>장학금 등록</MiddleBar>
-    <span className="content">
+    <span className="content2">
     <br />
       <InputGroup>
         <InputGroupAddon addonType="prepend">

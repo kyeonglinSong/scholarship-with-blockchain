@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import "./content.css"
+import "./content2.css"
 import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 import Search from "./Search";
 import Scholar from "./Scholar.js";

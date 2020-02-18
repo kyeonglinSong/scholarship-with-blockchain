@@ -1,5 +1,5 @@
 import React from "react";
-import "./content.css"
+import "./content2.css"
 import {Button} from 'reactstrap';
 import {GiNewspaper} from 'react-icons/gi';
 import {FaSearch} from 'react-icons/fa';
@@ -16,9 +16,8 @@ const Main = ()=>{
   }
   
   return(
-    <div>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <div className="img">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div style={{textalign: 'left', position: 'relative', marginLeft: '7%', top: '10%' }}>
       <hr style={{ textalign: 'left', width: '130px',border: '3px solid black', marginLeft: '0px'}}></hr>
       <h2><strong>장학금통합관리시스템</strong></h2>
@@ -28,12 +27,11 @@ const Main = ()=>{
       <br/><br/><br/>
       <div className="content2">
         <div className="row"></div>
-        <Link to="/scholars"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#8cb09d', border: 'none', color: 'black'}}>장학금정보/신청<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-        <Link to="/applylies"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#9fa947', border: 'none', color: 'black'}}>신청현황조회<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-        <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c369', border: 'none', color: 'black'}}>사이트 이용안내<br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-        <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c399', border: 'none', color: 'black'}}>재단용 페이지 이동<br/><AiOutlineBank style={iconStyle}/></Button></Link>
+        <Link to="/scholars"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#8cb09d', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>장학금정보/신청</a><br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/applylies"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#9fa947', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>신청현황조회</a><br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c369', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>사이트 이용안내</a><br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/student"><Button className="RegisterMainButton" size="lg" style={{backgroundColor:'#d7c399', border: 'none', color: 'black', boxShadow:'5px 5px 5px #999999'}}><a style={{fontWeight:'bold'}}>재단용 페이지 이동</a><br/><AiOutlineBank style={iconStyle}/></Button></Link>
       </div>
-    </div>
     </div>
   );
 }

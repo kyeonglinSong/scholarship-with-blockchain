@@ -1,6 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
-import "./content.css"
+import "./content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
@@ -30,12 +30,12 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content">
+      <span className="content2">
       <div className="container">
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>이름</th>
             <th>현황</th>
             <th>자세히보기</th>

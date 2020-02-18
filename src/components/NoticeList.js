@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Table, Button } from "reactstrap";
-import "./content.css"
+import "./content2.css"
 import styled from 'styled-components';
 import SearchContainer from '../containers/SearchContainer';
 import search from "../modules/search";
@@ -29,8 +29,13 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
   const noticeList = notices.slice(startIndex, endIndex).map((notice)=>(
     <tr key={notice.id}>
       <th style={{width:'50px'}} scope="row">{notice.id}</th>
+<<<<<<< Updated upstream
       <td style={{width:'1000px'}}><Link to={`/notices/${notice.id}`}>{notice.title}</Link></td>
       <td style={{width:'150px'}}>{moment(`${notice.createdAt}`).format('YY-MM-DD')}</td>
+=======
+      <td style={{width:'1000px'}}><Link to={`/notices/${notice.id}`}><a style={{color:'black'}}>{notice.title}</a></Link></td>
+      <td style={{width:'150px'}}>{notice.createdAt}</td>
+>>>>>>> Stashed changes
     </tr>
   ));
 
@@ -48,13 +53,13 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content">
+      <span className="content2">
       <div className="container">
       <SearchContainer type="notice"/>
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>제목</th>
             <th>작성날짜</th>
           </tr>

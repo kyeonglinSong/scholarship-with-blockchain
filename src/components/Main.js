@@ -1,5 +1,5 @@
 import React from "react";
-import "./content.css"
+import "./content2.css"
 import {Button} from 'reactstrap';
 import {GiNewspaper} from 'react-icons/gi';
 import {FaSearch} from 'react-icons/fa';
@@ -25,7 +25,7 @@ const Main = ()=>{
       </h7>
       </div>
       <br/><br/><br/>
-      <div className="content">
+      <div className="content2">
         <div className="row"></div>
         <Link to="/scholars"><Button className="RegisterMainButton" size="lg">장학금 정보/신청<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
         <Link to="/applylies"><Button className="RegisterMainButton" size="lg" color="warning">신청현황조회<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;

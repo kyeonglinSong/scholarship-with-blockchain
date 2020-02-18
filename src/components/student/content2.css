@@ -6,6 +6,7 @@
   padding: 20px;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: 20px;
 }
 
 .img{
@@ -33,21 +34,17 @@
 .RegisterMainButton{
   float: left;
   width: 22%;
-  height: 200px;
+  height: 400px;
   padding: 1rem;  
-  margin: 3px;
-}
-
-@media only screen and (max-width: 350px) {
-  
+  margin: 5px;
 }
 
 @media only screen and (min-width: 350px) {
-  .RegisterMainButton {width: 90%;}
+  .RegisterMainButton {width: 90%; height: 200px;}
   .img{height:160vh;}
 }
 
 @media only screen and (min-width: 768px) {
-  .RegisterMainButton {width: 22%;}
+  .RegisterMainButton {width: 22%; height: 400px;}
   .img{height:110vh;}
 }

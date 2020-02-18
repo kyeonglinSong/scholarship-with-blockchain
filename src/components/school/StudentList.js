@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table, Button, Collapse, CardBody, CardTitle, Card, Input } from "reactstrap";
-import "./content.css"
+import "./content2.css"
 import styled from 'styled-components';
 import SearchContainer from "../../containers/SearchContainer";
 import Student from "./Student";
@@ -32,13 +32,13 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <span className="content">
+      <span className="content2">
       <div className="container">
       <SearchContainer />
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>이름</th>
             <th>상태</th>
             <th>선발</th>
