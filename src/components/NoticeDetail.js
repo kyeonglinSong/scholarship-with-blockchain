@@ -34,7 +34,7 @@ const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
     margin:'10px'
   }
   const cardStyle = {
-      width: '850px',
+      width: '83%',
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingBottom:'50px'
@@ -75,7 +75,7 @@ return(
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>
         {content}
-        <img src={img}  height='170px' width='300px' style={imgStyle}/>
+        <img src={img}  height='auto' width='80%' style={imgStyle}/>
         </Row>
       <hr size="5" noshade></hr>
       <div style={{textAlign: 'center'}}>

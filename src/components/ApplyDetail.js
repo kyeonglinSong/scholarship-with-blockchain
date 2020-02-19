@@ -28,7 +28,7 @@ const ApplyDetail = ({ scholars, apply, loading, error, history })=>{
     fontSize: '20px',
     fontWeight: 'bold',
     weight: '750px',
-    marginLeft:'50px',
+    marginLeft:'auto',
     marginBottom:'10px',
     marginTop:'5px',
 }
@@ -36,7 +36,7 @@ const ApplyDetail = ({ scholars, apply, loading, error, history })=>{
     margin:'10px',
   }
   const cardStyle = {
-      width: '850px',
+      width: '83%',
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingBottom:'50px'

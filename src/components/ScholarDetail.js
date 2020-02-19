@@ -26,7 +26,7 @@ const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdi
     fontSize: '20px',
     fontWeight: 'bold',
     weight: '750px',
-    marginLeft:'50px',
+    marginLeft:'auto',
     marginBottom:'10px',
     marginTop:'5px',
 }
@@ -34,7 +34,7 @@ const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdi
     margin:'10px'
   }
   const cardStyle = {
-      width: '850px',
+      width: '83%',
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingBottom:'50px'
@@ -81,7 +81,7 @@ return(
         {body}
         </Row>
         <div style={{textAlign: 'center'}}>
-        <img src={img}  height='300px' width='240px' style={imgStyle}/></div>
+        <img src={img}  height='auto' width='80%' style={imgStyle}/></div>
       <hr size="5" noshade></hr>
       <div style={{textAlign: 'center'}}>
         {

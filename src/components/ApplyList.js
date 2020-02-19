@@ -4,6 +4,7 @@ import { Table, Button } from "reactstrap";
 import "./content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import { AutoComplete } from "antd";
 
 
 const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
@@ -18,8 +19,8 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   const applyList = applies.slice(startIndex, endIndex).map((applies, index)=>(
     <tr key={applies.id}>
     <th className="th" scope="row">{applies.id}</th>
-    <td><a className="applyId">{applies.id}<br/></a><a className="smalltext">{applies.title}</a></td>
-    <td><a className="smalltext">{(applies.completed)? "완료":"산정중"}</a></td>
+    <td><a className="applyId">{applies.id}<br/></a><a className="smalltitle">{applies.title}</a></td>
+    <td style={{width:'80px'}}><a className="smallstate" style={{verticalAlign:"middle"}}>{(applies.completed)? "완료":"산정중"}</a></td>
   {/* <td>  
   {(function(){ //이제 신청내용의 스테이트에 대해서 가져온다.
      if(applies.state==="applyDone") return "산정중"
@@ -42,8 +43,8 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
       <span>
       <div className="divStyle">
       <Table striped>
-        <thead className="thead">
-          <tr>
+        <thead>
+          <tr className="thead">
             <th></th>
             <th>이름</th>
             <th className="thstate">현황</th>
