@@ -27,11 +27,12 @@ const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
     fontSize: '20px',
     fontWeight: 'bold',
     weight: '750px',
-    textAlign: 'center',
+    textAlign: 'left',
     marginTop:'5px',
 }
   const bodyStyle = {
-    margin:'10px'
+    margin:'10px',
+    textAlign:'left'
   }
   const cardStyle = {
       width: '83%',

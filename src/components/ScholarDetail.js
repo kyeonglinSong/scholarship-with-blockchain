@@ -29,9 +29,11 @@ const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdi
     marginLeft:'auto',
     marginBottom:'10px',
     marginTop:'5px',
+    textAlign:'left'
 }
   const bodyStyle = {
-    margin:'10px'
+    margin:'10px',
+    textAlign:'left'
   }
   const cardStyle = {
       width: '83%',

@@ -8,7 +8,7 @@ const HeaderStudentLogin = ({ user, onClick }) =>{
 
     return(
       <header style={{ width:'100%' }}>
-        <Navbar className="navbar navbar-expand-md navbar-light ml-auto" expand="xs" style={{backgroundColor: "#022601", height: '20px'}}>
+        <Navbar className="navbar navbar-expand-md navbar-light ml-auto" expand="xs" style={{backgroundColor: "#022601", height: '40px', padding: '10px'}}>
         <div className="ml-auto" id="navbarSupportedContent">
           <Nav >
           <ul className="navbar-nav">

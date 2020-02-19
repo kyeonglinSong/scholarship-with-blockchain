@@ -3,7 +3,7 @@
 .applyId{display:none; font-size:15px; text-align:left;}
 .detail{display:block;}
 .thstate{width:80px;}
-.smalltitle{font-size:15px;}
+.smalltitle{font-size:15px; font-weight:normal;}
 .smallstate{font-size:15px;}
 .divStyle{width:73%; margin:auto;}
 
@@ -12,7 +12,7 @@
     .th{display:none;}
     .applyId{display:block; font-size:12px;}
     .detail{display:none;}
-    .smalltitle{font-size:12px;}
+    .smalltitle{font-size:12px; font-weight:bold;}
     .smallstate{font-size:12px;}
     .thstate{width:300px;}
     .divStyle{width:90%;margin:auto;}
@@ -24,7 +24,7 @@
     .applyId{display:none; font-size:15px;}
     .detail{display:block;}
     .thstate{width:80px;}
-    .smalltitle{font-size:15px;}
+    .smalltitle{font-size:15px; font-weight:normal;}
     .smallstate{font-size:15px;}
     .divStyle{width:73%;margin:auto;}
 }

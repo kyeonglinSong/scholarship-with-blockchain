@@ -24,7 +24,7 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
       <tr key={scholars.id}>
         <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px'}} ><Link to={`/scholars/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
+        <td style={{width:'1000px', textAlign:'left'}} ><Link to={`/scholars/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
       </tr>
     ));
 
