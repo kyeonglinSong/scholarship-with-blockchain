@@ -1,6 +1,6 @@
 .thead{visibility:visible;}
 .th{visibility:visible;}
-.applyId{display:none;}
+.applyId{display:none; font-size:15px;}
 .detail{display:block;}
 .divStyle{ 
     margin-top:50px;
@@ -10,6 +10,7 @@
 .thstate{
     width:80px;
 }
+.smalltext{font-size:15px;}
 
 @media only screen and (min-width: 350px) {
     .thead{visibility:collapse;}
@@ -30,7 +31,7 @@
 @media only screen and (min-width: 768px) {
     .thead{visibility:visible;}
     .th{visibility:visible;}
-    .applyId{display:none;}
+    .applyId{display:none; font-size:15px;}
     .detail{display:block;}
     .divStyle{ 
         margin-top:50px;
@@ -40,5 +41,6 @@
     .thstate{
         width:80px;
     }
+    .smalltext{font-size:15px;}
 }
   
