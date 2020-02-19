@@ -3,18 +3,27 @@
 .applyId{display:none;}
 .detail{display:block;}
 .divStyle{ 
-    width:90%;
-    margin:auto;
+    margin-top:50px;
+    margin-left:100px;
+    margin-right:100px;
+}
+.thstate{
+    width:80px;
 }
 
 @media only screen and (min-width: 350px) {
     .thead{visibility:collapse;}
     .th{visibility:collapse;}
-    .applyId{display:block;}
+    .applyId{display:block; font-size:12px;}
     .detail{display:none;}
     .divStyle{ 
-        width:100%;
-        margin:0px;
+        margin-top:10px;
+        margin-left:0px;
+        margin-right:0px;
+    }
+    .smalltext{font-size:12px;}
+    .thstate{
+        width:60px;
     }
 }
 
@@ -24,8 +33,12 @@
     .applyId{display:none;}
     .detail{display:block;}
     .divStyle{ 
-        width:90%;
-        margin:auto;
+        margin-top:50px;
+        margin-left:100px;
+        margin-right:100px;
     }
-  }
+    .thstate{
+        width:80px;
+    }
+}
   
