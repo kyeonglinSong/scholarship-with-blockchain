@@ -29,7 +29,7 @@ const NavigationStudent = ( {user})=>{
       <HeaderContainer />
       <br/>
       <Navbar color="light" light expand="md" className="mr-auto navbar navbar-expand-lg navbar-light bg-white">
-        <NavbarBrand style={{fontSize: 'x-large'}} className="nav-link ml-5 black" ><NavLink href="/student"><img src={LOGO} style={iconStyle}/><a style={aStyle}>학생용장학금관리</a></NavLink></NavbarBrand>
+        <NavbarBrand style={{fontSize: 'x-large'}} className="nav-link ml-auto black" ><NavLink href="/student"><img src={LOGO} style={iconStyle}/><a style={aStyle}>학생용장학금관리</a></NavLink></NavbarBrand>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
