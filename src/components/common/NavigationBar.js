@@ -18,6 +18,7 @@ import ScholarViewer from "../../containers/ScholarViewer";
 import ScholarEditorContainer from "../../containers/ScholarEditorContainer";
 import SelectionContainer from "../../containers/SelectionContainer";
 import StudentListContainer from "../../containers/StudentListContainer";
+import StudentDetailContainer from "../../containers/StudentDetailContainer";
 
 const NavigationBar = ()=>{
 
@@ -66,6 +67,7 @@ const NavigationBar = ()=>{
         <Route path="/applyDetail/:id" component={ApplyViewer}/>
         <Route path="/selections/:id" component={StudentListContainer}/>
         <Route path="/selections" component={SelectionContainer}/>
+        <Route path="/students/:id/:scholarId" component={StudentDetailContainer}/>
       </Switch>
     </div>
   );

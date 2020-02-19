@@ -1,6 +1,7 @@
 import React, { useState, createRef } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Link } from "react-router-dom";
+import styled from 'styled-components'
 
 const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
     let expanderBody = createRef();
@@ -33,7 +34,9 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
           <td className="uk-text-nowrap">{index}.</td>
           <td>{student.name}</td>
           <td>{student.name}</td>
-          <td><Button onClick={modalToggle} type='button'>{isSelect? "선발하기":"선발취소" }</Button></td>
+          <td><Button onClick={modalToggle} type='button' 
+              style={isSelect? {backgroundColor:"#941216", border:"none"}:{backgroundColor:"#0B7527", border:"none"}}>
+                {isSelect? "선발하기":"선발취소" }</Button></td>
           <Modal isOpen={modal} toggle={modalToggle}>
             <ModalHeader toggle={modalToggle}>정말요??</ModalHeader>
             <ModalBody>
