@@ -6,7 +6,6 @@ import { Container, Row } from 'reactstrap';
 import {WiNightCloudyHigh} from "react-icons/wi"
 import { Button,Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-
 const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdit })=>{
   const [modal, setModal]=useState(false);
   const toggle=()=>setModal(!modal);
@@ -56,7 +55,10 @@ if(loading || !scholar){
 }
 
 const { userId, id, title, body } = scholar;
+/*
+const {state, scholarshipId, foundation, dueDateTime, sum, semesterStart, semesterEnd, gradeLimit, majorLimit}=scholar;
 
+*/
 const onClick = e =>{
   history.push('/scholars');
 }
