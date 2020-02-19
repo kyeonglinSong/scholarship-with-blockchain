@@ -32,7 +32,7 @@ const NavigationSchool = ( {user})=>{
     <div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <HeaderContainer />
-    <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
+    <Navbar className="navbar navbar-expand-md mr-auto navbar-light bg-light" expand="xs">
       <Nav className="mr-auto" navbar>
         <NavbarBrand className="nav-link ml-5" style={brandStyle}><NavLink href="/"><img src={LOGO} style={iconStyle}/><a style={aStyle}>교직원용장학금관리</a></NavLink></NavbarBrand>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
