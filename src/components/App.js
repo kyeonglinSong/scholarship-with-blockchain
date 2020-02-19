@@ -9,7 +9,7 @@ import './App.css';
 
 const App = ()=>{
   return(
-    <div>
+    <div style={{overflowX: 'hidden'}}>
       <BrowserRouter>
       <NavigationBar />
       <Footer />

@@ -53,11 +53,11 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
           }
         </tbody>
       </Table>
-      </div>
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
       <br /><Button onClick={onSubmit} style={{margin:'10px'}}>저장하기</Button>
+      </div>
       </span>
     </div>
   );
