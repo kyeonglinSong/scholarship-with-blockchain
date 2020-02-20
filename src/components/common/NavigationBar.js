@@ -1,20 +1,14 @@
-import React, { Component } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
-import {
-  Navbar, Nav, NavItem, NavLink, NavbarBrand
-} from "reactstrap"
-import {NavLink as NL} from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { Navbar, Nav, NavItem, NavLink, NavbarBrand } from "reactstrap"
+import { NavLink as NL } from 'react-router-dom';
 import { IoIosSchool } from "react-icons/io"
+
 import Main from "../Main"
 import SignUp from "../SignUp";
 
 import LoginForm from '../../containers/LoginForm';
 import HeaderContainer from '../../containers/common/HeaderContainer';
-import ApplyListContainer from "../../containers/ApplyListContainer";
-import ApplyViewer from "../../containers/ApplyViewer";
-import ScholarListContainer from "../../containers/ScholarListContainer";
-import ScholarViewer from "../../containers/ScholarViewer";
-
 import ScholarEditorContainer from "../../containers/ScholarEditorContainer";
 import SelectionContainer from "../../containers/SelectionContainer";
 import StudentListContainer from "../../containers/StudentListContainer";
@@ -61,10 +55,6 @@ const NavigationBar = ()=>{
         <Route path="/signup" component={SignUp} />
         <Route path="/main" component={Main}/>
         <Route path="/addScholar" component={ScholarEditorContainer}/>
-        <Route path="/scholarlist" component={ScholarListContainer} />
-        <Route path="/applylist" component={ApplyListContainer} />
-        <Route path="/scholarDetail/:id" component={ScholarViewer}/>
-        <Route path="/applyDetail/:id" component={ApplyViewer}/>
         <Route path="/selections/:id" component={StudentListContainer}/>
         <Route path="/selections" component={SelectionContainer}/>
         <Route path="/students/:id/:scholarId" component={StudentDetailContainer}/>

@@ -6,6 +6,7 @@ import * as scholarAPI from '../lib/api/scholar';
 
 const INITIALIZE = 'scholarship/INITIALIZE';
 const CHANGE_FIELD = 'scholarship/CHANGE_FIELD';
+const SET_RIGHT = 'scholarship/SET_RIGHT';
 const [ ADD_SCHOLAR, ADD_SCHOLAR_SUCCESS, ADD_SCHOLAR_FAILURE] = createRequestActionTypes('scholarship/ADD_SCHOLAR');
 const SET_ORIGINAL = 'scholarship/SET_ORIGINAL';
 const [UPDATE_SCHOLAR, UPDATE_SCHOLAR_SUCCESS, UPDATE_SCHOLAR_FAILURE] = createRequestActionTypes('scholarship/UPDATE_NOTICE');
@@ -18,6 +19,9 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value })=>({
 export const addScholar = createAction(ADD_SCHOLAR, content=>content);
 export const setOriginal = createAction(SET_ORIGINAL, scholarship=>scholarship);
 export const updateScholar = createAction(UPDATE_SCHOLAR, ({id, title, body})=>({id, title, body}));
+
+export const setRight = createAction(SET_RIGHT, isRightForm=>isRightForm);
+
 
 const addScholarSaga = createRequestSaga(ADD_SCHOLAR, scholarAPI.registerScholarship);
 const updateScholarSaga = createRequestSaga(UPDATE_SCHOLAR, scholarAPI.updateScholarship);
@@ -38,6 +42,7 @@ const initialState = {
         file:null,
     },
     scholarship:null,
+    isRightForm:null,
     scholarshipError:null,
     originalScholarshipId:null,
 };
@@ -75,7 +80,12 @@ const Scholarship = handleActions(
         [UPDATE_SCHOLAR_FAILURE]: (state, { payload: scholarshipError })=>({
             ...state,
             scholarshipError,
-        })
+        }),
+        [SET_RIGHT]:(state, { payload: isRightForm })=>({
+            ...state,
+            isRightForm,
+        }),
+
     },
     initialState,
 )

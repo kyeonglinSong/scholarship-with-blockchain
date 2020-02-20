@@ -2,16 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { changeField, initializeForm, login } from '../modules/auth';
-import { check } from '../modules/user';
 import SignIn from '../components/SignIn';
 
 const LoginForm = ({ history }) => {
     const dispatch = useDispatch();
-    const { form, auth, authError, user } = useSelector(({ auth, user })=>({
+    const { form, auth, authError } = useSelector(({ auth })=>({
         form:auth.form,
         auth:auth.auth,
         authError:auth.authError,
-        user:user.user
     }));
 
     //change input handler
@@ -29,7 +27,6 @@ const LoginForm = ({ history }) => {
     const onSubmit = e => {
         e.preventDefault();
         const { email, password } = form;
-        console.log(form);
         dispatch(login({ email, password }));
     };
 

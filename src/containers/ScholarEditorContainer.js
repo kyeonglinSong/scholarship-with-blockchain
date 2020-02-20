@@ -14,6 +14,7 @@ const ScholarEditorContainer = ({ history }) => {
         scholarError:Scholarship.scholarshipError,
         originalScholarId: Scholarship.originalScholarshipId,
         originalScholar: scholarDetail.scholar,
+        isRightForm:Scholarship.isRightForm,
     }));
 
      //change input handler
@@ -28,14 +29,20 @@ const ScholarEditorContainer = ({ history }) => {
     };
     
     const onPublish = () =>{
-        if(originalScholarId){
-            dispatch(updateScholar({originalScholarId, content}));
+        const check = (content.scholarName==="" || content.startDate===""||content.endDate===""||content.sum===""||content.numberofPeople==="")
+        if(check){
+            alert("필수 입력란을 모두 채워주셈");
+        }else{
+            if(originalScholarId){
+                dispatch(updateScholar({originalScholarId, content}));
+            }
+            dispatch(
+               addScholar({
+                 content,
+               }),
+            ); 
+            history.push('/selections');
         }
-        dispatch(
-            addScholar({
-                content,
-            }),
-        );
     }
 
     const onCancel = () =>{
@@ -55,9 +62,6 @@ const ScholarEditorContainer = ({ history }) => {
         };
     }, [dispatch, originalScholarId]);
 
-    console.log(originalScholar);
-
-
     useEffect(()=>{
         if(scholar){
             const id = scholar.id;
@@ -67,6 +71,7 @@ const ScholarEditorContainer = ({ history }) => {
             console.log(scholarError);
         }
     }, [history, scholar, scholarError])
+
 
     return <ScholarEditorComponent onChange={onChange} content={content} onPublish={onPublish} onCancel={onCancel} originalScholar={originalScholar}/>;
 }

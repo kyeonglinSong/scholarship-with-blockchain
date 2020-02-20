@@ -6,8 +6,8 @@ import {
 const HeaderNotLogin = () =>{
     return(
       <header style={{ width:'100%' }}>
-        <Navbar className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "#022601", height: '20px'}}>
-        <div className="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
+        <Navbar className="navbar navbar-expand-md ml-auto navbar-light" style={{backgroundColor: "#022601", height: '40px', padding:'10px'}}>
+        <div className="ml-auto" id="navbarSupportedContent">
           <Nav >
           <ul className="navbar-nav ml-auto">
             <NavItem>

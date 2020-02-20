@@ -1,6 +1,6 @@
-import React, {useState, Component } from "react";
+import React, { useState } from "react";
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {Checkbox} from 'antd';
+import { Checkbox } from 'antd';
 import "./content.css"
 
 

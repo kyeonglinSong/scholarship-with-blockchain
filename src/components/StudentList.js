@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Table, Button, Collapse, CardBody, CardTitle, Card, Input } from "reactstrap";
+import React from "react";
+import { Table, Button } from "reactstrap";
 import "./content.css"
 import styled from 'styled-components';
 import SearchContainer from "../containers/SearchContainer";
@@ -13,7 +13,6 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
   }
 
   if(searchWord){
-    console.log(searchWord)
     students=students.filter((students)=>{
     return students.name.indexOf(searchWord)>-1;
     })

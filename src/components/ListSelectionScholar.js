@@ -11,10 +11,8 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
   if(loading || !scholars){
     return null;
   }
-  console.log(orderBase);
 
   if(searchWord){
-    console.log(searchWord)
     scholars=scholars.filter((scholars)=>{
       return scholars.title.indexOf(searchWord)>-1;
     })
