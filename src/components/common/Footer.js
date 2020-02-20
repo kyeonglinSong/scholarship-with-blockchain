@@ -6,8 +6,8 @@ function Footer() {
     return (
         <FooterContainer className="main-footer" id="footerNone">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <div className="footer-middle" >
-         <div className="container">
+        <div className="footer-middle">
+         <div className="container" style={{textAlign:'left'}}>
             <a href="/"><strong>정보처리방침</strong></a>
             &ensp;&ensp;<a href="/" ><strong>이용약관</strong></a>
             <hr/>
@@ -15,7 +15,7 @@ function Footer() {
             
              {/*Footer Botton*/}
              <div className="footer-bottom">
-                 <p className="text-xs-center">
+                 <p className="text-xs-left">
                      &copy;{new Date().getFullYear()} 장학금통합관리시스템 madebyTeamEllie - All Rights Reserved
                  </p>
              </div>
@@ -32,10 +32,12 @@ const FooterContainer=styled.footer`
     background:var(--mainDark);
     padding-top: 1.5rem;
     color: var(--mainWhite);
+    text-align:left;
 }
 .footer-bottom{
     padding-top: 1rem;
     padding-bottom:1rem;
+    text-align:left;
 }
 a{
     color: var(--mainWhite);

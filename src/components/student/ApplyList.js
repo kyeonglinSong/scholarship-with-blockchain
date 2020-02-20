@@ -23,6 +23,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
     <th className="th" scope="row">{applies.id}</th>
     <td><a className="applyId">{applies.id}<br/></a><a className="smalltitle">{applies.title}</a></td>
     <td style={{width:'80px'}}><a className="smallstate" style={{verticalAlign:"middle"}}>{(applies.completed)? "완료":"산정중"}</a></td>
+    <td style={{width:'60px', verticalAlign:"middle"}}><a className="smallstate">{(applies.completed)? "완료":"산정중"}</a></td>
   {/* <td>  
   {(function(){ //이제 신청내용의 스테이트에 대해서 가져온다.
      if(applies.state==="applyDone") return "산정중"

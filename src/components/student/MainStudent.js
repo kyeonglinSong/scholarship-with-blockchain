@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Switch, BrowserRouter, withRouter } from "react-router-dom";
+import styled from 'styled-components';
 
 import NavigationStudnet from "../common/NavigaionStudent";
-import NoticeViewer from "../../containers/NoticeViewer";
-import NoticeListContainer from "../../containers/NoticeListContainer";
-import ApplyListContainer from "../../containers/ApplyListContainer";
-import ApplyViewer from "../../containers/ApplyViewer";
-import ScholarListContainer from "../../containers/ScholarListContainer";
-import ScholarViewer from "../../containers/ScholarViewer";
-import Main from './Main';
-import styled from 'styled-components';
+import NoticeViewer from "../../containers/common/NoticeViewer";
+import NoticeListContainer from "../../containers/common/NoticeListContainer";
+import ApplyListContainer from "../../containers/student/ApplyListContainer";
+import ApplyViewer from "../../containers/student/ApplyViewer";
+import ScholarListContainer from "../../containers/student/ScholarListContainer";
+import ScholarViewer from "../../containers/common/ScholarViewer";
+import StudentMain from './StudentMain';
 
 const MainStudent = ({ history }) => {
 
@@ -19,7 +19,7 @@ const MainStudent = ({ history }) => {
             <BrowserRouter>
                 <NavigationStudnet />
                 <Switch>
-                    <Route path="/student" component={Main} />
+                    <Route path="/student" component={StudentMain} />
                     <Route path="/notices/:id" component={NoticeViewer}/>
                     <Route path="/notices" component={NoticeListContainer}/>
                     <Route path="/scholars/:id" component={ScholarViewer}/>

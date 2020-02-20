@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { changeField, initializeForm, login } from '../modules/auth';
-import { check } from '../modules/user';
-import SignIn from '../components/SignIn';
 import styled from 'styled-components';
+
+import { changeField, initializeForm, login } from '../../modules/auth';
+import SignIn from '../../components/common/SignIn';
 
 const LoginForm = ({ history }) => {
     const dispatch = useDispatch();
-    const { form, auth, authError, user } = useSelector(({ auth, user })=>({
+    const { form, auth, authError } = useSelector(({ auth })=>({
         form:auth.form,
         auth:auth.auth,
         authError:auth.authError,
-        user:user.user
     }));
 
     //change input handler
@@ -44,7 +43,6 @@ const LoginForm = ({ history }) => {
             }catch(e){
                 console.log('localStorage is not working');
             }
-            //dispatch(check());
         }
     }, [auth, authError, dispatch, history]);
 

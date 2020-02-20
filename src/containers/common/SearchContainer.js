@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeField, changeOrder, initialize, changeSemester } from '../modules/search';
-import SearchBar from '../components/SearchBar';
 import styled from 'styled-components';
 
+import { changeField, changeOrder, initialize, changeSemester } from '../../modules/search';
+import SearchBar from '../../components/common/SearchBar';
+
 const SearchContainer = ({ type }) => {
-    console.log("in search container")
     const dispatch = useDispatch();
     const { searchWord } = useSelector(({search})=>({
         searchWord:search.searchWord,

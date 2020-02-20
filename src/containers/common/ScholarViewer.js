@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { readScholar, unloadScholar } from '../modules/scholarDetail';
-import { setOriginal } from '../modules/school/scholarship';
-import ScholarDetail from '../components/ScholarDetail';
 import styled from 'styled-components';
-import { removeScholarship } from '../lib/api/scholar';
+
+import { readScholar, unloadScholar } from '../../modules/scholarDetail';
+import { setOriginal } from '../../modules/school/scholarship';
+import ScholarDetail from '../../components/common/ScholarDetail';
+import { removeScholarship } from '../../lib/api/scholar';
 
 const ScholarViewer = ({ match, history })=>{
     const scholarId  = match.params;

@@ -1,20 +1,17 @@
 import React from "react";
 import { Route, Switch, BrowserRouter, withRouter } from "react-router-dom";
+import styled from 'styled-components';
 
 import SchoolMain from "./SchoolMain";
 import NavigationSchool from "../common/NavigaionSchool";
-import NoticeViewer from "../../containers/NoticeViewer";
-import NoticeListContainer from "../../containers/NoticeListContainer";
-import ApplyListContainer from "../../containers/ApplyListContainer";
-import ApplyViewer from "../../containers/ApplyViewer";
+import NoticeViewer from "../../containers/common/NoticeViewer";
+import NoticeListContainer from "../../containers/common/NoticeListContainer";
 import ScholarshipsContainer from "../../containers/school/ScholarshipsContainer";
-import ScholarViewer from "../../containers/ScholarViewer";
-
-import EditorContainer from "../../containers/EditorContainer";
+import ScholarViewer from "../../containers/common/ScholarViewer";
+import EditorContainer from "../../containers/school/EditorContainer";
 import ScholarEditorContainer from "../../containers/school/ScholarEditorContainer";
 import SelectionContainer from "../../containers/school/SelectionContainer";
 import StudentListContainer from "../../containers/school/StudentListContainer";
-import styled from 'styled-components';
 import StudentDetailContainer from "../../containers/school/StudentDetailContainer";
 
 const MainSchool = () => {

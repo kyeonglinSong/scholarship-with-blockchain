@@ -30,7 +30,7 @@ const Apply=({ applies, scholarId, index})=>{
       ,
       
       (isOpen && (applies.completed%2===1 ))&& (
-          //state가 returned면 출력하게 할게요. 하지만 여기에선 state가 없으니 (applies.id%4==1)로 대체.
+          //state가 returned반려면 출력하게 할게요. 하지만 여기에선 state가 없으니 (applies.id%4==1)로 대체.
           /*(isOpen &&(applies.state==="returned"))&&(
             
           )*/
@@ -38,7 +38,7 @@ const Apply=({ applies, scholarId, index})=>{
              <td classname="uk-background-muted" colSpan={6}>
                  <div ref={expanderBody} className="inner uk-grid">
                      <div className="uk-width3-4">
-                         <h3> </h3>
+                         <h6>기준 성적 미달</h6>
                      </div>
                  </div>
              </td>

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { listScholars, prevPage, nextPage } from '../../modules/scholarList';
 import ScholarshipList from '../../components/school/ScholarshipList';
 
 const ScholarshipsContainer = ()=>{
-    console.log("in scholarlist")
     const dispatch = useDispatch();
     const { scholars, tempPage, lastPage, total, error, loading, searchWord } = useSelector(({ scholars, loading, search })=>({
         scholars:scholars.scholars,
@@ -32,7 +32,6 @@ const ScholarshipsContainer = ()=>{
         dispatch(listScholars());
     }, [dispatch]);
 
-    console.log(scholars);
 
     return <ScholarshipList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
                         nextPage={toNextPage} prevPage={toPrevPage} total={total} searchWord={searchWord} />;

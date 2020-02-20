@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom"
 import styled from 'styled-components';
-import img from '../images/background.png';
-import { Container, Row, Col } from 'reactstrap';
-import {WiNightCloudyHigh} from "react-icons/wi"
-import { Button } from 'reactstrap';
+import img from '../../images/background.png';
+import { Container, Row, Button } from 'reactstrap';
+import { WiNightCloudyHigh } from "react-icons/wi"
 
 
 const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
@@ -27,14 +26,15 @@ const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
     fontSize: '20px',
     fontWeight: 'bold',
     weight: '750px',
-    textAlign: 'center',
+    textAlign: 'left',
     marginTop:'5px',
 }
   const bodyStyle = {
-    margin:'10px'
+    margin:'10px',
+    textAlign:'left'
   }
   const cardStyle = {
-      width: '850px',
+      width: '83%',
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingBottom:'50px'
@@ -55,7 +55,6 @@ if(loading || !notice){
 
 const { userId, id, title, content } = notice;
 const usertype = (user.id===1)
-console.log(usertype);
 
 const onClick = e =>{
   history.push('/notices');
@@ -75,7 +74,7 @@ return(
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>
         {content}
-        <img src={img}  height='170px' width='300px' style={imgStyle}/>
+        <img src={img}  height='auto' width='80%' style={imgStyle}/>
         </Row>
       <hr size="5" noshade></hr>
       <div style={{textAlign: 'center'}}>

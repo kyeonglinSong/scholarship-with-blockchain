@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { listScholars, prevPage, nextPage } from '../modules/scholarList';
-import ScholarList from '../components/ScholarList';
 import styled from 'styled-components';
+
+import { listScholars, prevPage, nextPage } from '../../modules/scholarList';
+import ScholarList from '../../components/student/ScholarList';
 
 const ScholarListContainer = ()=>{
 

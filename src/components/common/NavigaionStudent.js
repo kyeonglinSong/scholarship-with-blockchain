@@ -2,6 +2,7 @@ import React from "react";
 import {Navbar, Nav, NavLink, NavbarBrand } from "reactstrap"
 import { Link } from 'react-router-dom';
 import LOGO from '../../images/logo.PNG'
+import "./NavigationBar.css";
 
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import styled from 'styled-components';
@@ -24,8 +25,9 @@ const NavigationStudent = ( {user})=>{
   }
 
   return(
-    <div style={{width:'100%', display:'block'}}>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div style={{width:'100%', maxWidth:'none', display:'block'}}>
       <HeaderContainer />
       <br/>
       <Navbar color="light" light expand="md" className="mr-auto navbar navbar-expand-lg navbar-light bg-white">
@@ -34,23 +36,24 @@ const NavigationStudent = ( {user})=>{
             <span className="navbar-toggler-icon"></span>
         </button>
         <div className="navbar-collapse collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav mt-2 mt-lg-0">
-                <li className="nav-item" style={{ marginLeft:'100px'}}>
-                    <Link className="nav-link" to="/notices">공지사항</Link>
+            <ul className="navbar-nav mt-auto mt-lg-0">
+                <li className="nav-item" style={{marginRight:'40px'}}>
+                    <Link className="nav-link" to="/notices" style={{width:'100%', margin:'0'}}>공지사항</Link>
                 </li>
-                <li className="nav-item" style={{ marginLeft:'100px'}}>
-                    <Link className="nav-link" to="/scholars">장학금 정보/신청</Link>
+                <li className="nav-item" style={{marginRight:'40px'}}>
+                    <Link className="nav-link" to="/scholars" style={{width:'100%', margin:'0'}}>장학금 정보/신청</Link>
                 </li>
-                <li className="nav-item" style={{ marginLeft:'100px'}}>
-                    <Link className="nav-link" to="/applies">신청현황조회</Link>
+                <li className="nav-item" style={{marginRight:'40px'}}>
+                    <Link className="nav-link" to="/applies" style={{width:'100%', margin:'0'}}>신청현황조회</Link>
                 </li>
-                <li className="nav-item" style={{ marginLeft:'100px'}}>
-                    <Link className="nav-link" to="/student">사이트이용방법</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/student" style={{width:'100%', margin:'0'}}>사이트이용방법</Link>
                 </li>
             </ul>
         </div>
         
       </Navbar>
+    </div>
     </div>
   );
 }

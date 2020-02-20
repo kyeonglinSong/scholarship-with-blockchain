@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeField, initialize, writeNotice, updateNotice } from '../modules/write';
-
-import EditorComponent from '../components/EditorComponent';
 import styled from 'styled-components';
+
+import { changeField, initialize, writeNotice, updateNotice } from '../../modules/write';
+import EditorComponent from '../../components/school/EditorComponent';
 
 const EditorContainer = ({ history }) => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const EditorContainer = ({ history }) => {
         noticeError:write.noticeError,
         originalNoticeId: write.originalNoticeId,
     }));
-    console.log(originalNoticeId);
+
     const onChangeField = useCallback(payload => dispatch(changeField(payload)),[
         dispatch,
     ]);
@@ -31,7 +31,11 @@ const EditorContainer = ({ history }) => {
     }
 
     const onCancel = () =>{
-        history.goBack();
+        if(originalNoticeId){
+            history.push(`/notices/${originalNoticeId}`);
+        }else{
+            history.push('/notices');
+        }
     }
 
     useEffect(()=>{
@@ -50,7 +54,9 @@ const EditorContainer = ({ history }) => {
         }
     }, [history, notice, noticeError])
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><EditorComponent onChangeField={onChangeField} title={title} body={content} onPublish={onPublish} onCancel={onCancel}/></div>;
+    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <EditorComponent onChangeField={onChangeField} title={title} body={content} onPublish={onPublish} onCancel={onCancel}/>
+            </div>;
 }
 
 export default EditorContainer;

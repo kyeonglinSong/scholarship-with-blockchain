@@ -1,5 +1,4 @@
 import React, { useState, createRef } from 'react'
-import { slideDown, slideUp } from '../animation';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Link } from "react-router-dom";
 

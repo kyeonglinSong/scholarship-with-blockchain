@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 import styled from 'styled-components';
-import img from '../images/background.png';
+import img from '../../images/background.png';
 import { Container, Row, Col } from 'reactstrap';
 import { WiNightCloudyHigh } from "react-icons/wi";
 import { Button } from 'reactstrap';
-import {Progress} from 'react-sweet-progress';
+import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 
 
@@ -28,7 +28,7 @@ const ApplyDetail = ({ scholars, apply, loading, error, history })=>{
     fontSize: '20px',
     fontWeight: 'bold',
     weight: '750px',
-    marginLeft:'50px',
+    marginLeft:'auto',
     marginBottom:'10px',
     marginTop:'5px',
 }
@@ -36,7 +36,7 @@ const ApplyDetail = ({ scholars, apply, loading, error, history })=>{
     margin:'10px',
   }
   const cardStyle = {
-      width: '850px',
+      width: '83%',
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingBottom:'50px'

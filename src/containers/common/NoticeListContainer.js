@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listNotices, prevPage, nextPage } from '../modules/noticeList';
-import NoticeList from '../components/NoticeList';
 import styled from 'styled-components';
+
+import { listNotices, prevPage, nextPage } from '../../modules/noticeList';
+import NoticeList from '../../components/common/NoticeList';
 
 const NoticeListContainer = ()=>{
 
@@ -18,8 +19,6 @@ const NoticeListContainer = ()=>{
         searchWord:search.searchWord,
         orderBase:search.orderBase,
     }));
-
-    var noticeList=notices;
 
     const toNextPage = e =>{
         if(e){
@@ -37,19 +36,9 @@ const NoticeListContainer = ()=>{
         dispatch(listNotices());
     }, [dispatch]);
 
-    const onSubmit = () =>{
-        console.log("in submit")
-        if(searchWord){
-            console.log(searchWord)
-          noticeList=notices.filter((notices)=>{
-            return notices.title.indexOf(searchWord)>-1;
-          })
-        }
-      }
-
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NoticeList notices={notices} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user} searchWord={searchWord} onSubmit={onSubmit} orderBase={orderBase}/></div>;
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user} searchWord={searchWord} orderBase={orderBase}/></div>;
 };
 
 export default NoticeListContainer;

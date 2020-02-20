@@ -1,12 +1,11 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom"
 import styled from 'styled-components';
-import img from '../images/examplepic01.png';
-import { Container, Row } from 'reactstrap';
-import {WiNightCloudyHigh} from "react-icons/wi"
-import { Button,Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import img from '../../images/examplepic01.png';
+import { WiNightCloudyHigh } from "react-icons/wi"
+import { Button,Modal, ModalHeader, ModalBody, ModalFooter,Container, Row } from 'reactstrap';
 
-const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdit })=>{
+const ScholarDetail = ({ scholar, loading, user, onRemove, onEdit })=>{
   const [modal, setModal]=useState(false);
   const toggle=()=>setModal(!modal);
   const ScholarStyle={
@@ -26,15 +25,17 @@ const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdi
     fontSize: '20px',
     fontWeight: 'bold',
     weight: '750px',
-    marginLeft:'50px',
+    marginLeft:'auto',
     marginBottom:'10px',
     marginTop:'5px',
+    textAlign:'left'
 }
   const bodyStyle = {
-    margin:'10px'
+    margin:'10px',
+    textAlign:'left'
   }
   const cardStyle = {
-      width: '850px',
+      width: '83%',
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingBottom:'50px'
@@ -55,13 +56,7 @@ if(loading || !scholar){
 }
 
 const { userId, id, title, body } = scholar;
-/*
-const {state, scholarshipId, foundation, dueDateTime, sum, semesterStart, semesterEnd, gradeLimit, majorLimit}=scholar;
 
-*/
-const onClick = e =>{
-  history.push('/scholars');
-}
 
 const usertype = (user.id===1)
 
@@ -81,7 +76,7 @@ return(
         {body}
         </Row>
         <div style={{textAlign: 'center'}}>
-        <img src={img}  height='300px' width='240px' style={imgStyle}/></div>
+        <img src={img}  height='auto' width='80%' style={imgStyle}/></div>
       <hr size="5" noshade></hr>
       <div style={{textAlign: 'center'}}>
         {

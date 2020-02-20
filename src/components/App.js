@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
+import styled from 'styled-components';
 
 import Footer from "./common/Footer"
 import MainContainer from '../containers/common/MainContainer';
-import LoginContainer from '../containers/LoginContainer';
+import LoginContainer from '../containers/common/LoginContainer';
 import MainSchool from "./school/MainSchool";
 import MainStudent from "./student/MainStudent";
-import styled from 'styled-components';
 
 
 

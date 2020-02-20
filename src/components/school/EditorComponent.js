@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 import { Button } from 'reactstrap';
-import { AutoComplete } from 'antd';
 
 const TitleInput = styled.input`
     font-size:2rem;

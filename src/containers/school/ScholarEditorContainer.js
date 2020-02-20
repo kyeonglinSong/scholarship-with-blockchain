@@ -1,9 +1,8 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { changeField, initialize, addScholar, updateScholar } from '../../modules/school/scholarship';
 import { readScholar, unloadScholar } from '../../modules/scholarDetail';
-
-
 import FormComponent from '../../components/school/FormComponent';
 
 const ScholarEditorContainer = ({ history }) => {
@@ -28,18 +27,28 @@ const ScholarEditorContainer = ({ history }) => {
     };
     
     const onPublish = () =>{
-        if(originalScholarId){
-            dispatch(updateScholar({originalScholarId, content}));
+        const check = (content.scholarName==="" || content.startDate===""||content.endDate===""||content.sum===""||content.numberofPeople==="")
+        if(check){
+            alert("필수 입력란을 모두 채워주셈");
+        }else{
+            if(originalScholarId){
+                dispatch(updateScholar({originalScholarId, content}));
+            }
+            dispatch(
+               addScholar({
+                 content,
+               }),
+            ); 
+            history.push('/selections');
         }
-        dispatch(
-            addScholar({
-                content,
-            }),
-        );
     }
 
     const onCancel = () =>{
-        history.goBack();
+        if(originalScholarId){
+            history.push(`/scholarships/${originalScholarId}`);
+        }else{
+            history.push('/scholarships');
+        }
     }
 
     useEffect(()=>{
@@ -54,8 +63,6 @@ const ScholarEditorContainer = ({ history }) => {
             dispatch(unloadScholar());
         };
     }, [dispatch, originalScholarId]);
-
-    console.log(originalScholar);
 
 
     useEffect(()=>{
