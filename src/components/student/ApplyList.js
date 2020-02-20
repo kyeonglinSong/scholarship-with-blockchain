@@ -46,7 +46,7 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span>
       <div className="divStyle">
-      <Table striped>
+      <Table hover bordered>
         <thead>
           <tr className="thead">
             <th></th>
