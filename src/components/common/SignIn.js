@@ -1,8 +1,10 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import styled from 'styled-components';
-import LOGO from '../images/logo.PNG'
-import './content2.css';
+import LOGO from '../../images/logo.PNG'
+import '../content2.css';
+
+
 const SignIn = ({form, onChange, onSubmit})=>{
 
   const inputStyle = {

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom"
 import styled from 'styled-components';
-import img from '../images/background.png';
-import { Container, Row, Col } from 'reactstrap';
-import {WiNightCloudyHigh} from "react-icons/wi"
-import { Button } from 'reactstrap';
+import img from '../../images/background.png';
+import { Container, Row, Button } from 'reactstrap';
+import { WiNightCloudyHigh } from "react-icons/wi"
 
 
 const Notice = ({ notice, loading, error, history, user, onRemove, onEdit })=>{
@@ -56,7 +55,6 @@ if(loading || !notice){
 
 const { userId, id, title, content } = notice;
 const usertype = (user.id===1)
-console.log(usertype);
 
 const onClick = e =>{
   history.push('/notices');

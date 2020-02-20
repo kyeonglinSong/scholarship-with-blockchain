@@ -18,9 +18,6 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
         borderRadius: '25px'
     }
     
-
-    console.log(content);
-
     
   return (
     <div style={style} >

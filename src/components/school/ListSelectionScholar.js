@@ -1,9 +1,10 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
+import styled from 'styled-components';
+
 import "./content2.css"
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
-import SearchContainer from "../../containers/SearchContainer";
+import SearchContainer from "../../containers/common/SearchContainer";
 
 
 const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord, orderBase })=>{
@@ -11,10 +12,8 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
   if(loading || !scholars){
     return null;
   }
-  console.log(orderBase);
 
   if(searchWord){
-    console.log(searchWord)
     scholars=scholars.filter((scholars)=>{
       return scholars.title.indexOf(searchWord)>-1;
     })

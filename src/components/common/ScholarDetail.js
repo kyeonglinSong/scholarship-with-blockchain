@@ -1,12 +1,11 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom"
 import styled from 'styled-components';
-import img from '../images/examplepic01.png';
-import { Container, Row } from 'reactstrap';
-import {WiNightCloudyHigh} from "react-icons/wi"
-import { Button,Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import img from '../../images/examplepic01.png';
+import { WiNightCloudyHigh } from "react-icons/wi"
+import { Button,Modal, ModalHeader, ModalBody, ModalFooter,Container, Row } from 'reactstrap';
 
-const ScholarDetail = ({ scholar, loading, error, history, user, onRemove, onEdit })=>{
+const ScholarDetail = ({ scholar, loading, user, onRemove, onEdit })=>{
   const [modal, setModal]=useState(false);
   const toggle=()=>setModal(!modal);
   const ScholarStyle={
@@ -57,13 +56,7 @@ if(loading || !scholar){
 }
 
 const { userId, id, title, body } = scholar;
-/*
-const {state, scholarshipId, foundation, dueDateTime, sum, semesterStart, semesterEnd, gradeLimit, majorLimit}=scholar;
 
-*/
-const onClick = e =>{
-  history.push('/scholars');
-}
 
 const usertype = (user.id===1)
 

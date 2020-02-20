@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { listStudents, prevPage, nextPage, studentStateChange, saveSelection } from '../../modules/school/selection';
 import StudentList from '../../components/school/StudentList';
 import styled from 'styled-components';

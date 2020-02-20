@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { readNotice, unloadNotice } from '../modules/notice';
-import { setOriginal } from '../modules/write';
-import Notice from '../components/NoticeDetail';
-import { removeNotice } from '../lib/api/notice';
 import styled from 'styled-components';
+
+import { readNotice, unloadNotice } from '../../modules/notice';
+import { setOriginal } from '../../modules/write';
+import Notice from '../../components/common/NoticeDetail';
+import { removeNotice } from '../../lib/api/notice';
 
 const NoticeViewer = ({ match, history })=>{
     const noticeId  = match.params;

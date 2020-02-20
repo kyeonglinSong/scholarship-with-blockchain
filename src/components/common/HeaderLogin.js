@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  Navbar, Nav, NavItem, NavLink
-} from "reactstrap"
+import {  Navbar, Nav, NavItem, NavLink } from "reactstrap"
 import styled from 'styled-components';
 
 const HeaderStudentLogin = ({ user, onClick }) =>{

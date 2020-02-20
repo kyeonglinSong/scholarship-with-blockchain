@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { listApplies, prevPage, nextPage } from '../modules/applyList';
-import ApplyList from '../components/ApplyList';
 import styled from 'styled-components';
+
+import { listApplies, prevPage, nextPage } from '../../modules/applyList';
+import ApplyList from '../../components/student/ApplyList';
 
 const ApplyListContainer = ()=>{
 

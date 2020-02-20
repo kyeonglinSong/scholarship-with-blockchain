@@ -1,14 +1,13 @@
 import React from "react";
-import { Table, Button } from "reactstrap";
 import styled from 'styled-components';
 
 import "./content2.css"
+import { Table, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import SearchContainer from "../../containers/common/SearchContainer";
 
 
-
-const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
+const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
 
   if(loading || !scholars){
     return null;
@@ -26,24 +25,25 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
       <tr key={scholars.id}>
         <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
+        <td style={{width:'1000px', textAlign:'left'}} ><Link to={`/scholars/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
       </tr>
     ));
 
     const pageStyle = {
       margin:'10px'
     }
+  
 
   return(
     <div>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span>
       <div className="container">
-      <SearchContainer type="addScholar"/>
+      <SearchContainer type="student"/>
       <Table striped>
         <thead>
           <tr>
-            <th> </th>
+            <th></th>
             <th>이름</th>
           </tr>
         </thead>
@@ -54,18 +54,16 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
-      </div>
-      
+      </div>     
       <div>
-        <br/>
-        
+        <br/> 
       </div>
       </span>
     </div>
   );
 }
 
-export default ScholarshipList;
+export default ScholarList;
 
 const Appcontainer = styled.div`
     &,

@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import "./content2.css"
-import {Button} from 'reactstrap';
-import {GiNewspaper} from 'react-icons/gi';
-import {FaSearch} from 'react-icons/fa';
-import {GoQuestion} from 'react-icons/go';
-import {AiOutlineBank} from 'react-icons/ai';
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Button } from 'reactstrap';
+import { GiNewspaper } from 'react-icons/gi';
+import { FaSearch } from 'react-icons/fa';
+import { GoQuestion } from 'react-icons/go';
+import { AiOutlineBank } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import "./content2.css"
+
 
 const SchoolMain = ()=>{
   const iconStyle={

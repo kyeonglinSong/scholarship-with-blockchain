@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 import styled from 'styled-components';
-import img from '../images/background.png';
+import img from '../../images/background.png';
 import { Container, Row, Col } from 'reactstrap';
 import { WiNightCloudyHigh } from "react-icons/wi";
 import { Button } from 'reactstrap';
-import {Progress} from 'react-sweet-progress';
+import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 
 

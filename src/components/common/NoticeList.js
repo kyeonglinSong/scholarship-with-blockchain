@@ -1,22 +1,20 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Table, Button } from "reactstrap";
-import "./content2.css"
-import styled from 'styled-components';
-import SearchContainer from '../containers/SearchContainer';
-import search from "../modules/search";
 import  moment from 'moment';
+import styled from 'styled-components';
+
+import "../content2.css"
+import SearchContainer from '../../containers/common/SearchContainer';
 
 
-
-const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nextPage, user, searchWord, onSubmit })=>{
+const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nextPage, user, searchWord })=>{
 
   if(loading || !notices){
     return null;
   }
 
   if(searchWord){
-    console.log(searchWord)
     notices=notices.filter((notices)=>{
     return notices.title.indexOf(searchWord)>-1;
     })

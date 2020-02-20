@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { readApplyDetail, unloadApplyDetail } from '../modules/applyDetail';
-import ApplyDetail from '../components/ApplyDetail';
 import styled from 'styled-components';
+
+import { readApplyDetail, unloadApplyDetail } from '../../modules/applyDetail';
+import ApplyDetail from '../../components/student/ApplyDetail';
 
 const ApplyViewer = ({ match })=>{
     const applyId  = match.params;
