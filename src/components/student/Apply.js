@@ -1,7 +1,8 @@
 import React, {useState, createRef} from 'react';
 import {Link} from "react-router-dom";
-import Progress from "react-sweet-progress";
-const Apply=({ applies, scholarId, index})=>{
+import {Badge} from 'reactstrap';
+import {Alert} from 'reactstrap';
+const Apply=({ applies, scholarship, scholarId, index})=>{
     let expanderBody=createRef();
     const [isOpen, setIsOpen]= useState(false);
     const toggle=()=>setIsOpen(!isOpen);
@@ -15,17 +16,23 @@ const Apply=({ applies, scholarId, index})=>{
             toggle();
         }
     }
-    function stateView(){ //내 신청의 스테이트에 따라 다른 결과를 리턴합니다. 
+    function returnedWhy(){ //내 신청이 왜 반려되었는지 이유를 리턴합니다.  
         if(applies.state==="returned")
-         return <Progress type="circle" percent={100} status="error"/>
-        else if(applies.state==="applyDone")
-         return <Progress type="circle"/>
+         {
+             if(applies.priorGrade<scholarship.gradeLimit)
+              return <Alert color="danger">성적 미달</Alert>;
+         }
     }
+    
     return[
         <tr key="main" onClick={toggleExpander}>
+            
              <th className="th" scope="row">{applies.id}</th>
              <td><a className="applyId">{applies.id}<br/></a><a className="smalltitle">{applies.title}</a></td>
-            <td style={{width:'80px'}}><a className="smallstate" style={{verticalAlign:"middle"}}>{(applies.completed)? "반려":"선정"}</a></td>
+    <td style={{width:'80px'}}><a className="smallstate" style={{verticalAlign:"middle"}}>
+        {(applies.completed)? (<Badge color="danger">반려</Badge>):(<Badge color="success">선정</Badge>)}
+           
+    </a></td>
                 </tr>
       ,
       
@@ -37,8 +44,17 @@ const Apply=({ applies, scholarId, index})=>{
         <tr className="expandable" key="tr-expander">
              <td classname="uk-background-muted" colSpan={6}>
                  <div ref={expanderBody} className="inner uk-grid">
-                     <div className="uk-width3-4">
-                         <h6>기준 성적 미달</h6>
+                     <div className="uk-width3-4" style={{textAlign: 'center', marginLeft: '30%', marginRight: '30%'}}>
+                         {/*반려의 근거를 서술합니다. 기준 성적, 학기 제한, 전공 제한 */}
+                         <h6>
+                         <Alert color="danger">성적 미달</Alert><br/>
+                        <Alert color="danger">전공 제한</Alert><br/>
+                        <Alert color="danger">학기 제한</Alert>
+                        </h6> 
+                         
+                         {/*stateView*/}
+    
+                        
                      </div>
                  </div>
              </td>
