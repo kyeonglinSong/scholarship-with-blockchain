@@ -1,11 +1,11 @@
-import React, {useState, createRef} from "react";
+import React from "react";
 import "./ApplyList.css"
 import { Table, Button } from "reactstrap";
 import "./content2.css"
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { AutoComplete } from "antd";
-import Apply from "./Apply";
+
 
 const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prevPage, total })=>{
 
@@ -16,9 +16,9 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
   var startIndex = (tempPage - 1) * 10;
   var endIndex = Math.min(startIndex + 10, total - 1);
 
-  /*const applyList = applies.slice(startIndex, endIndex).map((applies, index)=>(
+  const applyList = applies.slice(startIndex, endIndex).map((applies, index)=>(
     //
-    
+    <tbody>
   <tr key={applies.id}>
     <th className="th" scope="row">{applies.id}</th>
     <td><a className="applyId">{applies.id}<br/></a><a className="smalltitle">{applies.title}</a></td>
@@ -30,12 +30,13 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
      else if(applies.state==="selected") return "지급"
      else return "지급 거절"
    })
-   }</td>
+   }</td>*/}
     <td className="detail"><Link to={`/applies/${applies.id}`}><button>자세히보기</button></Link></td>
     </tr>
-    
+    <Apply key={index} index={index+1} applies={applies}/>
+  </tbody>
   ));
-*/
+
   const pageStyle = {
     margin:'10px'
   }
@@ -50,15 +51,13 @@ const ApplyList = ({ applies, tempPage, lastPage, loading, error, nextPage, prev
           <tr className="thead">
             <th></th>
             <th>이름</th>
-            <th className="thstate">상태</th>
-            {/*0219부로 상세보기 페이지는 삭제하였습니다.  */}
+            <th className="thstate">현황</th>
+            <th>자세히보기</th>
           </tr>
         </thead>
-        <tbody>
-          {applies.slice(startIndex, endIndex).map((applies, index)=>(
-          <Apply key={index} index={index+1} applies={applies}/>))
-        }
-        </tbody>
+       
+          {applyList}
+        
       </Table>
       <div className="container">
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
