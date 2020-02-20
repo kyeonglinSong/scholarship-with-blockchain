@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import { NavLink, Route, Switch, BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'draft-js/dist/Draft.css';
 
@@ -11,16 +10,13 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer, { rootSaga } from './modules';
 
-import { auth } from './modules/auth';
 import { setUser } from './modules/auth';
 
 function loadUser(){
   try{
-    console.log("in load user");
     const user = localStorage.getItem('user');
     if(!user) return;
     const tempuser = JSON.parse(user);
-    console.log(tempuser);
     store.dispatch(setUser(tempuser));
   }catch(e){
     console.log('localStorage is not working');
