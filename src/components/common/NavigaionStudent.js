@@ -2,8 +2,6 @@ import React from "react";
 import {Navbar, Nav, NavLink, NavbarBrand } from "reactstrap"
 import { Link } from 'react-router-dom';
 import LOGO from '../../images/logo.PNG'
-import "./NavigationBar.css";
-
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import styled from 'styled-components';
 

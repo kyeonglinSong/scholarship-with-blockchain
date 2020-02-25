@@ -29,7 +29,7 @@ const Apply=({ applies, scholarship, scholarId, index})=>{
             
              <th className="th" scope="row">{applies.id}</th>
              <td><a className="applyId">{applies.id}<br/></a><a className="smalltitle">{applies.title}</a></td>
-    <td style={{width:'80px'}}><a className="smallstate" style={{verticalAlign:"middle"}}>
+    <td style={{width:'80px', verticalAlign:'middle'}}><a className="smallstate">
         {(applies.completed)? (<Badge color="danger">반려</Badge>):(<Badge color="success">선정</Badge>)}
            
     </a></td>
