@@ -35,7 +35,10 @@
 
 ## Install
 
-#### Setup
+#### 1. node.js 다운
+#### 2. 깃 클론
+#### 3. cmd에서 npm install
+#### 4. cmd에서 npm start
 
 ## Author
 
