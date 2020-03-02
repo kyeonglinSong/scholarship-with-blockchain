@@ -1,65 +1,68 @@
-# Scholarship-With-Blockchain
-### 대학생을 위한 블록체인 기반 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> (나중에 설명을 씁시다)
->자꾸만 심쿵해~~
-> (한두줄 정도로)
+## Available Scripts
 
- [![license](https://img.shields.io/badge/license-Apache%202.0-red.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+In the project directory, you can run:
 
-## Use Case Senario
-![img](https://lh4.googleusercontent.com/x94mD0ESUivMSD0NVTTDneSDn7nWpCLHTIhNlwZWCgCVVuRtinrn-kNzR37nvukQPqyM3sXFUQm4xjDdY9KpyMZmTkwkkNPiOxULn72cpO6yLfJrs7s5tp6TvST2XphdcuLCUPdKAQ)
+### `npm start`
 
-위 그림은 학생이 장학금을 신청하면 장학재단이 학적정보를 요청한 후 결과통보를 하기까지 사용되는 자산의 요청과 흐름을 나타낸 것이다. 노트모양 아이콘은 학적과 같은 정보 자산이며, 돈 모양 아이콘은 장학금 산정 결과이다.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-  
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-1. 학교(학생)은 한국장학재단에 국가장학금을 신청한다.
-2. 한국장학재단이 학교(학적팀)을 통해 학적확인(요청)한다.
-3. 한국장학재단이 소득분위와 장학금을 산정한 후 학교(학생)에게 통보하고, 학교(학생)는 수혜내역을 확인한다.
-4. 학교(학생)는 학교(장학팀)에 장학금을 신청한다.
-5. 학교(장학팀)는 학교(학적팀)을 통해 학적확인(요청)한다.
-6. 학교(장학팀)이 한국장학재단에게 소득분위정보를 요청한다.
-7. 학교(장학팀)이 장학금을 산정한 후 학교(학생)에게 통보하고, 학교(학생)는 수혜내역을 확인한다.
-8. 학교(학생)은 타 장학재단에 장학금을 신청한다.
-9. 타 장학재단은 학교(학적팀)을 통해 학적확인(요청)한다.
-10. 타 장학재단이 장학금 지급여부를 학교(학생)에게 통보하고, 학교(학생)는 수혜내역을 확인한다.
+### `npm test`
 
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
-## Network
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 실행화면
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-프론트까지 구현 되면 여기다가 놓기..
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Install
+### `npm run eject`
 
-#### Setup
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## Author
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-![img](https://lh5.googleusercontent.com/qApbyW2FzEe_ww93kzEFdXhz6CXNZi6qDzUAeCKWL4ymyjTdBl7p_inMRz629yg3vJzMy6iYdvLbLT1GIFOWOVEFmFnHzzHKADz2pMsOv2NHm15qREFceEaaHMhnIR-KusKnHdAHrg)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-2019 하반기 - 2020 상반기 이화여자대학교 컴퓨터공학과 졸업프로젝트 16조 **Team ELLIE**
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- 1615032 송경린 (Kyeonglin Song)
-- 1401110 김은별 (Eunbyeol Kim)
-- 1614037 최윤영 (Yunyeong Choi)
-- 1602119 최찬미 (Chanmi Choi)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-## FAQ
+### Analyzing the Bundle Size
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
+### Making a Progressive Web App
 
-## License
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-- Apache 2.0 
+### Advanced Configuration
 
-  
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-## Acknowledgments
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
