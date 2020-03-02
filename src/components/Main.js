@@ -24,10 +24,10 @@ const Main = ()=>{
     <br/><br/><br/>
     <div className="content">
       <div className="row"></div>
-      <Link to="/scholarlist"><Button className="RegisterMainButton" size="lg">장학금정보/신청<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-      <Link to="/applylist"><Button className="RegisterMainButton" size="lg" color="warning">신청현황조회<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+      <Link to="/addScholar"><Button className="RegisterMainButton" size="lg">장학금등록<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+      <Link to="/selections"><Button className="RegisterMainButton" size="lg" color="warning">장학생선발<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
       <Link to="/main"><Button className="RegisterMainButton" size="lg" color="info">사이트 이용안내<br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-      <Link to="/"><Button className="RegisterMainButton" size="lg" color="success">재단용 페이지 이동<br/><AiOutlineBank style={iconStyle}/></Button></Link>
+      <Link to="/"><Button className="RegisterMainButton" size="lg" color="success">학생용 페이지 이동<br/><AiOutlineBank style={iconStyle}/></Button></Link>
     </div>
    
     </div>
