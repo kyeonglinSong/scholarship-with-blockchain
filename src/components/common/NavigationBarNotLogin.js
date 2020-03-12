@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { Navbar, Nav, NavItem, NavLink, NavbarBrand } from "reactstrap"
 import { NavLink as NL } from 'react-router-dom';
 import { IoIosSchool } from "react-icons/io"
@@ -15,10 +14,7 @@ import SelectionContainer from "../../containers/SelectionContainer";
 import StudentListContainer from "../../containers/StudentListContainer";
 import StudentDetailContainer from "../../containers/StudentDetailContainer";
 
-const NavigationBar = ()=>{
-
-  const { user } = useSelector(({auth})=>({user:auth.auth}));
-
+const NavigationBarNotLogin = ()=>{
 
   const iconStyle={
     margin:'10px',
@@ -58,13 +54,13 @@ const NavigationBar = ()=>{
         <Route path="/signin" component={LoginForm} />
         <Route path="/signup" component={SignUp} />
         <Route path="/main" component={Main}/>
-        <Route path="/addScholar" component={ScholarEditorContainer}/>
-        <Route path="/selections/:id" component={StudentListContainer}/>
-        <Route path="/selections" component={SelectionContainer}/>
-        <Route path="/students/:id/:scholarId" component={StudentDetailContainer}/>
+        <Route path="/addScholar" component={LoginForm}/>
+        <Route path="/selections/:id" component={LoginForm}/>
+        <Route path="/selections" component={LoginForm}/>
+        <Route path="/students/:id/:scholarId" component={LoginForm}/>
       </Switch>
     </div>
   );
 }
 
-export default NavigationBar;
+export default NavigationBarNotLogin;

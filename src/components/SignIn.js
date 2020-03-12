@@ -24,7 +24,7 @@ const SignIn = ({form, onChange, onSubmit})=>{
             <Input style={inputStyle} type="password" name="password" id="examplePassword" placeholder="password placeholder" 
             onChange={onChange} value={form.password} />
           </FormGroup>
-          <Button>로그인</Button>
+          <Button onClick={onSubmit}>로그인</Button>
         </Form>
       </span>
     </div>

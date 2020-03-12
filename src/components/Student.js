@@ -51,32 +51,7 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
           </Modal>
           <td><Link to={`/students/${student.id}/${scholarId}`}><Button>자세히보기</Button></Link></td>
         </tr>,
-        isOpen && (
-          <tr className="expandable" key="tr-expander">
-            <td className="uk-background-muted" colSpan={6}>
-              <div ref={expanderBody} className="inner uk-grid">
-                <div className="uk-width-3-4">
-                  <h3>{student.name.first}</h3>
-                  <p>
-                    Address:<br/>
-                    <i>
-                      {student.name}<br/>
-                      {student.name}<br/>
-                      {student.name}
-                    </i>
-                  </p>
-                  <p>
-                    E-mail: {student.name}<br/>
-                    Phone: {student.name}
-                  </p>
-                  <p>Date of birth: {student.name}</p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        )
       ];
-    
   }
 
   export default Student;

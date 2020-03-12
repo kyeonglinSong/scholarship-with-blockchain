@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Table, Button } from "reactstrap";
 import "./content.css"
 import styled from 'styled-components';
@@ -56,6 +57,9 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
       <Button disabled={tempPage<=1} onClick={prevPage}>이전</Button>
       <span style={pageStyle}>{tempPage}</span>
       <Button disabled={tempPage>=lastPage} onClick={nextPage}>다음</Button>
+      <div style={{textAlign: 'center'}}>
+        <Link to='/selections'><Button outline color="secondary" style={{margin:'10px'}}>목록으로</Button></Link>
+      </div>
       <br/>
       </div>
       </span>
