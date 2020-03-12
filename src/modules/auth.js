@@ -6,6 +6,7 @@ import * as authAPI from '../lib/api/auth';
 
 const CHANGE_FIELD = 'auth/CHANGE_FIELD';
 const INITIALIZE_FORM = 'auth/INITIALIZE_FORM';
+const INITIALIZE = 'auth/INITIALIZE';
 const LOGOUT = 'auth/LOGOUT';
 const SET_USER = 'auth/SET_USER'
 
@@ -22,6 +23,8 @@ export const changeField = createAction(
 export const initializeForm = createAction(
     INITIALIZE_FORM,
 );
+
+export const initialize = createAction(INITIALIZE);
 
 export const logout = createAction(
     LOGOUT,
@@ -48,6 +51,12 @@ const initialState = {
     authError:null,
 };
 
+const initialForm={
+    email:'',
+    password:'',
+}
+
+
 const auth = handleActions(
     {
         [CHANGE_FIELD]: (state, { payload: {key, value} }) => 
@@ -57,6 +66,10 @@ const auth = handleActions(
         [INITIALIZE_FORM]: (state)=>({
             ...state,
             initialState,
+        }),
+        [INITIALIZE]:(state)=>({
+            ...state,
+            form:initialForm,
         }),
         [LOGOUT]:(state)=>({
             ...state,

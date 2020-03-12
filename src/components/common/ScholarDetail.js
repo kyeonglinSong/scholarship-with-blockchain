@@ -97,7 +97,12 @@ return(
 </ModalFooter>
       </Modal>
      &nbsp; &nbsp;
-        <Link to='/scholarships'><Button color="secondary">목록으로</Button></Link>
+     {
+       usertype? 
+       <Link to='/scholars'><Button color="secondary">목록으로</Button></Link>
+       :<Link to='/scholarships'><Button color="secondary">목록으로</Button></Link>
+     }
+        
       </div>
       <div style={{textAlign: 'right'}}>
         {

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { changeField, initializeForm, login } from '../../modules/auth';
+import { changeField, initializeForm, login, initialize } from '../../modules/auth';
 import SignIn from '../../components/common/SignIn';
 
 const LoginForm = ({ history }) => {
@@ -40,6 +40,7 @@ const LoginForm = ({ history }) => {
         if(auth){
             try{
                 localStorage.setItem('user', JSON.stringify(auth));
+                dispatch(initialize());
             }catch(e){
                 console.log('localStorage is not working');
             }
