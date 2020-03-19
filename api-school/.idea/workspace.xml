@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="school" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="school" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="school" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="school: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="school" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="school: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="students_role: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-school" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-school" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-school" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-school" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZIuPz5AkkkxCOdhlhEIdES7hey" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+  </component>
+  <component name="RequestMappingsEndpointTabSettings">
+    <option name="showLibraryMappings" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="api-school.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.ac.becaforschool.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@554b634" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@344bb20" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@5c4e4636" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1a5e6902" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@191d9d53" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="" />
+      <created>1584538908366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584538908366</updated>
+      <workItem from="1584538909974" duration="791000" />
+      <workItem from="1584540448026" duration="251000" />
+      <workItem from="1584540744711" duration="394000" />
+      <workItem from="1584541465022" duration="4208000" />
+      <workItem from="1584591985493" duration="3120000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="89" key="#Project_Structure" timestamp="1584540003506">
+      <screen x="0" y="23" width="1440" height="802" />
+    </state>
+    <state x="320" y="89" key="#Project_Structure/0.23.1440.802@0.23.1440.802" timestamp="1584540003506" />
+    <state x="640" y="139" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584540359526">
+      <screen x="0" y="23" width="1440" height="802" />
+    </state>
+    <state x="640" y="139" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.802@0.23.1440.802" timestamp="1584540359526" />
+    <state width="1398" height="651" key="GridCell.Tab.0.bottom" timestamp="1584594409447">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.0.bottom/0.23.1440.802@0.23.1440.802" timestamp="1584593661292" />
+    <state width="1398" height="651" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584594409447" />
+    <state width="1398" height="651" key="GridCell.Tab.0.center" timestamp="1584594409445">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.0.center/0.23.1440.802@0.23.1440.802" timestamp="1584593661291" />
+    <state width="1398" height="651" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1584594409445" />
+    <state width="1398" height="651" key="GridCell.Tab.0.left" timestamp="1584594409444">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.0.left/0.23.1440.802@0.23.1440.802" timestamp="1584593661290" />
+    <state width="1398" height="651" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1584594409444" />
+    <state width="1398" height="651" key="GridCell.Tab.0.right" timestamp="1584594409446">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.0.right/0.23.1440.802@0.23.1440.802" timestamp="1584593661291" />
+    <state width="1398" height="651" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1584594409446" />
+    <state width="1398" height="651" key="GridCell.Tab.1.bottom" timestamp="1584594409449">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.1.bottom/0.23.1440.802@0.23.1440.802" timestamp="1584593661294" />
+    <state width="1398" height="651" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584594409449" />
+    <state width="1398" height="651" key="GridCell.Tab.1.center" timestamp="1584594409448">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.1.center/0.23.1440.802@0.23.1440.802" timestamp="1584593661293" />
+    <state width="1398" height="651" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1584594409448" />
+    <state width="1398" height="651" key="GridCell.Tab.1.left" timestamp="1584594409448">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.1.left/0.23.1440.802@0.23.1440.802" timestamp="1584593661292" />
+    <state width="1398" height="651" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1584594409448" />
+    <state width="1398" height="651" key="GridCell.Tab.1.right" timestamp="1584594409449">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="357" key="GridCell.Tab.1.right/0.23.1440.802@0.23.1440.802" timestamp="1584593661293" />
+    <state width="1398" height="651" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1584594409449" />
+    <state x="458" y="63" key="SettingsEditor" timestamp="1584541708207">
+      <screen x="0" y="23" width="1440" height="802" />
+    </state>
+    <state x="458" y="63" key="SettingsEditor/0.23.1440.802@0.23.1440.802" timestamp="1584541708207" />
+    <state x="422" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1584591987185">
+      <screen x="0" y="23" width="1440" height="802" />
+    </state>
+    <state x="422" y="256" key="com.intellij.ide.util.TipDialog/0.23.1440.802@0.23.1440.802" timestamp="1584591987185" />
+  </component>
+</project>
