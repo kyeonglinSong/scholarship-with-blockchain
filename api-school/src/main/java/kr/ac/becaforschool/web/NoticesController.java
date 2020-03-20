@@ -16,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value="/school")
+@CrossOrigin(origins = "http://localhost:3000")
 public class NoticesController {
 
     private final NoticesService noticesService;

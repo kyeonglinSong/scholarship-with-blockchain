@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="" />
+    <list default="true" id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/JwtTokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/JwtTokenProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/security/CustomUserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/security/CustomUserDetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/NoticesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/NoticesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/makeUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/makeUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/config/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/config/security/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/service/security/CustomUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/service/security/CustomUserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/NoticesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/NoticesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/dto/usersDto/EmployeesLoginRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/dto/usersDto/EmployeesLoginRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/makeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/makeUserController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,6 +133,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -142,37 +165,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@43236c91" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@521cb4ee" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@5118ee2e" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@93ec766" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:school" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@17f0843a" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -194,7 +187,9 @@
       <workItem from="1584540744711" duration="394000" />
       <workItem from="1584541465022" duration="4208000" />
       <workItem from="1584591985493" duration="3120000" />
-      <workItem from="1584596556546" duration="38000" />
+      <workItem from="1584596556546" duration="271000" />
+      <workItem from="1584601879559" duration="257000" />
+      <workItem from="1584682159504" duration="4093000" />
     </task>
     <servers />
   </component>
@@ -210,53 +205,54 @@
       <screen x="0" y="23" width="1440" height="802" />
     </state>
     <state x="640" y="139" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.802@0.23.1440.802" timestamp="1584540359526" />
-    <state width="1398" height="651" key="GridCell.Tab.0.bottom" timestamp="1584594409447">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.0.bottom" timestamp="1584685890878">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.0.bottom/0.23.1440.802@0.23.1440.802" timestamp="1584593661292" />
+    <state width="1341" height="279" key="GridCell.Tab.0.bottom/0.23.1440.802@0.23.1440.802" timestamp="1584685890878" />
     <state width="1398" height="651" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584594409447" />
-    <state width="1398" height="651" key="GridCell.Tab.0.center" timestamp="1584594409445">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.0.center" timestamp="1584685890871">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.0.center/0.23.1440.802@0.23.1440.802" timestamp="1584593661291" />
+    <state width="1341" height="279" key="GridCell.Tab.0.center/0.23.1440.802@0.23.1440.802" timestamp="1584685890871" />
     <state width="1398" height="651" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1584594409445" />
-    <state width="1398" height="651" key="GridCell.Tab.0.left" timestamp="1584594409444">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.0.left" timestamp="1584685890869">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.0.left/0.23.1440.802@0.23.1440.802" timestamp="1584593661290" />
+    <state width="1341" height="279" key="GridCell.Tab.0.left/0.23.1440.802@0.23.1440.802" timestamp="1584685890869" />
     <state width="1398" height="651" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1584594409444" />
-    <state width="1398" height="651" key="GridCell.Tab.0.right" timestamp="1584594409446">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.0.right" timestamp="1584685890875">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.0.right/0.23.1440.802@0.23.1440.802" timestamp="1584593661291" />
+    <state width="1341" height="279" key="GridCell.Tab.0.right/0.23.1440.802@0.23.1440.802" timestamp="1584685890875" />
     <state width="1398" height="651" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1584594409446" />
-    <state width="1398" height="651" key="GridCell.Tab.1.bottom" timestamp="1584594409449">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.1.bottom" timestamp="1584685890882">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.1.bottom/0.23.1440.802@0.23.1440.802" timestamp="1584593661294" />
+    <state width="1341" height="279" key="GridCell.Tab.1.bottom/0.23.1440.802@0.23.1440.802" timestamp="1584685890882" />
     <state width="1398" height="651" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584594409449" />
-    <state width="1398" height="651" key="GridCell.Tab.1.center" timestamp="1584594409448">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.1.center" timestamp="1584685890880">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.1.center/0.23.1440.802@0.23.1440.802" timestamp="1584593661293" />
+    <state width="1341" height="279" key="GridCell.Tab.1.center/0.23.1440.802@0.23.1440.802" timestamp="1584685890880" />
     <state width="1398" height="651" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1584594409448" />
-    <state width="1398" height="651" key="GridCell.Tab.1.left" timestamp="1584594409448">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.1.left" timestamp="1584685890879">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.1.left/0.23.1440.802@0.23.1440.802" timestamp="1584593661292" />
+    <state width="1341" height="279" key="GridCell.Tab.1.left/0.23.1440.802@0.23.1440.802" timestamp="1584685890879" />
     <state width="1398" height="651" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1584594409448" />
-    <state width="1398" height="651" key="GridCell.Tab.1.right" timestamp="1584594409449">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1341" height="279" key="GridCell.Tab.1.right" timestamp="1584685890881">
+      <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1398" height="357" key="GridCell.Tab.1.right/0.23.1440.802@0.23.1440.802" timestamp="1584593661293" />
+    <state width="1341" height="279" key="GridCell.Tab.1.right/0.23.1440.802@0.23.1440.802" timestamp="1584685890881" />
     <state width="1398" height="651" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1584594409449" />
     <state x="458" y="63" key="SettingsEditor" timestamp="1584541708207">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
     <state x="458" y="63" key="SettingsEditor/0.23.1440.802@0.23.1440.802" timestamp="1584541708207" />
-    <state x="422" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1584591987185">
+    <state x="422" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1584682157893">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state x="422" y="256" key="com.intellij.ide.util.TipDialog/0.23.1440.802@0.23.1440.802" timestamp="1584591987185" />
+    <state x="422" y="256" key="com.intellij.ide.util.TipDialog/0.23.1440.802@0.23.1440.802" timestamp="1584682157893" />
+    <state x="422" y="257" key="com.intellij.ide.util.TipDialog/0.23.1440.804@0.23.1440.804" timestamp="1584602093890" />
   </component>
 </project>

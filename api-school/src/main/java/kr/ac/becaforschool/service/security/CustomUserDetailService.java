@@ -15,8 +15,11 @@ public class CustomUserDetailService implements UserDetailsService {
     private final StudentsRepository studentsRepository;
     private final EmployeesRepository employeesRepository;
 
-    public UserDetails loadUserByUsername(String userPk) {
-        return employeesRepository.findById(Long.valueOf(userPk)).orElseThrow(CUserNotFoundException::new);
+    public UserDetails loadUserByUsername(String userId) {
+        if (userId.matches("a(.*)"))
+            return employeesRepository.findByUserId(userId).orElseThrow(CUserNotFoundException::new);
+        else
+            return studentsRepository.findByUserId(userId).orElseThrow(CUserNotFoundException::new);
     }
 
 }

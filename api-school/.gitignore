@@ -1,0 +1,15 @@
+
+# gradle
+.gradle
+/build/
+
+# java template
+*.class
+
+# IntelliJ project files
+.idea
+.idea/*.xml
+*.iml
+out
+gen
+build
