@@ -17,12 +17,10 @@ const MainContainer = ( { history } ) =>{
         )
     }
     else{
-        if(user.id===1){
-            console.log("in student")
-            return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Redirect to='/student'></Redirect></div>
+        if(user.position==="관리자"){
+            return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Redirect to='/school'></Redirect></div>
         }
         else{
-            console.log("in school")
             return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Redirect to='/school'></Redirect></div>
         }
     }

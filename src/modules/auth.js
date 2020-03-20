@@ -10,7 +10,9 @@ const INITIALIZE = 'auth/INITIALIZE';
 const LOGOUT = 'auth/LOGOUT';
 const SET_USER = 'auth/SET_USER'
 
-const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes('auth/LOGIN');
+const [EMPLOYEE_LOGIN, EMPLOYEE_LOGIN_SUCCESS, EMPLOYEE_LOGIN_FAILURE] = createRequestActionTypes('auth/EMPLOYEE_LOGIN');
+const [STUDENT_LOGIN, STUDENT_LOGIN_SUCCESS, STUDENT_LOGIN_FAILURE] = createRequestActionTypes('auth/STUDENT_LOGIN');
+
 
 export const changeField = createAction(
     CHANGE_FIELD,
@@ -19,6 +21,8 @@ export const changeField = createAction(
         value,
     }),
 );
+
+export const changeToggle = createAction(CHANGE_FIELD, type=>type);
 
 export const initializeForm = createAction(
     INITIALIZE_FORM,
@@ -32,28 +36,40 @@ export const logout = createAction(
 
 export const setUser = createAction(SET_USER, auth=>auth);
 
-export const login = createAction(LOGIN, ({email, password})=>({
-    email,
+export const employee_login = createAction(EMPLOYEE_LOGIN, ({userId, password})=>({
+    userId,
     password
 }));
 
-const loginSaga = createRequestSaga(LOGIN, authAPI.login);
+export const student_login = createAction(STUDENT_LOGIN, ({userId, password})=>({
+    userId,
+    password
+}));
+
+const employee_loginSaga = createRequestSaga(EMPLOYEE_LOGIN, authAPI.employeelogin);
+const student_loginSaga = createRequestSaga(STUDENT_LOGIN, authAPI.studentlogin);
+
 export function* authSaga(){
-    yield takeLatest(LOGIN, loginSaga);
+    yield takeLatest(EMPLOYEE_LOGIN, employee_loginSaga);
+    yield takeLatest(STUDENT_LOGIN, student_loginSaga);
 }
 
 const initialState = {
     form:{
-        email:'',
+        userId:'',
         password:'',
+        type:'',
     },
     auth:null,
     authError:null,
 };
 
 const initialForm={
-    email:'',
-    password:'',
+    form:{
+        userId:'',
+        password:'',
+        type:'',
+    }
 }
 
 
@@ -80,12 +96,21 @@ const auth = handleActions(
             ...state,
             auth,
         }),
-        [LOGIN_SUCCESS]: (state, { payload:auth })=>({
+        [EMPLOYEE_LOGIN_SUCCESS]: (state, { payload:auth })=>({
             ...state,
             authError:null,
             auth,
         }),
-        [LOGIN_FAILURE]: (state, { payload:error }) =>({
+        [EMPLOYEE_LOGIN_FAILURE]: (state, { payload:error }) =>({
+            ...state,
+            authError:error,
+        }),
+        [STUDENT_LOGIN_SUCCESS]: (state, { payload:auth })=>({
+            ...state,
+            authError:null,
+            auth,
+        }),
+        [STUDENT_LOGIN_FAILURE]: (state, { payload:error }) =>({
             ...state,
             authError:error,
         }),

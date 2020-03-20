@@ -1,7 +1,7 @@
 import client from './client';
 
-export const writeNotice = ({ title, body })=>client.post('https://koreanjson.com/posts', 
-                                                        { title, body });
+export const writeNotice = ({ title, body, author, token })=>client.post('http://localhost:8080/school/notices', 
+                                                        { title, content:body, author }, {headers:{'X-AUTH-TOKEN':token}});
 
 export const updateNotice = ({ id, title, body }) => client.patch(`https://koreanjson.com/posts/${id}`, 
                                                                 {title, body})                                                                

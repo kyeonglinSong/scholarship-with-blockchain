@@ -7,12 +7,15 @@ import EditorComponent from '../../components/school/EditorComponent';
 
 const EditorContainer = ({ history }) => {
     const dispatch = useDispatch();
-    const { title, content, notice, noticeError, originalNoticeId } = useSelector(({ write })=>({
+    const { title, body, notice, noticeError, originalNoticeId, author, user, token } = useSelector(({ write, auth })=>({
         title: write.title,
-        content:write.content,
+        body:write.body,
         notice:write.notice,
         noticeError:write.noticeError,
         originalNoticeId: write.originalNoticeId,
+        author:write.author,
+        token:write.token,
+        user:auth.auth,
     }));
 
     const onChangeField = useCallback(payload => dispatch(changeField(payload)),[
@@ -20,12 +23,13 @@ const EditorContainer = ({ history }) => {
     ]);
     
     const onPublish = () =>{
+
         if(originalNoticeId){
-            dispatch(updateNotice({originalNoticeId, title, content}));
+            dispatch(updateNotice({originalNoticeId, title, body}));
         }
         dispatch(
             writeNotice({
-                title,content,
+                title,body,author,token
             }),
         );
     }
@@ -39,8 +43,16 @@ const EditorContainer = ({ history }) => {
     }
 
     useEffect(()=>{
+        console.log("in initialize")
+        const { data } = user;
+        console.log(data);
         return() => {
-            dispatch(initialize());
+            dispatch(initialize(
+                {
+                    token:data,
+                    author:user,
+                }
+            ));
         };
     }, [dispatch]);
 
@@ -55,7 +67,7 @@ const EditorContainer = ({ history }) => {
     }, [history, notice, noticeError])
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <EditorComponent onChangeField={onChangeField} title={title} body={content} onPublish={onPublish} onCancel={onCancel}/>
+            <EditorComponent onChangeField={onChangeField} title={title} body={body} onPublish={onPublish} onCancel={onCancel}/>
             </div>;
 }
 

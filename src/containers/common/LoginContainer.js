@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { changeField, initializeForm, login, initialize } from '../../modules/auth';
+import { changeField, initializeForm, student_login, employee_login, initialize } from '../../modules/auth';
 import SignIn from '../../components/common/SignIn';
 
 const LoginForm = ({ history }) => {
@@ -16,14 +16,28 @@ const LoginForm = ({ history }) => {
 
     //change input handler
     const onChange = e =>{
-        const { value, name } = e.target;
+        if(e.target.id==="student"||e.target.id==="employee"){
+            console.log("in radio")
+            const id=e.target.id;
+            const name=e.target.name;
+            dispatch(
+                changeField({
+                    key:name,
+                    value:id
+                })
+            )
+        }
+        else{
+            const { value, name } = e.target;
         dispatch(
             changeField({
                 key:name,
                 value
             })
         );
+        }
     };
+
 
     useEffect(()=>{
         dispatch(initializeForm());
@@ -50,8 +64,14 @@ const LoginForm = ({ history }) => {
      //form submit handler
      const onSubmit = e => {
         e.preventDefault();
-        const { email, password } = form;
-        dispatch(login({ email, password }));
+        const type=form.type;
+        const { userId, password } = form;
+        if(type==='student'){
+            dispatch(student_login({ userId, password }));
+        }
+        else{
+            dispatch(employee_login({ userId, password }))
+        }
     };
 
     return(
