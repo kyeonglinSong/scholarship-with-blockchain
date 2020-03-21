@@ -9,7 +9,7 @@ const [ WRITE_NOTICE, WRITE_NOTICE_SUCCESS, WRITE_NOTICE_FAILURE] = createReques
 const SET_ORIGINAL = 'write/SET_ORIGINAL';
 const [UPDATE_NOTICE, UPDATE_NOTICE_SUCCESS, UPDATE_NOTICE_FAILURE] = createRequestActionTypes('write/UPDATE_NOTICE');
 
-export const initialize = createAction(INITIALIZE, ({token, author})=>({token, author}));
+export const initialize = createAction(INITIALIZE);
 export const changeField = createAction(CHANGE_FIELD, ({ key, value })=>({
     key,
     value,
@@ -30,25 +30,33 @@ export function* writeSaga(){
     yield takeLatest(UPDATE_NOTICE, updateNoticeSaga);
 }
 
-const user=JSON.parse(localStorage.getItem("user"));
-const author=user.msg;
-const token=user.data;
 
-const initialState = {
+var initialState = {
     title:'',
     body:'',
     notice:null,
     noticeError:null,
-    author,
-    token
 };
+
+const user=JSON.parse(localStorage.getItem("user"));
+if(user){
+    const token = user.data.token;
+    const author = user.data.role;
+
+    initialState = {
+        title:'',
+        body:'',
+        notice:null,
+        noticeError:null,
+        token,
+        author,
+    };
+}
+
 
 const write = handleActions(
     {
-        [INITIALIZE]:(state,{payload:{token, author}})=>({
-            token,
-            author,
-        }),
+        [INITIALIZE]:state=>initialState,
         [CHANGE_FIELD]:(state, { payload: { key, value } }) => ({
             ...state,
             [key]:value,

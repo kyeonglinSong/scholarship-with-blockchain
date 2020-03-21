@@ -17,11 +17,11 @@ const MainContainer = ( { history } ) =>{
         )
     }
     else{
-        if(user.position==="관리자"){
+        if(user.data.role==="ADMIN"){
             return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Redirect to='/school'></Redirect></div>
         }
         else{
-            return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Redirect to='/school'></Redirect></div>
+            return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Redirect to='/student'></Redirect></div>
         }
     }
 }

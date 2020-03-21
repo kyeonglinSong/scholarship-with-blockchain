@@ -43,16 +43,8 @@ const EditorContainer = ({ history }) => {
     }
 
     useEffect(()=>{
-        console.log("in initialize")
-        const { data } = user;
-        console.log(data);
         return() => {
-            dispatch(initialize(
-                {
-                    token:data,
-                    author:user,
-                }
-            ));
+            dispatch(initialize());
         };
     }, [dispatch]);
 
