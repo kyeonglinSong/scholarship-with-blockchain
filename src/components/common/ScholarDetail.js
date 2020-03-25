@@ -58,7 +58,7 @@ if(loading || !scholar){
 const { userId, id, title, body } = scholar;
 
 
-const usertype = (user.id===1)
+const usertype = (user.data.role==="ADMIN");
 
 
 return(

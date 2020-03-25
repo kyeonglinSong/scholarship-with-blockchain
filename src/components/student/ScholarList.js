@@ -7,10 +7,16 @@ import { Link } from "react-router-dom";
 import SearchContainer from "../../containers/common/SearchContainer";
 
 
-const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord })=>{
+const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, prevPage, total, searchWord, possible })=>{
 
   if(loading || !scholars){
     return null;
+  }
+
+  if(possible==="possible"){
+    scholars=scholars.filter((scholars)=>{
+      return scholars.possible===possible;
+    })
   }
 
   if(searchWord){

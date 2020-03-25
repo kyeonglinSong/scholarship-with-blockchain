@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { changeField, changeOrder, initialize, changeSemester } from '../../modules/search';
+import { changeField, changeOrder, initialize, changeSemester, changeCheck } from '../../modules/search';
 import SearchBar from '../../components/common/SearchBar';
 
 const SearchContainer = ({ type }) => {
     const dispatch = useDispatch();
-    const { searchWord } = useSelector(({search})=>({
+    const { searchWord, possible } = useSelector(({search})=>({
         searchWord:search.searchWord,
+        possible:search.possible,
     }));
 
     const onChange = e =>{
@@ -29,13 +30,21 @@ const SearchContainer = ({ type }) => {
         dispatch(changeSemester(value));
     }
 
+    const onPossibleChange = e =>{
+        e.preventDefault();
+        const { id, name } = e.target;
+        dispatch(changeCheck(id));
+    }
+
     useEffect(()=>{
         return() => {
             dispatch(initialize());
         };
     }, [dispatch]);
 
-    return  <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><SearchBar onChange={onChange} onDropChange={onDropChange} type={type} onSemesterChange={onSemesterChange}/></div>
+    return  <div><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <SearchBar possible={possible} onPossibleChange={onPossibleChange} onChange={onChange} onDropChange={onDropChange} 
+                        type={type} onSemesterChange={onSemesterChange}/></div>
 }
 
 export default SearchContainer;

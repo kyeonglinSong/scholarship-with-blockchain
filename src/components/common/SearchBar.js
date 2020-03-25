@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
-import { Input, Button, Row, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
+import { Input, Button, Row, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, Col, Label, FormGroup } from 'reactstrap';
 import styled from 'styled-components';
 
-const SearchBar = ({ onChange, onDropChange, type, onSemesterChange }) => {
+const SearchBar = ({ onChange, onDropChange, type, onSemesterChange, onPossibleChange, possible }) => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(prevState => !prevState);
@@ -70,7 +70,23 @@ const SearchBar = ({ onChange, onDropChange, type, onSemesterChange }) => {
             <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
+                <Col>
                 <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
+                </Col>
+                <Col xs={{size:1}}>
+                    <FormGroup check>
+                    <Label check>
+                        <Input type="radio" name="possible" onChange={onPossibleChange} value={possible} id="all"/>전체
+                    </Label>
+                    </FormGroup>
+                </Col>
+                <Col xs={{size:2}}>
+                    <FormGroup check>
+                    <Label check>
+                        <Input type="radio" name="possible" onChange={onPossibleChange} value={possible} id="possible"/>지원가능
+                    </Label>
+                    </FormGroup>
+                </Col>
             </Row>
         </div>
         )

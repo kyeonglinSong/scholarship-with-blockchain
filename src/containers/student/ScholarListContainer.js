@@ -8,7 +8,7 @@ import ScholarList from '../../components/student/ScholarList';
 const ScholarListContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { scholars, tempPage, lastPage, total, error, loading, searchWord } = useSelector(({ scholars, loading, search })=>({
+    const { scholars, tempPage, lastPage, total, error, loading, searchWord, possible } = useSelector(({ scholars, loading, search })=>({
         scholars:scholars.scholars,
         tempPage:scholars.tempPage,
         lastPage:scholars.lastPage,
@@ -16,7 +16,10 @@ const ScholarListContainer = ()=>{
         error:scholars.error,
         loading:loading['scholarList/LIST_SCHOLARS'],
         searchWord:search.searchWord,
+        possible:search.possible,
     }));
+
+    console.log(possible);
 
     const toNextPage = e =>{
         if(e){
@@ -35,8 +38,9 @@ const ScholarListContainer = ()=>{
     }, [dispatch]);
 
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><ScholarList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
-                        nextPage={toNextPage} prevPage={toPrevPage} total={total} searchWord={searchWord}/></div>;
+    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <ScholarList scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
+                        nextPage={toNextPage} prevPage={toPrevPage} total={total} searchWord={searchWord} possible={possible}/></div>;
 };
 
 export default ScholarListContainer;
