@@ -242,47 +242,7 @@ public class Scholarship extends State {
         + " " + getSemester() + " " + getMaturityDateTime() + " " +getFoundation() + " " + getFaceValue() 
         + " " + getSemesterLimitMin() + " " + getGradeLimit() + " " + getMajorLimit() + " " + getTotalNum() + " " + getCurrentNum();
     }
-    
 
-    public static List<Scholarship> listDeserialize(byte[] data) {
-
-        List<Scholarship> result = new ArrayList<Scholarship>();
-        Scholarship scholarship;
-
-        JSONArray jsonArray = new JSONArray(new String(data, UTF_8));
-        for(int i=0 ; i<jsonArray.length() ; i++){
-            JSONObject jsonObj = jsonArray.getJSONObject(i);
-            scholarship = jsonDeserialize(jsonObj);
-            result.add(scholarship);
-        }
-        return result;
-    }
-
-    /**
-     * Deserialize a state data to commercial paper
-     *
-     * @param {Buffer} data to form back into the object
-     */
-    public static Scholarship deserialize(byte[] data) {
-
-        JSONObject json = new JSONObject(new String(data, UTF_8));
-        String scholarshipId = json.getString("scholarshipId");
-        String state = json.getString("state");  
-        String scholarshipName = json.getString("scholarshipName");
-        String semester = json.getString("semester");
-        String maturityDateTime = json.getString("maturityDateTime");
-        String foundation = json.getString("foundation");
-        int faceValue = json.getInt("faceValue");   
-        int semesterLimitMin = json.getInt("semesterLimitMin");
-        int semesterLimitMax = json.getInt("semesterLimitMax");
-        float gradeLimit = json.getFloat("gradeLimit");   
-        String majorLimit = json.getString("majorLimit");
-        int totalNum = json.getInt("totalNum");
-        int currentNum = json.getInt("currentNum");
-
-        // scholarship 객체 반환
-        return createInstance(scholarshipName, semester, maturityDateTime, foundation, scholarshipId, faceValue, semesterLimitMin, semesterLimitMax, gradeLimit, majorLimit, totalNum, currentNum, state);
-    }
 
     public static Scholarship jsonDeserialize(JSONObject json) {
         String scholarshipId = json.getString("scholarshipId");
@@ -303,6 +263,27 @@ public class Scholarship extends State {
         return createInstance(scholarshipName, semester, maturityDateTime, foundation, scholarshipId, faceValue, semesterLimitMin, semesterLimitMax, gradeLimit, majorLimit, totalNum, currentNum, state);
 
     }
+
+    public static List<Scholarship> listDeserialize(byte[] data) {
+
+        List<Scholarship> result = new ArrayList<Scholarship>();
+        Scholarship scholarship;
+
+        JSONArray jsonArray = new JSONArray(new String(data, UTF_8));
+        for(int i=0 ; i<jsonArray.length() ; i++){
+            JSONObject jsonObj = jsonArray.getJSONObject(i);
+            scholarship = jsonDeserialize(jsonObj);
+            result.add(scholarship);
+        }
+        return result;
+    }
+
+    public static Scholarship deserialize(byte[] data) {
+
+        JSONObject jsonObject = new JSONObject(new String(data, UTF_8));
+        return jsonDeserialize(jsonObject);
+    }
+
 
     
     public static byte[] serialize(Scholarship scholarship) {

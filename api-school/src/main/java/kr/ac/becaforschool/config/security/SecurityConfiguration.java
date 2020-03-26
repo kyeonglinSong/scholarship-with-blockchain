@@ -32,12 +32,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests() // 다음 리퀘스트의 사용권한 체크
                 // 로그인 안해도 이용 가능
-                .antMatchers("/*/student/signin","/*/admin/signin", "/*/student/signup","/*/admin/signup", "/school/scholarships", "/school/scholarships/*", "/school/applyings", "school/applyings/*").permitAll()
+                .antMatchers("/*/student/signin","/*/admin/signin", "/*/admin/signup","/*/student/signup").permitAll()
                 // ADMIN ONLY
-               .antMatchers("/school/notices", "/school/notices/*").hasAuthority("ADMIN")
+               .antMatchers(  "/*/admin/*").hasAuthority("ADMIN")
                 // STUDENT ONLY
-                .anyRequest().hasAuthority("STUDENT")
+                .antMatchers("/*/student/*").hasAuthority("STUDENT")
                 // 둘 다
+                .anyRequest().hasAnyAuthority("STUDENT", "ADMIN")
                 .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
     }

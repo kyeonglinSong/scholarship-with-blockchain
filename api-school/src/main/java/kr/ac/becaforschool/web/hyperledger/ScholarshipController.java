@@ -1,5 +1,6 @@
 package kr.ac.becaforschool.web.hyperledger;
 
+
 import kr.ac.becaforschool.domain.hyperledger.Scholarship;
 import kr.ac.becaforschool.model.response.ListResult;
 import kr.ac.becaforschool.model.response.SingleResult;
@@ -14,18 +15,14 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
-
-// 학교측에서 hyperledger nw에 evaluate transaction을 날릴 때
 
 
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value="/school")
-@CrossOrigin(origins = "http://localhost:3000")
 public class ScholarshipController {
 
     static {
@@ -38,10 +35,10 @@ public class ScholarshipController {
     Path networkConfigPath = Paths.get("connection.json");
     Gateway.Builder builder = Gateway.createBuilder();
 
-    // 장학금 하나 쿼링. 장학금 아이디로 쿼링
+    // 장학금 하나 쿼링. 장학금 아이디로 쿼링 : ok
     // EX  GET /school/scholarships
     @GetMapping(value = "/scholarships/{scholarshipid}")
-    public SingleResult<Scholarship> queryOne(@PathVariable String scholarshipid) throws IOException {
+    public SingleResult<Scholarship> queryScholarship(@PathVariable String scholarshipid) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
 
@@ -67,8 +64,8 @@ public class ScholarshipController {
         }
     }
 
-    // 전체 장학금 쿼링
-    @GetMapping(value = "/scholarships")
+    // 전체 장학금 쿼링 : ok
+    @GetMapping(value = "/all/scholarships")
     public ListResult<Scholarship> queryAllScholarship() throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -95,8 +92,8 @@ public class ScholarshipController {
     }
 
 
-    // 장학금 등록
-    @PostMapping(value = "/scholarships")
+    // 장학금 등록 : ok
+    @PostMapping(value = "/admin/scholarships")
     public SingleResult<Scholarship> enroll(@RequestBody ScholarshipEnrollDto requestDto) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -125,12 +122,61 @@ public class ScholarshipController {
     }
 
 
-    // 장학금 수정
+    // 장학금 수정 : ok
+    @PutMapping("/scholarships/{scholarshipId}")
+    public SingleResult<Scholarship> updateScholarship(@RequestBody ScholarshipEnrollDto requestDto, @PathVariable String scholarshipId) throws IOException {
+        Wallet wallet = Wallet.createFileSystemWallet(walletPath);
+
+        builder.identity(wallet, "admin").networkConfig(networkConfigPath).discovery(true);
+
+        // create a gateway connection
+        try (Gateway gateway = builder.connect()) {
+
+            // get the network and contract
+            Network network = gateway.getNetwork("mychannel");
+            Contract contract = network.getContract("scholarship");
+
+            // 여기서부터 좀 고민
+            byte[] result = contract.submitTransaction("updateScholarship", requestDto.getScholarshipName(), requestDto.getSemester(),
+                    requestDto.getMaturityDateTime(), requestDto.getFoundation(), Integer.toString(requestDto.getFaceValue()), Integer.toString(requestDto.getSemesterLimitMin()),
+                    Integer.toString(requestDto.getSemesterLimitMax()), Float.toString(requestDto.getGradeLimit()), requestDto.getMajorLimit(), Integer.toString(requestDto.getTotalNum()),
+                    scholarshipId);
+
+            Scholarship scholarship = Scholarship.deserialize(result);
+            return responseService.getSingleResult(scholarship);
+
+        } catch (GatewayException | InterruptedException | TimeoutException e){
+            e.printStackTrace();
+            return (SingleResult<Scholarship>) responseService.getFailResult();
+        }
+    }
 
 
-    // 장하금 만료시키기
+    // 장하금 산정완료 or 만료시키기
+    @PutMapping("/admin/scholarships/{scholarshipId}")
+    public SingleResult<Scholarship> updateScholarship(@PathVariable String scholarshipId) throws IOException {
+        Wallet wallet = Wallet.createFileSystemWallet(walletPath);
 
+        builder.identity(wallet, "admin").networkConfig(networkConfigPath).discovery(true);
 
+        // create a gateway connection
+        try (Gateway gateway = builder.connect()) {
+
+            // get the network and contract
+            Network network = gateway.getNetwork("mychannel");
+            Contract contract = network.getContract("scholarship");
+
+            // 여기서부터 좀 고민
+            byte[] result = contract.submitTransaction("finishOrExpireScholarship", scholarshipId);
+
+            Scholarship scholarship = Scholarship.deserialize(result);
+            return responseService.getSingleResult(scholarship);
+
+        } catch (GatewayException | InterruptedException | TimeoutException e){
+            e.printStackTrace();
+            return (SingleResult<Scholarship>) responseService.getFailResult();
+        }
+    }
 
 
 }

@@ -9,8 +9,12 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import kr.ac.becaforschool.domain.hyperledger.ledgerapi.State;
 import org.hyperledger.fabric.contract.annotation.DataType;
 import org.hyperledger.fabric.contract.annotation.Property;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONPropertyIgnore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @DataType()
 public class Applying extends State {
@@ -234,9 +238,8 @@ public class Applying extends State {
      *
      * @param {Buffer} data to form back into the object
      */
-    public static Applying deserialize(byte[] data) {
 
-        JSONObject json = new JSONObject(new String(data, UTF_8));
+    public static Applying jsonDeserialize(JSONObject json) {
         String applyingId =  json.getString("applyingId");
         String semester = json.getString("semester");
         String state = json.getString("state");
@@ -252,21 +255,41 @@ public class Applying extends State {
         // scholarship
         JSONObject innerObject = json.getJSONObject("scholarship");
         String scholarshipId = innerObject.getString("scholarshipId");
-        String scholarState = innerObject.getString("state");  
+        String scholarState = innerObject.getString("state");
         String scholarshipName = innerObject.getString("scholarshipName");
         String scholarSemester = innerObject.getString("semester");
         String maturityDateTime = innerObject.getString("maturityDateTime");
         String foundation = innerObject.getString("foundation");
-        int faceValue = innerObject.getInt("faceValue");   
+        int faceValue = innerObject.getInt("faceValue");
         int semesterLimitMin = innerObject.getInt("semesterLimitMin");
         int semesterLimitMax = innerObject.getInt("semesterLimitMax");
-        float gradeLimit = innerObject.getFloat("gradeLimit");   
+        float gradeLimit = innerObject.getFloat("gradeLimit");
         String majorLimit = innerObject.getString("majorLimit");
         int totalNum = innerObject.getInt("totalNum");
         int currentNum = innerObject.getInt("currentNum");
         Scholarship scholarship = Scholarship.createInstance(scholarshipName, scholarSemester, maturityDateTime, foundation, scholarshipId, faceValue, semesterLimitMin, semesterLimitMax, gradeLimit, majorLimit, totalNum, currentNum, scholarState);
         // scholarship 객체 반환
         return createInstance(applyingId, semester, name, studentId, university, college, major, completeSemester, grade, tuition, scholarship, state);
+    }
+
+    public static List<Applying> listDeserialize(byte[] data) {
+
+        List<Applying> result = new ArrayList<Applying>();
+        Applying applying;
+
+        JSONArray jsonArray = new JSONArray(new String(data, UTF_8));
+        for(int i=0 ; i<jsonArray.length() ; i++){
+            JSONObject jsonObj = jsonArray.getJSONObject(i);
+            applying = jsonDeserialize(jsonObj);
+            result.add(applying);
+        }
+        return result;
+    }
+
+    public static Applying deserialize(byte[] data) {
+
+        JSONObject jsonObject = new JSONObject(new String(data, UTF_8));
+        return jsonDeserialize(jsonObject);
     } 
 
     
