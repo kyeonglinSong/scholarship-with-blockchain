@@ -32,7 +32,7 @@ public class ApplyingController {
 
 
     // 장학금에 지원 (학생) : OK
-    @PostMapping(value = "/student/applyings")
+    @PostMapping(value = "/applyings")
     public SingleResult<Applying> apply(@RequestBody ApplyingDto requestDto) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -62,7 +62,7 @@ public class ApplyingController {
     }
 
     // 장학금 번호로 지원들 쿼링. : ok
-    @GetMapping(value = "/admin/applyings/{scholarshipId}")
+    @GetMapping(value = "/applyings/{scholarshipId}")
     public ListResult<Applying> queryApplyingsByScholarship(@PathVariable String scholarshipId) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -91,7 +91,7 @@ public class ApplyingController {
     }
 
     // 학생정보로 지원들 쿼링:ok
-    @GetMapping(value = "/all/applyings")
+    @GetMapping(value = "/applyings")
     public ListResult<Applying> queryApplyingsByStudentInfo(@RequestParam String university, @RequestParam String studentId) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -119,7 +119,7 @@ public class ApplyingController {
     }
 
     // 선발 / 선발취소하기
-    @PutMapping(value="/admin/applyings/{applyingId}")
+    @PutMapping(value="/applyings/{applyingId}")
     public SingleResult<Applying> selectStudent(@PathVariable String applyingId) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);

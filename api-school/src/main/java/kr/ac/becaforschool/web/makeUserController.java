@@ -14,7 +14,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 
-@Api(tags = {"makeuser"})
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value="/school")
@@ -28,7 +27,6 @@ public class makeUserController {
     private final LoginService loginService;
 
     // 어드민 생성
-    @ApiOperation(value="학생 등록", notes = "학생 계정을 등록한다.")
     @PostMapping(value = "/admin/signup")
     public CommonResult emplyoeeSignup (@RequestBody EmployeesSaveRequestDto requestDto) {
 
@@ -38,7 +36,6 @@ public class makeUserController {
     }
 
     // 학생 생성, 어드민 계정 있어야 함
-    @ApiOperation(value="학생 등록", notes = "학생 계정을 등록한다.")
     @PostMapping(value = "/student/signup")
     public CommonResult stduentSignup (@RequestBody StudentsSaveRequestDto requestDto) {
 

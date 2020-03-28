@@ -2,67 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/advice/CIdSigninFailedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/advice/CUserExistException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/advice/CUserNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/JwtTokenProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/SecurityConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/BaseTimeEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/notices/Notices$NoticesBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/notices/Notices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/notices/NoticesRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/users/Employees$EmployeesBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/users/Employees.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/users/EmployeesRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/users/Students$StudentsBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/users/Students.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/domain/users/StudentsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/model/response/CommonResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/model/response/ListResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/model/response/SingleResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/LoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/ResponseService$CommonResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/ResponseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/notices/NoticesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/service/security/CustomUserDetailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/NoticesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/noticesDto/NoticesListResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/noticesDto/NoticesResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/noticesDto/NoticesSaveRequestDto$NoticesSaveRequestDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/noticesDto/NoticesSaveRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/noticesDto/NoticesUpdateRequestDto$NoticesUpdateRequestDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/noticesDto/NoticesUpdateRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/EmployeesLoginRequestDto$EmployeesLoginRequestDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/EmployeesLoginRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/EmployeesSaveRequestDto$EmployeesSaveRequestDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/EmployeesSaveRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/StudentsLoginRequestDto$StudentsLoginRequestDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/StudentsLoginRequestDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/StudentsSaveRequestDto$StudentsSaveRequestDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/dto/usersDto/StudentsSaveRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/config/security/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/NoticesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/NoticesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/hyperledger/StudentQueryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/makeUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/makeUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/kr/ac/becaforschool/web/makeUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/config/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/config/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/domain/hyperledger/Applying.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/domain/hyperledger/Applying.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/domain/hyperledger/Scholarship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/domain/hyperledger/Scholarship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/NoticesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/NoticesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/hyperledger/ApplyingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/hyperledger/ApplyingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/hyperledger/ScholarshipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/hyperledger/ScholarshipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/hyperledger/StudentQueryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/makeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/makeUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,6 +201,8 @@
       <workItem from="1585051900857" duration="169000" />
       <workItem from="1585120050652" duration="4549000" />
       <workItem from="1585193642237" duration="9130000" />
+      <workItem from="1585297377585" duration="592000" />
+      <workItem from="1585382273527" duration="2714000" />
     </task>
     <servers />
   </component>
@@ -257,59 +218,59 @@
       <screen x="0" y="23" width="1440" height="802" />
     </state>
     <state x="640" y="139" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.802@0.23.1440.802" timestamp="1584540359526" />
-    <state width="1117" height="88" key="GridCell.Tab.0.bottom" timestamp="1585204598871">
+    <state width="1395" height="651" key="GridCell.Tab.0.bottom" timestamp="1585385205978">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.0.bottom/0.23.1440.802@0.23.1440.802" timestamp="1585204598871" />
+    <state width="1395" height="651" key="GridCell.Tab.0.bottom/0.23.1440.802@0.23.1440.802" timestamp="1585385205978" />
     <state width="1411" height="235" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1585201483881" />
     <state width="1227" height="250" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1584774175017" />
     <state width="1013" height="319" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1584772848922" />
-    <state width="1117" height="88" key="GridCell.Tab.0.center" timestamp="1585204598870">
+    <state width="1395" height="651" key="GridCell.Tab.0.center" timestamp="1585385205969">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.0.center/0.23.1440.802@0.23.1440.802" timestamp="1585204598870" />
+    <state width="1395" height="651" key="GridCell.Tab.0.center/0.23.1440.802@0.23.1440.802" timestamp="1585385205969" />
     <state width="1411" height="235" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1585201483878" />
     <state width="1227" height="250" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1584774175012" />
     <state width="1013" height="319" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1584772848918" />
-    <state width="1117" height="88" key="GridCell.Tab.0.left" timestamp="1585204598869">
+    <state width="1395" height="651" key="GridCell.Tab.0.left" timestamp="1585385205967">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.0.left/0.23.1440.802@0.23.1440.802" timestamp="1585204598869" />
+    <state width="1395" height="651" key="GridCell.Tab.0.left/0.23.1440.802@0.23.1440.802" timestamp="1585385205967" />
     <state width="1411" height="235" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1585201483874" />
     <state width="1227" height="250" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1584774175012" />
     <state width="1013" height="319" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1584772848916" />
-    <state width="1117" height="88" key="GridCell.Tab.0.right" timestamp="1585204598871">
+    <state width="1395" height="651" key="GridCell.Tab.0.right" timestamp="1585385205970">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.0.right/0.23.1440.802@0.23.1440.802" timestamp="1585204598871" />
+    <state width="1395" height="651" key="GridCell.Tab.0.right/0.23.1440.802@0.23.1440.802" timestamp="1585385205970" />
     <state width="1411" height="235" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1585201483879" />
     <state width="1227" height="250" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1584774175013" />
     <state width="1013" height="319" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1584772848920" />
-    <state width="1117" height="88" key="GridCell.Tab.1.bottom" timestamp="1585204598875">
+    <state width="1395" height="140" key="GridCell.Tab.1.bottom" timestamp="1585384493368">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.1.bottom/0.23.1440.802@0.23.1440.802" timestamp="1585204598875" />
+    <state width="1395" height="140" key="GridCell.Tab.1.bottom/0.23.1440.802@0.23.1440.802" timestamp="1585384493368" />
     <state width="1411" height="235" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1585201483887" />
     <state width="1227" height="250" key="GridCell.Tab.1.bottom/0.23.1440.806@0.23.1440.806" timestamp="1584774175018" />
     <state width="1013" height="319" key="GridCell.Tab.1.bottom/0.23.1440.808@0.23.1440.808" timestamp="1584772848928" />
-    <state width="1117" height="88" key="GridCell.Tab.1.center" timestamp="1585204598873">
+    <state width="1395" height="140" key="GridCell.Tab.1.center" timestamp="1585384493367">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.1.center/0.23.1440.802@0.23.1440.802" timestamp="1585204598873" />
+    <state width="1395" height="140" key="GridCell.Tab.1.center/0.23.1440.802@0.23.1440.802" timestamp="1585384493367" />
     <state width="1411" height="235" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1585201483885" />
     <state width="1227" height="250" key="GridCell.Tab.1.center/0.23.1440.806@0.23.1440.806" timestamp="1584774175018" />
     <state width="1013" height="319" key="GridCell.Tab.1.center/0.23.1440.808@0.23.1440.808" timestamp="1584772848927" />
-    <state width="1117" height="88" key="GridCell.Tab.1.left" timestamp="1585204598872">
+    <state width="1395" height="140" key="GridCell.Tab.1.left" timestamp="1585384493366">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.1.left/0.23.1440.802@0.23.1440.802" timestamp="1585204598872" />
+    <state width="1395" height="140" key="GridCell.Tab.1.left/0.23.1440.802@0.23.1440.802" timestamp="1585384493366" />
     <state width="1411" height="235" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1585201483882" />
     <state width="1227" height="250" key="GridCell.Tab.1.left/0.23.1440.806@0.23.1440.806" timestamp="1584774175017" />
     <state width="1013" height="319" key="GridCell.Tab.1.left/0.23.1440.808@0.23.1440.808" timestamp="1584772848923" />
-    <state width="1117" height="88" key="GridCell.Tab.1.right" timestamp="1585204598874">
+    <state width="1395" height="140" key="GridCell.Tab.1.right" timestamp="1585384493367">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state width="1117" height="88" key="GridCell.Tab.1.right/0.23.1440.802@0.23.1440.802" timestamp="1585204598874" />
+    <state width="1395" height="140" key="GridCell.Tab.1.right/0.23.1440.802@0.23.1440.802" timestamp="1585384493367" />
     <state width="1411" height="235" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1585201483886" />
     <state width="1227" height="250" key="GridCell.Tab.1.right/0.23.1440.806@0.23.1440.806" timestamp="1584774175018" />
     <state width="1013" height="319" key="GridCell.Tab.1.right/0.23.1440.808@0.23.1440.808" timestamp="1584772848927" />
@@ -321,10 +282,10 @@
       <screen x="0" y="23" width="1440" height="802" />
     </state>
     <state x="167" y="23" key="SettingsEditor/0.23.1440.802@0.23.1440.802" timestamp="1585032569469" />
-    <state x="422" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1585193644118">
+    <state x="422" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1585382281656">
       <screen x="0" y="23" width="1440" height="802" />
     </state>
-    <state x="422" y="256" key="com.intellij.ide.util.TipDialog/0.23.1440.802@0.23.1440.802" timestamp="1585193644118" />
+    <state x="422" y="256" key="com.intellij.ide.util.TipDialog/0.23.1440.802@0.23.1440.802" timestamp="1585382281656" />
     <state x="422" y="257" key="com.intellij.ide.util.TipDialog/0.23.1440.804@0.23.1440.804" timestamp="1584692559710" />
     <state x="784" y="149" width="670" height="676" key="search.everywhere.popup" timestamp="1585032424336">
       <screen x="0" y="23" width="1440" height="802" />

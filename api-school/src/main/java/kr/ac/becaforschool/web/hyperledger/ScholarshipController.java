@@ -35,6 +35,7 @@ public class ScholarshipController {
     Path networkConfigPath = Paths.get("connection.json");
     Gateway.Builder builder = Gateway.createBuilder();
 
+
     // 장학금 하나 쿼링. 장학금 아이디로 쿼링 : ok
     // EX  GET /school/scholarships
     @GetMapping(value = "/scholarships/{scholarshipid}")
@@ -65,7 +66,7 @@ public class ScholarshipController {
     }
 
     // 전체 장학금 쿼링 : ok
-    @GetMapping(value = "/all/scholarships")
+    @GetMapping(value = "/scholarships")
     public ListResult<Scholarship> queryAllScholarship() throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -93,7 +94,7 @@ public class ScholarshipController {
 
 
     // 장학금 등록 : ok
-    @PostMapping(value = "/admin/scholarships")
+    @PostMapping(value = "/scholarships")
     public SingleResult<Scholarship> enroll(@RequestBody ScholarshipEnrollDto requestDto) throws IOException {
 
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -136,11 +137,16 @@ public class ScholarshipController {
             Network network = gateway.getNetwork("mychannel");
             Contract contract = network.getContract("scholarship");
 
-            // 여기서부터 좀 고민
-            byte[] result = contract.submitTransaction("updateScholarship", requestDto.getScholarshipName(), requestDto.getSemester(),
-                    requestDto.getMaturityDateTime(), requestDto.getFoundation(), Integer.toString(requestDto.getFaceValue()), Integer.toString(requestDto.getSemesterLimitMin()),
-                    Integer.toString(requestDto.getSemesterLimitMax()), Float.toString(requestDto.getGradeLimit()), requestDto.getMajorLimit(), Integer.toString(requestDto.getTotalNum()),
-                    scholarshipId);
+            byte[] result;
+            if (requestDto == null) {
+                result = contract.submitTransaction("finishScholarship", scholarshipId);
+
+            } else {
+                result = contract.submitTransaction("updateScholarship", requestDto.getScholarshipName(), requestDto.getSemester(),
+                        requestDto.getMaturityDateTime(), requestDto.getFoundation(), Integer.toString(requestDto.getFaceValue()), Integer.toString(requestDto.getSemesterLimitMin()),
+                        Integer.toString(requestDto.getSemesterLimitMax()), Float.toString(requestDto.getGradeLimit()), requestDto.getMajorLimit(), Integer.toString(requestDto.getTotalNum()),
+                        scholarshipId);
+            }
 
             Scholarship scholarship = Scholarship.deserialize(result);
             return responseService.getSingleResult(scholarship);
@@ -151,8 +157,9 @@ public class ScholarshipController {
         }
     }
 
+    /*
 
-    // 장하금 산정완료 or 만료시키기
+    // 장하금 만료
     @PutMapping("/admin/scholarships/{scholarshipId}")
     public SingleResult<Scholarship> updateScholarship(@PathVariable String scholarshipId) throws IOException {
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
@@ -167,7 +174,7 @@ public class ScholarshipController {
             Contract contract = network.getContract("scholarship");
 
             // 여기서부터 좀 고민
-            byte[] result = contract.submitTransaction("finishOrExpireScholarship", scholarshipId);
+            byte[] result = contract.submitTransaction("finisheScholarship", scholarshipId);
 
             Scholarship scholarship = Scholarship.deserialize(result);
             return responseService.getSingleResult(scholarship);
@@ -177,6 +184,6 @@ public class ScholarshipController {
             return (SingleResult<Scholarship>) responseService.getFailResult();
         }
     }
-
+*/
 
 }

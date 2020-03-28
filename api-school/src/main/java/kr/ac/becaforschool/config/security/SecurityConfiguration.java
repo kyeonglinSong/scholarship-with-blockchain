@@ -32,11 +32,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests() // 다음 리퀘스트의 사용권한 체크
                 // 로그인 안해도 이용 가능
-                .antMatchers("/*/student/signin","/*/admin/signin", "/*/admin/signup","/*/student/signup").permitAll()
+                .antMatchers("/school/admin/signin","/school/student/signin", "/school/admin/signup").permitAll()
                 // ADMIN ONLY
-               .antMatchers(  "/*/admin/*").hasAuthority("ADMIN")
-                // STUDENT ONLY
-                .antMatchers("/*/student/*").hasAuthority("STUDENT")
+                .antMatchers( "/school/applyings/*", "/school/student/signup").hasAuthority("ADMIN")
                 // 둘 다
                 .anyRequest().hasAnyAuthority("STUDENT", "ADMIN")
                 .and()

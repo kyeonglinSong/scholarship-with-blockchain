@@ -1,7 +1,6 @@
 package kr.ac.becaforschool.web;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+
 import kr.ac.becaforschool.advice.CIdSigninFailedException;
 import kr.ac.becaforschool.config.security.JwtTokenProvider;
 import kr.ac.becaforschool.domain.users.Employees;
@@ -13,13 +12,11 @@ import kr.ac.becaforschool.service.ResponseService;
 
 import kr.ac.becaforschool.web.dto.usersDto.LoginResponseDto;
 import kr.ac.becaforschool.web.dto.usersDto.StudentsLoginRequestDto;
-import kr.ac.becaforschool.web.dto.usersDto.StudentsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 
-@Api(value="login", description="로그인 기")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value="/school")
@@ -35,7 +32,6 @@ public class LoginController {
 
     // 교직원 로그인i
     @PostMapping(value="/admin/signin")
-    @ApiOperation(value="/admin/signin", notes="교직원 로그인용 ap")
     public SingleResult<LoginResponseDto> employeesSignin(@RequestBody StudentsLoginRequestDto requestDto) {
 
         Employees employee = employeesRepository.findByUserId(requestDto.getUserId()).orElseThrow(CIdSigninFailedException::new);
