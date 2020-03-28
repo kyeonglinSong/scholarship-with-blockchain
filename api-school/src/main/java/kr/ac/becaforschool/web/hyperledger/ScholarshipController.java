@@ -137,16 +137,11 @@ public class ScholarshipController {
             Network network = gateway.getNetwork("mychannel");
             Contract contract = network.getContract("scholarship");
 
-            byte[] result;
-            if (requestDto == null) {
-                result = contract.submitTransaction("finishScholarship", scholarshipId);
 
-            } else {
-                result = contract.submitTransaction("updateScholarship", requestDto.getScholarshipName(), requestDto.getSemester(),
-                        requestDto.getMaturityDateTime(), requestDto.getFoundation(), Integer.toString(requestDto.getFaceValue()), Integer.toString(requestDto.getSemesterLimitMin()),
-                        Integer.toString(requestDto.getSemesterLimitMax()), Float.toString(requestDto.getGradeLimit()), requestDto.getMajorLimit(), Integer.toString(requestDto.getTotalNum()),
-                        scholarshipId);
-            }
+            byte[] result = contract.submitTransaction("updateScholarship", requestDto.getScholarshipName(), requestDto.getSemester(),
+                    requestDto.getMaturityDateTime(), requestDto.getFoundation(), Integer.toString(requestDto.getFaceValue()), Integer.toString(requestDto.getSemesterLimitMin()),
+                    Integer.toString(requestDto.getSemesterLimitMax()), Float.toString(requestDto.getGradeLimit()), requestDto.getMajorLimit(), Integer.toString(requestDto.getTotalNum()),
+                    scholarshipId);
 
             Scholarship scholarship = Scholarship.deserialize(result);
             return responseService.getSingleResult(scholarship);
@@ -157,11 +152,10 @@ public class ScholarshipController {
         }
     }
 
-    /*
 
     // 장하금 만료
-    @PutMapping("/admin/scholarships/{scholarshipId}")
-    public SingleResult<Scholarship> updateScholarship(@PathVariable String scholarshipId) throws IOException {
+    @DeleteMapping("/scholarships/{scholarshipId}")
+    public SingleResult<Scholarship> finishScholarship(@PathVariable String scholarshipId) throws IOException {
         Wallet wallet = Wallet.createFileSystemWallet(walletPath);
 
         builder.identity(wallet, "admin").networkConfig(networkConfigPath).discovery(true);
@@ -174,7 +168,7 @@ public class ScholarshipController {
             Contract contract = network.getContract("scholarship");
 
             // 여기서부터 좀 고민
-            byte[] result = contract.submitTransaction("finisheScholarship", scholarshipId);
+            byte[] result = contract.submitTransaction("finishScholarship", scholarshipId);
 
             Scholarship scholarship = Scholarship.deserialize(result);
             return responseService.getSingleResult(scholarship);
@@ -184,6 +178,6 @@ public class ScholarshipController {
             return (SingleResult<Scholarship>) responseService.getFailResult();
         }
     }
-*/
+
 
 }
