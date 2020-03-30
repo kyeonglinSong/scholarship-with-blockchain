@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="" />
+    <list default="true" id="c0745edf-dba6-426c-8be0-006c0b54f99c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ac/becaforschool/web/LoginController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +188,7 @@
       <workItem from="1585382273527" duration="3270000" />
       <workItem from="1585410818564" duration="588000" />
       <workItem from="1585542902499" duration="4000" />
-      <workItem from="1585544797254" duration="1099000" />
+      <workItem from="1585544797254" duration="2026000" />
     </task>
     <servers />
   </component>

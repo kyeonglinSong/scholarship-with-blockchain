@@ -10,6 +10,7 @@ import kr.ac.becaforschool.domain.users.StudentsRepository;
 import kr.ac.becaforschool.model.response.SingleResult;
 import kr.ac.becaforschool.service.ResponseService;
 
+import kr.ac.becaforschool.web.dto.usersDto.EmployeesLoginRequestDto;
 import kr.ac.becaforschool.web.dto.usersDto.LoginResponseDto;
 import kr.ac.becaforschool.web.dto.usersDto.StudentsLoginRequestDto;
 import lombok.RequiredArgsConstructor;
@@ -30,9 +31,9 @@ public class LoginController {
     private final PasswordEncoder passwordEncoder;
 
 
-    // 교직원 로그인i
+    // 교직원 로그인
     @PostMapping(value="/admin/signin")
-    public SingleResult<LoginResponseDto> employeesSignin(@RequestBody StudentsLoginRequestDto requestDto) {
+    public SingleResult<LoginResponseDto> employeesSignin(@RequestBody EmployeesLoginRequestDto requestDto) {
 
         Employees employee = employeesRepository.findByUserId(requestDto.getUserId()).orElseThrow(CIdSigninFailedException::new);
         if (!passwordEncoder.matches(requestDto.getPassword(), employee.getPassword()) )
