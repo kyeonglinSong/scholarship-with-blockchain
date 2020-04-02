@@ -8,7 +8,7 @@ import SearchContainer from "../../containers/common/SearchContainer";
 import Student from "./Student";
 
 
-const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, onChange, onSubmit, searchWord, scholarId, onSelect })=>{
+const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, prevPage, onChange, onSubmit, searchWord, scholarId, onSelect, onScholarClose, scholarState })=>{
 
   if(loading || !students){
     return null;
@@ -35,7 +35,7 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <span >
       <div className="container">
-      <SearchContainer />
+      <SearchContainer onScholarClose={onScholarClose}/>
       <Table hover>
         <thead>
           <tr>
@@ -49,7 +49,7 @@ const StudentList = ({ students, tempPage, lastPage, loading, error, nextPage, p
         <tbody>
           {
             students.map((student, index) =>
-            <Student key={index} index={index + 1} student={student} onChange={onChange} scholarId={scholarId} onSelect={onSelect}/>
+            <Student key={index} index={index + 1} student={student} onChange={onChange} scholarId={scholarId} onSelect={onSelect} scholarState={scholarState}/>
                     )
           }
         </tbody>

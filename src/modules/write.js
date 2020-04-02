@@ -4,12 +4,14 @@ import createRequestSaga, { createRequestActionTypes } from '../lib/createReques
 import * as noticeAPI from '../lib/api/notice';
 
 const INITIALIZE = 'write/INITIALIZE';
+const SET_TOKEN=('write/SET_TOKEN');
 const CHANGE_FIELD = 'write/CHANGE_FIELD';
 const [ WRITE_NOTICE, WRITE_NOTICE_SUCCESS, WRITE_NOTICE_FAILURE] = createRequestActionTypes('write/WRITE_NOTICE');
 const SET_ORIGINAL = 'write/SET_ORIGINAL';
 const [UPDATE_NOTICE, UPDATE_NOTICE_SUCCESS, UPDATE_NOTICE_FAILURE] = createRequestActionTypes('write/UPDATE_NOTICE');
 
 export const initialize = createAction(INITIALIZE);
+export const setToken = createAction(SET_TOKEN);
 export const changeField = createAction(CHANGE_FIELD, ({ key, value })=>({
     key,
     value,
@@ -36,27 +38,19 @@ var initialState = {
     body:'',
     notice:null,
     noticeError:null,
+    token:null,
+    author:null,
 };
-
-const user=JSON.parse(localStorage.getItem("user"));
-if(user){
-    const token = user.data.token;
-    const author = user.data.role;
-
-    initialState = {
-        title:'',
-        body:'',
-        notice:null,
-        noticeError:null,
-        token,
-        author,
-    };
-}
 
 
 const write = handleActions(
     {
         [INITIALIZE]:state=>initialState,
+        [SET_TOKEN]:(state,{ payload:token, author })=>({
+            ...state,
+            token,
+            author,
+        }),
         [CHANGE_FIELD]:(state, { payload: { key, value } }) => ({
             ...state,
             [key]:value,

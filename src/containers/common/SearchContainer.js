@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { changeField, changeOrder, initialize, changeSemester, changeCheck } from '../../modules/search';
 import SearchBar from '../../components/common/SearchBar';
 
-const SearchContainer = ({ type }) => {
+const SearchContainer = ({ type, onScholarClose }) => {
     const dispatch = useDispatch();
     const { searchWord, possible } = useSelector(({search})=>({
         searchWord:search.searchWord,
@@ -44,7 +44,7 @@ const SearchContainer = ({ type }) => {
 
     return  <div><meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <SearchBar possible={possible} onPossibleChange={onPossibleChange} onChange={onChange} onDropChange={onDropChange} 
-                        type={type} onSemesterChange={onSemesterChange}/></div>
+                        type={type} onSemesterChange={onSemesterChange} onScholarClose={onScholarClose}/></div>
 }
 
 export default SearchContainer;

@@ -4,10 +4,12 @@ import createRequestSaga, { createRequestActionTypes } from '../lib/createReques
 import * as scholarAPI from '../lib/api/scholar';
 
 const [LIST_SCHOLARS, LIST_SCHOLARS_SUCCESS, LIST_SCHOLARS_FAILURE]=createRequestActionTypes('scholarList/LIST_SCHOLARS');
+const SET_TOKEN=('scholarList/SET_TOKEN');
 const NEXT_PAGE=('scholarList/NEXT_PAGE');
 const PREV_PAGE=('scholarList/PREV_PAGE');
 
-export const listScholars = createAction(LIST_SCHOLARS);
+export const setToken = createAction(SET_TOKEN);
+export const listScholars = createAction(LIST_SCHOLARS, token=>token);
 export const nextPage = createAction(NEXT_PAGE);
 export const prevPage = createAction(PREV_PAGE);
 
@@ -22,10 +24,15 @@ const initialState={
     lastPage:1,
     tempPage:1,
     total:1,
+    token:null,
 }
 
 const scholars = handleActions(
     {
+        [SET_TOKEN]:(state,{ payload:token })=>({
+            ...state,
+            token,
+        }),
         [LIST_SCHOLARS_SUCCESS]:(state, { payload:scholars, meta:response })=>({
             ...state,
             scholars,

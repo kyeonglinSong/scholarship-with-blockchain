@@ -5,19 +5,21 @@ import createRequestSaga, { createRequestActionTypes } from '../../lib/createReq
 import * as scholarAPI from '../../lib/api/scholar';
 
 const INITIALIZE = 'scholarship/INITIALIZE';
+const SET_TOKEN=('schohlarship/SET_TOKEN');
 const CHANGE_FIELD = 'scholarship/CHANGE_FIELD';
 const [ ADD_SCHOLAR, ADD_SCHOLAR_SUCCESS, ADD_SCHOLAR_FAILURE] = createRequestActionTypes('scholarship/ADD_SCHOLAR');
 const SET_ORIGINAL = 'scholarship/SET_ORIGINAL';
 const [UPDATE_SCHOLAR, UPDATE_SCHOLAR_SUCCESS, UPDATE_SCHOLAR_FAILURE] = createRequestActionTypes('scholarship/UPDATE_NOTICE');
 
 export const initialize = createAction(INITIALIZE);
+export const setToken = createAction(SET_TOKEN);
 export const changeField = createAction(CHANGE_FIELD, ({ key, value })=>({
     key,
     value,
 }));
-export const addScholar = createAction(ADD_SCHOLAR, content=>content);
+export const addScholar = createAction(ADD_SCHOLAR, ({content, token})=>({content, token}));
 export const setOriginal = createAction(SET_ORIGINAL, scholarship=>scholarship);
-export const updateScholar = createAction(UPDATE_SCHOLAR, ({id, title, body})=>({id, title, body}));
+export const updateScholar = createAction(UPDATE_SCHOLAR, ({id, title, body, token})=>({id, title, body, token}));
 
 const addScholarSaga = createRequestSaga(ADD_SCHOLAR, scholarAPI.registerScholarship);
 const updateScholarSaga = createRequestSaga(UPDATE_SCHOLAR, scholarAPI.updateScholarship);
@@ -40,11 +42,16 @@ const initialState = {
     scholarship:null,
     scholarshipError:null,
     originalScholarshipId:null,
+    token:null,
 };
 
 const Scholarship = handleActions(
     {
         [INITIALIZE]:state=>initialState,
+        [SET_TOKEN]:(state,{ payload:token })=>({
+            ...state,
+            token,
+        }),
         [CHANGE_FIELD]:(state, { payload: { key, value } }) => 
             produce(state, draft=>{
                 draft['content'][key]=value;

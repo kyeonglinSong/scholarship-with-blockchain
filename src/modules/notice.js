@@ -4,8 +4,10 @@ import createRequestSaga, { createRequestActionTypes } from '../lib/createReques
 import * as noticeAPI from '../lib/api/notice';
 
 const [READ_NOTICE, READ_NOTICE_SUCCESS, READ_NOTICE_FAILURE] = createRequestActionTypes('notice/READ_NOTICE');
+const SET_TOKEN=('notice/SET_TOKEN');
 const UNLOAD_NOTICE = 'notice/UNLOAD_POST';
 
+export const setToken = createAction(SET_TOKEN);
 export const readNotice = createAction(READ_NOTICE, id=>id);
 export const unloadNotice = createAction(UNLOAD_NOTICE);
 
@@ -17,6 +19,8 @@ export function* noticeSaga(){
 const initialState = {
     notice:null,
     error:null,
+    token:null,
+    author:null,
 };
 
 const notice = handleActions(
@@ -30,6 +34,11 @@ const notice = handleActions(
             error,
         }),
         [UNLOAD_NOTICE]:()=>initialState,
+        [SET_TOKEN]:(state,{ payload:token, author })=>({
+            ...state,
+            token,
+            author,
+        }),
     },
     initialState,
 );

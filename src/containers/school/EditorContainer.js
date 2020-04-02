@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { changeField, initialize, writeNotice, updateNotice } from '../../modules/write';
+import { changeField, initialize, writeNotice, updateNotice, setToken } from '../../modules/write';
 import EditorComponent from '../../components/school/EditorComponent';
 
 const EditorContainer = ({ history }) => {
@@ -43,10 +43,20 @@ const EditorContainer = ({ history }) => {
     }
 
     useEffect(()=>{
+        const tempuser=JSON.parse(localStorage.getItem("user"));
+        const temptoken=tempuser.data.token;
+        const tempauthor=tempuser.data.role;
+        console.log(temptoken);
+        dispatch(setToken(temptoken, tempauthor));
+    }, [dispatch]);
+
+    
+    useEffect(()=>{
         return() => {
             dispatch(initialize());
         };
-    }, [dispatch]);
+    }, [dispatch, token]);
+    
 
     useEffect(()=>{
         if(notice){

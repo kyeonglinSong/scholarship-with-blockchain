@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { listScholars, prevPage, nextPage } from '../../modules/scholarList';
+import { listScholars, prevPage, nextPage, setToken } from '../../modules/scholarList';
 import ScholarList from '../../components/student/ScholarList';
 
 const ScholarListContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { scholars, tempPage, lastPage, total, error, loading, searchWord, possible } = useSelector(({ scholars, loading, search })=>({
+    const { scholars, tempPage, lastPage, total, error, loading, searchWord, possible, token } = useSelector(({ scholars, loading, search })=>({
         scholars:scholars.scholars,
         tempPage:scholars.tempPage,
         lastPage:scholars.lastPage,
@@ -17,6 +17,7 @@ const ScholarListContainer = ()=>{
         loading:loading['scholarList/LIST_SCHOLARS'],
         searchWord:search.searchWord,
         possible:search.possible,
+        token:scholars.token,
     }));
 
     console.log(possible);
@@ -34,8 +35,16 @@ const ScholarListContainer = ()=>{
     }
 
     useEffect(()=>{
-        dispatch(listScholars());
+        const tempuser=JSON.parse(localStorage.getItem("user"));
+        const temptoken=tempuser.data.token;
+        const tempauthor=tempuser.data.role;
+        console.log(temptoken);
+        dispatch(setToken(temptoken, tempauthor));
     }, [dispatch]);
+
+    useEffect(()=>{
+        dispatch(listScholars(token));
+    }, [dispatch, token]);
 
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" />

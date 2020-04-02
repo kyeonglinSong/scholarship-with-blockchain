@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listScholars, prevPage, nextPage } from '../../modules/scholarList';
+import { listScholars, prevPage, nextPage, setToken } from '../../modules/scholarList';
 import ListSelectionScholar from '../../components/school/ListSelectionScholar';
 import styled from 'styled-components';
 
 const SelectionContainer = ()=>{
 
     const dispatch = useDispatch();
-    const { scholars, tempPage, lastPage, total, error, loading, searchWord, orderBase } = useSelector(({ scholars, loading, search })=>({
+    const { scholars, tempPage, lastPage, total, error, loading, searchWord, orderBase, token } = useSelector(({ scholars, loading, search })=>({
         scholars:scholars.scholars,
         tempPage:scholars.tempPage,
         lastPage:scholars.lastPage,
@@ -16,6 +16,7 @@ const SelectionContainer = ()=>{
         loading:loading['applyList/LIST_scholars'],
         searchWord:search.searchWord,
         orderBase:search.orderBase,
+        token:scholars.token,
     }));
 
     const toNextPage = e =>{
@@ -31,8 +32,16 @@ const SelectionContainer = ()=>{
     }
 
     useEffect(()=>{
-        dispatch(listScholars(1));
+        const tempuser=JSON.parse(localStorage.getItem("user"));
+        const temptoken=tempuser.data.token;
+        const tempauthor=tempuser.data.role;
+        console.log(temptoken);
+        dispatch(setToken(temptoken, tempauthor));
     }, [dispatch]);
+
+    useEffect(()=>{
+        dispatch(listScholars(token));
+    }, [dispatch, token]);
 
 
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><ListSelectionScholar scholars={scholars} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 

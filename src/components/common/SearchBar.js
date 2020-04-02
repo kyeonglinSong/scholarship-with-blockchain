@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Input, Button, Row, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, Col, Label, FormGroup } from 'reactstrap';
 import styled from 'styled-components';
 
-const SearchBar = ({ onChange, onDropChange, type, onSemesterChange, onPossibleChange, possible }) => {
+const SearchBar = ({ onChange, onDropChange, type, onSemesterChange, onPossibleChange, possible, onScholarClose }) => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(prevState => !prevState);
@@ -103,6 +103,7 @@ const SearchBar = ({ onChange, onDropChange, type, onSemesterChange, onPossibleC
                     <DropdownItem name="semester" onClick={onDropChange}>이수학기</DropdownItem>
                 </DropdownMenu>
                 </Dropdown>
+                <Button onClick={onScholarClose} style={{padding:'5px', height:'40px', marginTop:'5px'}}>장학금닫기</Button>
             </Row>
         </div>
     );

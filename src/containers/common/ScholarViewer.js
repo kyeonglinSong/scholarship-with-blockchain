@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { readScholar, unloadScholar } from '../../modules/scholarDetail';
+import { readScholar, unloadScholar, setToken } from '../../modules/scholarDetail';
 import { setOriginal } from '../../modules/school/scholarship';
 import ScholarDetail from '../../components/common/ScholarDetail';
 import { removeScholarship } from '../../lib/api/scholar';
@@ -11,19 +11,28 @@ import { removeScholarship } from '../../lib/api/scholar';
 const ScholarViewer = ({ match, history })=>{
     const scholarId  = match.params;
     const dispatch = useDispatch();
-    const { scholar, error, loading, user } = useSelector(({ scholarDetail, loading, auth })=>({
+    const { scholar, error, loading, user, token } = useSelector(({ scholarDetail, loading, auth })=>({
         scholar:scholarDetail.scholar,
         error:scholarDetail.error,
         loading:loading['scholar/READ_SCHOLAR'],
         user:auth.auth,
+        token:scholarDetail.token,
     }));
 
     useEffect(()=>{
-        dispatch(readScholar(scholarId.id));
+        const tempuser=JSON.parse(localStorage.getItem("user"));
+        const temptoken=tempuser.data.token;
+        const tempauthor=tempuser.data.role;
+        console.log(temptoken);
+        dispatch(setToken(temptoken, tempauthor));
+    }, [dispatch]);
+
+    useEffect(()=>{
+        dispatch(readScholar(scholarId.id, token));
         return()=>{
             dispatch(unloadScholar());
         };
-    }, [dispatch, scholarId]);
+    }, [dispatch, scholarId, token]);
 
     const onRemove = async() => {
         try{

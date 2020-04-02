@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { changeField, initialize, addScholar, updateScholar } from '../../modules/school/scholarship';
+import { changeField, initialize, addScholar, updateScholar, setToken } from '../../modules/school/scholarship';
 import { readScholar, unloadScholar } from '../../modules/scholarDetail';
 import FormComponent from '../../components/school/FormComponent';
 
 const ScholarEditorContainer = ({ history }) => {
     const dispatch = useDispatch();
-    const { content, scholar, scholarError, originalScholarId, originalScholar } = useSelector(({ Scholarship, scholarDetail })=>({
+    const { content, scholar, scholarError, originalScholarId, originalScholar, token } = useSelector(({ Scholarship, scholarDetail })=>({
         content:Scholarship.content,
         scholar:Scholarship.scholarship,
         scholarError:Scholarship.scholarshipError,
         originalScholarId: Scholarship.originalScholarshipId,
         originalScholar: scholarDetail.scholar,
+        token:Scholarship.token,
     }));
 
      //change input handler
@@ -52,17 +53,25 @@ const ScholarEditorContainer = ({ history }) => {
     }
 
     useEffect(()=>{
-        return() => {
-            dispatch(initialize());
-        };
+        const tempuser=JSON.parse(localStorage.getItem("user"));
+        const temptoken=tempuser.data.token;
+        const tempauthor=tempuser.data.role;
+        console.log(temptoken);
+        dispatch(setToken(temptoken, tempauthor));
     }, [dispatch]);
 
     useEffect(()=>{
-        dispatch(readScholar(originalScholarId));
+        return() => {
+            dispatch(initialize());
+        };
+    }, [dispatch, token]);
+
+    useEffect(()=>{
+        dispatch(readScholar(originalScholarId, token));
         return()=>{
             dispatch(unloadScholar());
         };
-    }, [dispatch, originalScholarId]);
+    }, [dispatch, originalScholarId, token]);
 
 
     useEffect(()=>{
