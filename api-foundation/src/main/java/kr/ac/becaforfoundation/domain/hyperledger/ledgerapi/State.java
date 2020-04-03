@@ -11,7 +11,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * State class. States have a class, unique key, and a lifecycle current state
  * the current state is determined by the specific subclass
  */
-public class State {
+public class State extends BaseTimeEntity{
 
     protected String key;
 
