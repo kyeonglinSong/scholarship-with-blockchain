@@ -5,13 +5,14 @@ package kr.ac.becaforschool.domain.hyperledger.ledgerapi;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import kr.ac.becaforschool.domain.BaseTimeEntity;
 import org.json.JSONObject;
 
 /**
  * State class. States have a class, unique key, and a lifecycle current state
  * the current state is determined by the specific subclass
  */
-public class State {
+public class State extends BaseTimeEntity {
 
     protected String key;
 
