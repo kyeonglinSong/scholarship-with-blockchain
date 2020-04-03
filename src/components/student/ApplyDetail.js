@@ -55,7 +55,7 @@ if(loading || !apply){
   return null;
 }
 
-const { userId, id, title, body } = apply;
+const { semester, name, studentId, university, college, major, completeSemester, grade, tuition, scholarshipId, } = apply;
 /* //내가 신청한 정보
 const {studentName, studentId, schoolId, completeSemester, priorGrade, tuition, college, major, scholarshipId}=apply;
 const myApply=()=>(
@@ -82,7 +82,7 @@ return(
       <Row style={ApplyStyle}>
         <div style={{fontSize: '30px', textAlign: 'left'}}><WiNightCloudyHigh style={{marginBottom:'10px'}}/> 장학금 신청 정보</div>
       </Row>
-      <div style={titleStyle}>{title}</div>
+      <div style={titleStyle}>{scholarshipId}</div>
       <div style={titleSubStyle}>여기엔 뭘 쓸까요. </div>
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>

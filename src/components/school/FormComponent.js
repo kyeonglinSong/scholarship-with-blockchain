@@ -30,7 +30,7 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
       <FormGroup row style={{marginBottom: '6%', marginTop: '6%'}}>
         <Label for="scholarName" xs="auto"><strong>장학금 이름</strong></Label>
         <Col xs={4}>
-        <Input onChange={onChange} type="text" name="scholarName" id="scholarName" placeholder="장학금 이름을 입력하세요" value={originalScholar? originalScholar.title:null}/>
+        <Input onChange={onChange} type="text" name="scholarshipName" id="scholarName" placeholder="장학금 이름을 입력하세요" value={originalScholar? originalScholar.scholarshipName:null}/>
       </Col>
         <Col xs={1}/>
         <Col xs={4}>
@@ -45,21 +45,21 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
       <FormGroup row style={{marginBottom: '6%', marginTop: '6%'}}>
                 <Label xs="auto" for="startDate" ><strong>시작 날짜&nbsp;&nbsp;&nbsp;</strong></Label>
                 <Col xs={4}>
-                <Input  onChange={onChange} type="date" name="startDate" id="startDate" placeholder="시작날짜를 설정하세요" value={originalScholar? originalScholar.createdAt:null} />
+                <Input  onChange={onChange} type="date" name="startDate" id="startDate" placeholder="시작날짜를 설정하세요" value={originalScholar? originalScholar.createdDate:null} />
                 </Col>
                 <Col xs={1}/>
                 <Label for="dueDate" xs="auto" ><strong>마감 날짜</strong></Label>
-                <Col xs={4}> <Input onChange={onChange} type="date" name="dueDate" id="dueDate" placeholder="마감기한을 설정하세요" value={originalScholar? originalScholar.updatedAt:null} /></Col>
+                <Col xs={4}> <Input onChange={onChange} type="date" name="maturityDateTime" id="dueDate" placeholder="마감기한을 설정하세요" value={originalScholar? originalScholar.maturityDateTime:null} /></Col>
       </FormGroup>
       
         <FormGroup row style={{marginBottom: '6%', marginTop: '6%'}}>
             <Label for="sum" xs="auto" ><strong>지급 금액&nbsp;&nbsp;&nbsp;</strong></Label>
             <Col xs={4}>
-            <Input onChange={onChange} type="number" name="sum" id="sum" placeholder="공란 입력시 전액 장학금" value={originalScholar? originalScholar.title:null}/>
+            <Input onChange={onChange} type="number" name="facevalue" id="sum" placeholder="공란 입력시 전액 장학금" value={originalScholar? originalScholar.facevalue:null}/>
             </Col>
             <Col xs={1}/>
             <Label for="numberOfPeople"xs="auto" ><strong>모집 인원</strong></Label>
-           <Col xs={4}> <Input onChange={onChange} type="number" name="numberOfPeople" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.id:null}/>
+           <Col xs={4}> <Input onChange={onChange} type="number" name="totalNum" id="numberOfPeople" placeholder="인원을 입력하세요" value={originalScholar? originalScholar.totalNum:null}/>
           </Col>
         </FormGroup>
         
@@ -67,11 +67,11 @@ const FormComponent = ({ onChange, content, onPublish, onCancel, originalScholar
         <Row>
             <Label for="semester" xs="auto" ><strong>학기 제한&nbsp;&nbsp;&nbsp;</strong></Label>
             <Col xs={4}>
-                <Input onChange={onChange} type="number" name="startSemester" id="startSemester" placeholder="시작 학기"  value={originalScholar? originalScholar.id:null}/>
+                <Input onChange={onChange} type="number" name="semesterLimitMin" id="startSemester" placeholder="시작 학기"  value={originalScholar? originalScholar.semesterLimitMin:null}/>
             </Col>
             <Col xs={1}/>&nbsp;&nbsp;
             <Col xs={5}>
-                <Input onChange={onChange} type="number" name="endSemester" id="endSemester" placeholder="끝 학기"  value={originalScholar? originalScholar.id:null}/>
+                <Input onChange={onChange} type="number" name="semesterLimitMax" id="endSemester" placeholder="끝 학기"  value={originalScholar? originalScholar.semesterLimitMax:null}/>
             </Col>
         </Row>
         <FormText color="muted">

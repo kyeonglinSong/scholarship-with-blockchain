@@ -53,7 +53,7 @@ if(loading || !notice){
   return null;
 }
 
-const { userId, id, title, content } = notice;
+const { id, title, content, author, createdDate } = notice;
 const usertype = (user.id===1)
 
 const onClick = e =>{
@@ -69,8 +69,8 @@ return(
         <div style={{fontSize:'30px', textAlign: 'left'}}><WiNightCloudyHigh style={{marginBottom:'10px'}}/> 공지사항</div>
       </Row>
       <div style={titleStyle}>{title}</div>
-      <div style={titleSubStyle}>작성날짜: {userId}</div>
-      <div style={titleSubStyle}>첨부파일: 파일제목.hwp</div>
+      <div style={titleSubStyle}>작성날짜: {createdDate}</div>
+      <div style={titleSubStyle}>작성자: {author}</div>
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>
         {content}

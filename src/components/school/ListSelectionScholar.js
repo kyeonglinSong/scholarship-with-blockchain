@@ -30,11 +30,11 @@ const ListSelectionScholar = ({ scholars, tempPage, lastPage, loading, error, ne
   var endIndex = Math.min(startIndex + 10, total - 1);
 
   const applyList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
-    <tr key={scholars.id}>
-    <th scope="row">{scholars.id}</th>
-    <td style={{width:'600px'}}>{scholars.title}</td>
-    <td style={{width:'100px'}}>{(scholars.completed)? "완료":"산정중"}</td>
-    <td><Link to={`/selections/${scholars.id}`}><button>자세히보기</button></Link></td>
+    <tr key={scholars.scholarshipId}>
+    <th scope="row">{scholars.scholarshipId}</th>
+    <td style={{width:'600px'}}>{scholars.scholarshipName}</td>
+    <td style={{width:'100px'}}>{(scholars.state)? "완료":"산정중"}</td>
+    <td><Link to={`/selections/${scholars.scholarshipId}`}><button>자세히보기</button></Link></td>
     </tr>
   ));
 

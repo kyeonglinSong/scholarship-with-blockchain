@@ -55,7 +55,9 @@ if(loading || !scholar){
   return null;
 }
 
-const { userId, id, title, body } = scholar;
+const { scholarshipName, foundation, createdDate, maturityDateTime, facevalue, gradeLimit, majorLimit } = scholar;
+
+const body = `자격요건 및 세부사항\n마감날짜: ${maturityDateTime}\n금액: ${facevalue}\n학기제한:${gradeLimit}\n학과:${majorLimit}`;
 
 
 const usertype = (user.data.role==="ADMIN");
@@ -68,9 +70,9 @@ return(
       <Row style={ScholarStyle}>
         <div  style={{fontSize:'30px', textAlign: 'left'}}><WiNightCloudyHigh style={{marginBottom:'10px'}}/> 장학금 세부정보</div>
       </Row>
-      <div style={titleStyle}>{title}</div>
-      <div style={titleSubStyle}>작성날짜: {userId}</div>
-      <div style={titleSubStyle}>첨부파일: 파일제목.hwp</div>
+      <div style={titleStyle}>{scholarshipName}</div>
+      <div style={titleSubStyle}>주최: {foundation}</div>
+      <div style={titleSubStyle}>작성날짜 : {createdDate}</div>
       <hr size="3" noshade></hr>
       <Row style={bodyStyle}>
         {body}
@@ -84,7 +86,7 @@ return(
           <Button color="primary" onClick={toggle}>신청하기</Button>
         }
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>{title}</ModalHeader>
+        <ModalHeader toggle={toggle}>{scholarshipName}</ModalHeader>
 <ModalBody>1. 목적 : 지원자 개인 식별, 지원의사 확인, 입사전형의 진행, 고지사항 전달, 입사 지원자와의 원활한 의사소통, 지원이력 확인 및 면접 불합격자 재지원 제한
 <br/>
 2. 항목 : 아이디(이메일주소), 비밀번호, 이름, 생년월일, 휴대폰번호<br/>

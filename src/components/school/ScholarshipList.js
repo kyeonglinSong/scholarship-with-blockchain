@@ -16,7 +16,7 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
 
   if(searchWord){
     scholars=scholars.filter((scholars)=>{
-    return scholars.title.indexOf(searchWord)>-1;
+    return scholars.scholarshipName.indexOf(searchWord)>-1;
     })
   }
 
@@ -25,8 +25,8 @@ const ScholarshipList = ({ scholars, tempPage, lastPage, loading, error, nextPag
   
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
       <tr key={scholars.id}>
-        <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
+        <th style={{width:'50px'}} scope="row">{scholars.scholarshipId}</th>
+        <td style={{width:'1000px'}} ><Link to={`/scholarships/${scholars.id}`}><a style={{color:'black'}}>{scholars.scholarshipName}</a></Link></td>
       </tr>
     ));
 

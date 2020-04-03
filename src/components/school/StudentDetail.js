@@ -28,9 +28,9 @@ const StudentDetail = ({ student, loading, scholarId }) =>{
                         <tr>
                             <th>신청번호 {student.id}</th>
                             <th>{student.name} 학생</th>
-                            <th>{student.city} 학교</th>
-                            <th>{student.zipcode}/4.3</th>
-                            <th>{student.phone}</th>
+                            <th>{student.university} 학교</th>
+                            <th>{student.grade}/4.3</th>
+                            <th>등록금 : {student.tution}</th>
                         </tr>
                     </thead>
                 </Table>

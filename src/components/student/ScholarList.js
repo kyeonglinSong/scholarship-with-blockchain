@@ -15,13 +15,13 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
 
   if(possible==="possible"){
     scholars=scholars.filter((scholars)=>{
-      return scholars.possible===possible;
+      return scholars.state===possible;
     })
   }
 
   if(searchWord){
     scholars=scholars.filter((scholars)=>{
-    return scholars.title.indexOf(searchWord)>-1;
+    return scholars.scholarshipName.indexOf(searchWord)>-1;
     })
   }
 
@@ -29,9 +29,9 @@ const ScholarList = ({ scholars, tempPage, lastPage, loading, error, nextPage, p
   var endIndex = Math.min(startIndex + 10, total - 1);
   
     const scholarList = scholars.slice(startIndex, endIndex).map((scholars, index)=>(
-      <tr key={scholars.id}>
-        <th style={{width:'50px'}} scope="row">{scholars.id}</th>
-        <td style={{width:'1000px', textAlign:'left'}} ><Link to={`/scholars/${scholars.id}`}><a style={{color:'black'}}>{scholars.title}</a></Link></td>
+      <tr key={scholars.scholarshipId}>
+        <th style={{width:'50px'}} scope="row">{scholars.scholarshipId}</th>
+        <td style={{width:'1000px', textAlign:'left'}} ><Link to={`/scholars/${scholars.id}`}><a style={{color:'black'}}>{scholars.scholarshipName}</a></Link></td>
       </tr>
     ));
 

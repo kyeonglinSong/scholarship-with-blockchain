@@ -28,16 +28,16 @@ const ScholarEditorContainer = ({ history }) => {
     };
     
     const onPublish = () =>{
-        const check = (content.scholarName==="" || content.startDate===""||content.endDate===""||content.sum===""||content.numberofPeople==="")
+        const check = (content.scholarshipName==="" ||content.maturityDateTime===""||content.facevalue===""||content.totalNum==="")
         if(check){
-            alert("필수 입력란을 모두 채워주셈");
+            alert("필수 입력란을 모두 채워주세요");
         }else{
             if(originalScholarId){
-                dispatch(updateScholar({originalScholarId, content}));
+                dispatch(updateScholar({originalScholarId, content, token}));
             }
             dispatch(
                addScholar({
-                 content,
+                 content, token
                }),
             ); 
             history.push('/selections');
@@ -76,7 +76,7 @@ const ScholarEditorContainer = ({ history }) => {
 
     useEffect(()=>{
         if(scholar){
-            const id = scholar.id;
+            const id = scholar.scholarshipId;
             history.push(`/scholarships/${id}`);
         }
         if(scholarError){

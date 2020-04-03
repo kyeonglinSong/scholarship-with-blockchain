@@ -28,7 +28,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     <tr key={notice.id}>
       <th style={{width:'50px'}} scope="row">{notice.id}</th>
       <td style={{width:'1000px', textAlign:'left'}}><Link to={`/notices/${notice.id}`}><a style={{color:'black'}}>{notice.title}</a></Link></td>
-      <td style={{width:'150px'}}>{moment(`${notice.createdAt}`).format('YY-MM-DD')}</td>
+      <td style={{width:'150px'}}>{moment(`${notice.createdDate}`).format('YY-MM-DD')}</td>
     </tr>
   ));
 

@@ -54,11 +54,11 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect, scholarSt
               }
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={selectToggle} name={student.id}>확인</Button>{' '}
+              <Button color="primary" onClick={selectToggle} name={student.studendId}>확인</Button>{' '}
               <Button color="secondary" onClick={modalToggle}>취소</Button>
             </ModalFooter>
           </Modal>
-          <td><Link to={`/students/${student.id}/${scholarId}`}><Button>자세히보기</Button></Link></td>
+          <td><Link to={`/students/${student.studentId}/${scholarId}`}><Button>자세히보기</Button></Link></td>
         </tr>,
       ];
     
