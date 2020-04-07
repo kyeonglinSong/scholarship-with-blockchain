@@ -2,8 +2,7 @@
 ### 대학생을 위한 블록체인 기반 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템
 
 > (나중에 설명을 씁시다)
->자꾸만 심쿵해~~
-> (한두줄 정도로)
+이건 제가 쓸게여 
 
  [![license](https://img.shields.io/badge/license-Apache%202.0-red.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -31,7 +30,8 @@
 
 ## 실행화면
 
-프론트까지 구현 되면 여기다가 놓기..
+프론트 학교용 / 재단용 각각 캡쳐해서 사진넣기
+
 
 ## Install
 
