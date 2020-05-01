@@ -17,22 +17,30 @@
 ## 시작하기
 
 ### 환경
----  
-
 - node.js
   
 ### dependency 설치
----
-`npm install`
+#### 재단용 애플리케이션
+```bash
+git clone -b foundationApp https://github.com/kyeonglinSong/scholarship-with-blockchain.git
+npm install
+```
+#### 학교용 애플리케이션
+```bash
+git clone -b universityApp https://github.com/kyeonglinSong/scholarship-with-blockchain.git
+npm install
+```
+
   
 ### 애플리케이션 실행
----
-`npm start`  
+```bash
+npm install
+``` 
   
 Open http://localhost:3000 to view it in the browser.  
   
 ### 사용방법
----
+
 #### 재단용 애플리케이션
 
 - 재단직원용 계정
@@ -60,6 +68,7 @@ Open http://localhost:3000 to view it in the browser.
   PW : e1234567  
   ```
 
+  
   
 ### 실행 화면
 
