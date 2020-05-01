@@ -1,7 +1,12 @@
- [![license](https://img.shields.io/badge/license-Apache%202.0-red.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+ [![license](https://img.shields.io/badge/license-Apache%202.0-red.svg)](https://www.apache.org/licenses/LICENSE-2.0)  
+ 
 # Scholarship-With-Blockchain
 대학생을 위한 블록체인 기반 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템  
+  
 > 2019 IBM '더 나은 교육을 위한 블록체인' 사회공헌 프로젝트 선정  
+> 2020 한국정보보호학회 하계학술대회(CISCS2020)
+하이퍼레저 패브릭 기반의 장학금 지급 및 관리 통합 시스템 개발(논문)  
+
 
 
 
@@ -77,7 +82,17 @@ Open http://localhost:3000 to view it in the browser.
   
 ### 실행 화면
 
-(프론트 학교용 / 재단용 각각 캡쳐해서 사진넣기)
+- 재단직원용 계정
+![img](https://blog.naver.com/PostView.nhn?blogId=byeol0714&logNo=221939632862&redirect=Dlog&widgetTypeCall=true&directAccess=false#)
+  
+  
+- 학생용 계정 로그인
+![img](https://blog.naver.com/PostView.nhn?blogId=byeol0714&logNo=221939632862&redirect=Dlog&widgetTypeCall=true&directAccess=false#)
+  
+  
+- 교직원용 계정 로그인
+![img](https://blog.naver.com/PostView.nhn?blogId=byeol0714&logNo=221939632862&redirect=Dlog&widgetTypeCall=true&directAccess=false#)
+  
   
   
 ## Author
