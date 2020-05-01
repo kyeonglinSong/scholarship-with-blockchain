@@ -17,18 +17,22 @@
 ## 시작하기
 
 ### 환경
+---  
 
 - node.js
   
 ### dependency 설치
+---
 `npm install`
   
 ### 애플리케이션 실행
+---
 `npm start`  
   
 Open http://localhost:3000 to view it in the browser.  
   
-### 사용방법  
+### 사용방법
+---
 ##### 재단용 애플리케이션
 - 재단직원용 계정
   - ID : f1234567
