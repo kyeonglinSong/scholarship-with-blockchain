@@ -81,15 +81,15 @@ Open http://localhost:3000 to view it in the browser.
 ### 실행 화면
 
 - 재단직원용 계정
-![img](https://blog.naver.com/PostView.nhn?blogId=byeol0714&logNo=221939632862&redirect=Dlog&widgetTypeCall=true&directAccess=false#)
+![img](https://postfiles.pstatic.net/MjAyMDA1MDFfMTM2/MDAxNTg4MzE0MjEyNDE3.gwUjP1VpE7szgp1w0KSdfxnHD2LVww30YeMoYVCitW0g.pWWCPkm6w5LDw-Q2PymFzxxpHh8je7l6LSKiVic2EDsg.PNG.byeol0714/Main_3.png?type=w966)
   
   
 - 학생용 계정 로그인
-![img](https://blog.naver.com/PostView.nhn?blogId=byeol0714&logNo=221939632862&redirect=Dlog&widgetTypeCall=true&directAccess=false#)
+![img](https://postfiles.pstatic.net/MjAyMDA1MDFfMTcz/MDAxNTg4MzE0MjEyMzY4.nqGwARMS6cGcfY3Bpey0elGELF35GDzFaUt0YdMpvOEg.s0hPqe-d4FPtBZIwSEcfp8ww0DL11THK3V1P-KHppGUg.PNG.byeol0714/Main_1.png?type=w966)
   
   
 - 교직원용 계정 로그인
-![img](https://blog.naver.com/PostView.nhn?blogId=byeol0714&logNo=221939632862&redirect=Dlog&widgetTypeCall=true&directAccess=false#)
+![img](https://postfiles.pstatic.net/MjAyMDA1MDFfMTAx/MDAxNTg4MzE0MjEyMzcz.wczAtfyCsb2pcyL-mx04xeZPK8VtaIiFqh26dJZdALUg.LJRX6dPZ4bR_76WGu6f3n-tI-3LDckHs2mi2xy6QUnYg.PNG.byeol0714/Main_2.png?type=w966)
   
   
   
