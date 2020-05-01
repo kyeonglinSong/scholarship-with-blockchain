@@ -2,7 +2,7 @@
 # Scholarship-With-Blockchain
 ### 대학생을 위한 블록체인 기반 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템
 
-![system](/Users/blossommilktea/Desktop/system.png)
+
 
  기존 장학금 지급 및 관리 프로세스는 복잡한 신청 및 처리 절차, 이중수혜와 같은 문제로 인해 공정하고 효율적인 장학금 분배가 어렵다. 따라서 보다 효과적으로 학생들의 장학금 수혜 내역을 관리하고 장학금을 지급할 수 있는 새로운 통합 시스템 ‘하이퍼레저 기반 장학금 통합관리시스템’을 제안한다. 프라이빗 블록체인 플랫폼인 하이퍼레저를 활용해 권한형 블록체인 시스템안에서 스마트 컨트랙트를 작동시킨다면, 공유 원장 아래서 학생들의 모든 장학금 지급 내역은 실시간으로 기록될 수 있다.
 
@@ -17,12 +17,22 @@
 
 ### 환경
 
+- node.js
+  
+### dependency 설치
+`npm install`
+  
+### 애플리케이션 실행
+`npm start`
+  
+  
+### 사용방법  
+
 ### 실행 화면
 
-프론트 학교용 / 재단용 각각 캡쳐해서 사진넣기
-
-### 사용방법
-
+(프론트 학교용 / 재단용 각각 캡쳐해서 사진넣기)
+  
+  
 ## Author
 
 ![img](https://lh5.googleusercontent.com/qApbyW2FzEe_ww93kzEFdXhz6CXNZi6qDzUAeCKWL4ymyjTdBl7p_inMRz629yg3vJzMy6iYdvLbLT1GIFOWOVEFmFnHzzHKADz2pMsOv2NHm15qREFceEaaHMhnIR-KusKnHdAHrg)
