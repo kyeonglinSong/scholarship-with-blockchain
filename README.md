@@ -1,5 +1,6 @@
 
-https://img.shields.io/badge/apm/l/:packageName
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 # 시작하기
 
