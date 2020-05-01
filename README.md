@@ -1,6 +1,9 @@
  [![license](https://img.shields.io/badge/license-Apache%202.0-red.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 # Scholarship-With-Blockchain
 대학생을 위한 블록체인 기반 국가 및 법인 장학금 지급 및 기록(관리) 통합 시스템  
+> 2019 IBM '더 나은 교육을 위한 블록체인' 사회공헌 프로젝트 선정  
+
+
 
   
 ![img](https://blogfiles.pstatic.net/MjAyMDA1MDFfOTQg/MDAxNTg4MzEyOTg3Nzg3.2Aan0_ts2fc3J4j5vYQ9lSBIA1u3XkhX-WBGMYLTobgg.Me3WVxMpHi8epTPDHZjiSAm-tDEirf9jK5CHOREYE5gg.PNG.byeol0714/KakaoTalk_20200501_150104444.png)
@@ -9,9 +12,10 @@
 
  본 시스템은 블록체인 네트워크 개발에 하이레저 패브릭을 사용하여 공유 원장 아래서 학생들의 모든 장학금 지급 내역은 실시간으로 기록되게 하였다. 이를 통해 장학금이라는 자본의 이동을 기관들이 즉각적으로 조회할 수 있고, 그에 따라 장학금 산정을 정확하고 빠르게 완료할 수 있다. 
 
- 애플리케이션의 프론트엔드는 리액트(React)로, API는 스프링 부트(Springboot)로, 체인코드는 자바(Java)로 작성되었다.
+ 애플리케이션의 프론트엔드는 리액트(React)로, API는 스프링 부트(Springboot)로, 체인코드는 자바(Java)로 작성되었다. API와 블록체인 네트워크는 IBM 클라우드에 배포할 예정이다.
+ 
    
-##### - 2020 한국정보보호학회 하계학술대회(CISCS2020)  
+#### - 2020 한국정보보호학회 하계학술대회(CISCS2020)  
 하이퍼레저 패브릭 기반의 장학금 지급 및 관리 통합 시스템 개발(논문)  
   
 
