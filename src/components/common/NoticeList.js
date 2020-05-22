@@ -19,6 +19,8 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     return notices.title.indexOf(searchWord)>-1;
     })
   }
+
+  notices=notices.list;
   
   var total=notices.length;
   var startIndex = (tempPage - 1) * 10 ;

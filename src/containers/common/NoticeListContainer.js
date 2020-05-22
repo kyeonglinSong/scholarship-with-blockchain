@@ -48,6 +48,7 @@ const NoticeListContainer = ()=>{
     }, [dispatch, token])
 
 
+
     return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><NoticeList notices={notices} tempPage={tempPage} lastPage={lastPage} loading={loading} error={error} 
                         nextPage={toNextPage} prevPage={toPrevPage} total={total} user={user} searchWord={searchWord} orderBase={orderBase}/></div>;
 };

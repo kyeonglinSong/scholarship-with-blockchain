@@ -18,7 +18,7 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value })=>({
     value,
 }));
 export const addScholar = createAction(ADD_SCHOLAR, ({content, token})=>({content, token}));
-//export const setOriginal = createAction(SET_ORIGINAL, scholarship=>scholarship);
+export const setOriginal = createAction(SET_ORIGINAL, scholarship=>scholarship);
 export const updateScholar = createAction(UPDATE_SCHOLAR, ({id, title, body, token})=>({id, title, body, token}));
 
 const addScholarSaga = createRequestSaga(ADD_SCHOLAR, scholarAPI.registerScholarship);
@@ -71,12 +71,12 @@ const Scholarship = handleActions(
             ...state,
             scholarshipError,
         }),
-        /*[SET_ORIGINAL]:(state, { payload:originalScholarship })=>({
+        [SET_ORIGINAL]:(state, { payload:originalScholarship })=>({
             ...state,
             title:originalScholarship.title,
             body:originalScholarship.body,
             originalScholarshipId:originalScholarship.id,
-        }),*/
+        }),
         [UPDATE_SCHOLAR_SUCCESS]: (state, { payload: scholarship })=>({
             ...state,
             scholarship,
