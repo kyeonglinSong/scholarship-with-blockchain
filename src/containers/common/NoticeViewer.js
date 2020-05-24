@@ -3,36 +3,48 @@ import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { readNotice, unloadNotice, setToken } from '../../modules/notice';
+import { readNotice, unloadNotice, setToken, setId, setInfo } from '../../modules/notice';
 import { setOriginal } from '../../modules/write';
 import Notice from '../../components/common/NoticeDetail';
 import { removeNotice } from '../../lib/api/notice';
 
 const NoticeViewer = ({ match, history })=>{
-    const noticeId  = match.params;
+    const noticeId  = match.params.id;
     const dispatch = useDispatch();
-    const { notice, error, loading, user, token } = useSelector(({ notice, loading, auth })=>({
+
+    const { id, notice, error, loading, author, token, info } = useSelector(({ notice, loading, auth })=>({
+        id:notice.id,
         notice:notice.notice,
         error:notice.error,
         loading:loading['notice/READ_NOTICE'],
-        user:auth.auth,
+        author:notice.author,
         token:notice.token,
+        info:notice.info,
     }));
+
 
     useEffect(()=>{
         const tempuser=JSON.parse(localStorage.getItem("user"));
         const temptoken=tempuser.data.token;
         const tempauthor=tempuser.data.role;
-        console.log(temptoken);
-        dispatch(setToken(temptoken, tempauthor));
-    }, [dispatch]);
-
+        const info={'token':temptoken, 'author':tempauthor, 'noticeId':noticeId};
+        console.log(info);
+        dispatch(setInfo(info));
+    }, [dispatch, noticeId]);
+/*
     useEffect(()=>{
-        dispatch(readNotice(noticeId.id, token));
-        return()=>{
-            dispatch(unloadNotice());
-        };
-    }, [dispatch, noticeId, token]);
+        dispatch(setId(noticeId));
+    },[dispatch, noticeId]);
+*/
+    useEffect(()=>{
+        if(info.token!=null){
+            dispatch(readNotice(info));
+            return()=>{
+                dispatch(unloadNotice());
+            };
+        }
+        
+    }, [dispatch, info]);
 
 
     const onRemove = async() => {
@@ -49,7 +61,9 @@ const NoticeViewer = ({ match, history })=>{
         history.push('/notices/write');
     }
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Notice notice={notice} loading={loading} error={error} user={user} onRemove={onRemove} onEdit={onEdit}/></div>;
+    console.log(notice);
+
+    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Notice notice={notice} loading={loading} error={error} user={author} onRemove={onRemove} onEdit={onEdit}/></div>;
 };
 
 export default withRouter(NoticeViewer);

@@ -14,23 +14,23 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     return null;
   }
 
+  notices=notices.list;
+
   if(searchWord){
     notices=notices.filter((notices)=>{
     return notices.title.indexOf(searchWord)>-1;
     })
   }
-
-  notices=notices.list;
   
   var total=notices.length;
-  var startIndex = (tempPage - 1) * 10 ;
-  var endIndex = Math.min(startIndex + 10, total - 1);
+  var startIndex = (tempPage - 1) * 10;
+  var endIndex = Math.min(startIndex + 10, total);
 
   const noticeList = notices.slice(startIndex, endIndex).map((notice)=>(
     <tr key={notice.id}>
       <th style={{width:'50px'}} scope="row">{notice.id}</th>
       <td style={{width:'1000px', textAlign:'left'}}><Link to={`/notices/${notice.id}`}><a style={{color:'black'}}>{notice.title}</a></Link></td>
-      <td style={{width:'150px'}}>{moment(`${notice.createdDate}`).format('YY-MM-DD')}</td>
+      <td style={{width:'150px'}}>{moment(`${notice.modifiedDate}`).format('YY-MM-DD')}</td>
     </tr>
   ));
 
@@ -42,7 +42,7 @@ const NoticeList = ({ notices, tempPage, lastPage, loading, error, prevPage, nex
     padding:'auto',
   }
 
-  const usertype = (user.id===1)
+  const usertype = (user.role==="ADMIN")
 
 
   return(

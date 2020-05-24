@@ -38,12 +38,10 @@ const NoticeListContainer = ()=>{
         const tempuser=JSON.parse(localStorage.getItem("user"));
         const temptoken=tempuser.data.token;
         const tempauthor=tempuser.data.role;
-        console.log(temptoken);
         dispatch(setToken(temptoken, tempauthor));
     }, [dispatch]);
 
     useEffect(()=>{
-        console.log(token);
         dispatch(listNotices(token));
     }, [dispatch, token])
 
