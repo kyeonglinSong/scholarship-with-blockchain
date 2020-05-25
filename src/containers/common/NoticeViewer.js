@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { readNotice, unloadNotice, setToken, setId, setInfo } from '../../modules/notice';
-import { setOriginal } from '../../modules/write';
+import { setOriginal, setInfo_update } from '../../modules/write';
 import Notice from '../../components/common/NoticeDetail';
 import { removeNotice } from '../../lib/api/notice';
 
@@ -12,7 +12,7 @@ const NoticeViewer = ({ match, history })=>{
     const noticeId  = match.params.id;
     const dispatch = useDispatch();
 
-    const { id, notice, error, loading, author, token, info } = useSelector(({ notice, loading, auth })=>({
+    const { id, notice, error, loading, author, token, info, info_update } = useSelector(({ notice, loading, write })=>({
         id:notice.id,
         notice:notice.notice,
         error:notice.error,
@@ -20,6 +20,7 @@ const NoticeViewer = ({ match, history })=>{
         author:notice.author,
         token:notice.token,
         info:notice.info,
+        info_update:write.info,
     }));
 
 
@@ -49,7 +50,10 @@ const NoticeViewer = ({ match, history })=>{
 
     const onRemove = async() => {
         try{
-            await removeNotice(noticeId);
+            console.log(noticeId);
+            console.log(info.token);
+            const temp={'id':noticeId, 'token':info.token}
+            await removeNotice(temp);
             history.push('/notices');
         }catch(e){
             console.log(e)
@@ -57,13 +61,16 @@ const NoticeViewer = ({ match, history })=>{
     }
 
     const onEdit = () =>{
-        dispatch(setOriginal(notice));
+        const temp={'originalNotice':notice, 'author':info.author,'token':info.token }
+        console.log(temp)
+        dispatch(setInfo_update(temp));
+        console.log(info_update);
         history.push('/notices/write');
     }
 
     console.log(notice);
 
-    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Notice notice={notice} loading={loading} error={error} user={author} onRemove={onRemove} onEdit={onEdit}/></div>;
+    return <div><meta name="viewport" content="width=device-width, initial-scale=1.0" /><Notice notice={notice} loading={loading} error={error} user={info.author} onRemove={onRemove} onEdit={onEdit}/></div>;
 };
 
 export default withRouter(NoticeViewer);

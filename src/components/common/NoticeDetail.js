@@ -57,7 +57,7 @@ console.log(notice.data);
 
 const { id, author, content, title, modifiedDate } = notice.data;
 //const usertype = (author.type==="ADMIN")
-const usertype=1;
+const usertype=(user==="ADMIN");
 
 const onClick = e =>{
   history.push('/notices');
@@ -85,7 +85,7 @@ return(
       </div>
       <div style={{textAlign: 'right'}}>
         {
-          !usertype &&
+          usertype &&
           <div>
           <Button outline color="secondary" onClick={onEdit} style={{margin:'5px'}}>수정하기</Button>
           <Button outline color="secondary" onClick={onRemove} style={{margin:'5px'}}>삭제하기</Button>

@@ -27,9 +27,11 @@ const EditorContainer = ({ history }) => {
         if(originalNoticeId){
             dispatch(updateNotice({originalNoticeId, title, body}));
         }
+        const info={'title':title, 'content':body, 'author':author, 'token':token}
+        console.log(info);
         dispatch(
             writeNotice({
-                title,body,author,token
+                info
             }),
         );
     }
@@ -46,21 +48,23 @@ const EditorContainer = ({ history }) => {
         const tempuser=JSON.parse(localStorage.getItem("user"));
         const temptoken=tempuser.data.token;
         const tempauthor=tempuser.data.role;
-        console.log(temptoken);
-        dispatch(setToken(temptoken, tempauthor));
+        const info={'token':temptoken, 'author':tempauthor};
+        console.log(info);
+        dispatch(setToken(info));
     }, [dispatch]);
 
-    
+    /*
     useEffect(()=>{
         return() => {
             dispatch(initialize());
         };
-    }, [dispatch, token]);
+    }, [dispatch, token]);*/
     
 
     useEffect(()=>{
         if(notice){
-            const id = notice.id;
+            console.log(notice);
+            const id = notice.data;
             history.push(`/notices/${id}`);
         }
         if(noticeError){
