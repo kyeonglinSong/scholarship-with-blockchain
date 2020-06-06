@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/scholarship-with-blockchain/static/css/main.bf41504e.chunk.css",
+    "main.js": "/scholarship-with-blockchain/static/js/main.04c3510c.chunk.js",
+    "main.js.map": "/scholarship-with-blockchain/static/js/main.04c3510c.chunk.js.map",
+    "runtime-main.js": "/scholarship-with-blockchain/static/js/runtime-main.bf5d5735.js",
+    "runtime-main.js.map": "/scholarship-with-blockchain/static/js/runtime-main.bf5d5735.js.map",
+    "static/css/2.b8f9ecc0.chunk.css": "/scholarship-with-blockchain/static/css/2.b8f9ecc0.chunk.css",
+    "static/js/2.abb36fb3.chunk.js": "/scholarship-with-blockchain/static/js/2.abb36fb3.chunk.js",
+    "static/js/2.abb36fb3.chunk.js.map": "/scholarship-with-blockchain/static/js/2.abb36fb3.chunk.js.map",
+    "index.html": "/scholarship-with-blockchain/index.html",
+    "precache-manifest.15952e787224c531e5c7ea8210d6789e.js": "/scholarship-with-blockchain/precache-manifest.15952e787224c531e5c7ea8210d6789e.js",
+    "service-worker.js": "/scholarship-with-blockchain/service-worker.js",
+    "static/css/2.b8f9ecc0.chunk.css.map": "/scholarship-with-blockchain/static/css/2.b8f9ecc0.chunk.css.map",
+    "static/css/main.bf41504e.chunk.css.map": "/scholarship-with-blockchain/static/css/main.bf41504e.chunk.css.map",
+    "static/js/2.abb36fb3.chunk.js.LICENSE.txt": "/scholarship-with-blockchain/static/js/2.abb36fb3.chunk.js.LICENSE.txt",
+    "static/media/background.png": "/scholarship-with-blockchain/static/media/background.3ab8fb0d.png",
+    "static/media/content2.css": "/scholarship-with-blockchain/static/media/background_student.f0d41bc2.png",
+    "static/media/examplepic01.png": "/scholarship-with-blockchain/static/media/examplepic01.63df473f.png",
+    "static/media/logo.PNG": "/scholarship-with-blockchain/static/media/logo.c83e1bb8.PNG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf5d5735.js",
+    "static/css/2.b8f9ecc0.chunk.css",
+    "static/js/2.abb36fb3.chunk.js",
+    "static/css/main.bf41504e.chunk.css",
+    "static/js/main.04c3510c.chunk.js"
+  ]
+}
