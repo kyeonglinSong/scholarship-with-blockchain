@@ -1,0 +1,60 @@
+.contentnew{
+  display:block;
+  width:100%;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  margin-left: 70px;
+}
+
+.img{
+  position: relative;
+  background-image: url("../../images/background_student.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 110vh;
+  background-size:cover;
+}
+
+.center-col{
+  height: 300px;
+  width: 100%;
+  border-style: solid;
+  overflow-y: scroll;
+
+}
+
+.container{
+  text-align:center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.signupbuttons{
+  padding:  20px;
+  text-align:center;
+}
+
+.RegisterMainButton{
+  float: left;
+  width: 21%;
+  height: 300px;
+  padding: 1rem;  
+  margin: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 350px) {
+  .RegisterMainButton {width: 90%; height: 200px; margin-top:20px;}
+  .img{height:160vh;}
+  .contentnew{margin-left:25px; margin-top:30px;}
+}
+
+@media only screen and (min-width: 768px) {
+  .RegisterMainButton {width: 22%; height: 400px;}
+  .img{height:110vh;}
+  .contentnew{margin-left:70px;}
+}

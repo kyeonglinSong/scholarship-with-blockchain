@@ -1,0 +1,31 @@
+.thead{display:table-row;}
+.th{display:table-cell; font-weight:normal;}
+.applyId{display:none; font-size:15px; text-align:left;}
+.detail{display:block;}
+.thstate{width:80px;}
+.smalltitle{font-size:15px; font-weight:normal;}
+.smallstate{font-size:15px;}
+.divStyle{width:73%; margin:auto;}
+
+@media only screen and (min-width: 350px) {
+    .thead{display:none;}
+    .th{display:none; font-weight:normal;}
+    .applyId{display:block; font-size:12px;}
+    .detail{display:none;}
+    .smalltitle{font-size:12px; font-weight:bold;}
+    .smallstate{font-size:12px;}
+    .thstate{width:300px;}
+    .divStyle{width:90%;margin:auto;}
+}
+
+@media only screen and (min-width: 768px) {
+    .thead{display:table-row;}
+    .th{display:table-cell; font-weight:normal;}
+    .applyId{display:none; font-size:15px;}
+    .detail{display:block;}
+    .thstate{width:80px;}
+    .smalltitle{font-size:15px; font-weight:normal;}
+    .smallstate{font-size:15px;}
+    .divStyle{width:73%;margin:auto;}
+}
+  
