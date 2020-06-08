@@ -42,7 +42,8 @@ npm install
 ```bash
 npm install
 ``` 
-  
+OR https://kyeonglinsong.github.io/scholarship-with-blockchain/  
+
 Open http://localhost:3000 to view it in the browser.  
   
 ### 4. 사용방법
